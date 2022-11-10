@@ -10,19 +10,36 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/main.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+	<style>
+	.main   {
+                background-color: antiquewhite;
+				position: absolute;
+                top: 55px;
+				width: 100%;
+        }
+	.row1col1   {
+                background-color: red;
+        }
+	.row1col2   {
+                background-color: blue;
+        }
+	.row2   {
+                background-color: green;
+        }	
+	</style>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm fixed-top">
+            <div class="container-fluid">
                 
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
@@ -35,7 +52,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto top-right">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -54,7 +71,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="main">
             @yield('content')
         </main>
     </div>
