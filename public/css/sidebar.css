@@ -6,29 +6,19 @@
     align-items: stretch;
     
 }
-#section_content{
-    margin-left: 150px;
-    align-content: center;
-    height: 100vh;
+.content{
+    background-color: #a11616 ; 
     
 
 }
-#section_sidebar{
-   
+.sidebar{
+    background-color: #12cbd8 ;
+    
     min-width: 150px;
     max-width: 150px;
-    height: 100%;
-    position: fixed!important;
-    overflow: auto;
-    overflow-x: hidden;
-    overflow-y:auto;
-    z-index: 1;
-    
-    background-color: #000000;
-    color: #ffffff !important;
-    align-content: stretch;
+      
 }
-.sidebar.bn{
+.sidebar.active{
     margin-left: -150px;
 }
 
