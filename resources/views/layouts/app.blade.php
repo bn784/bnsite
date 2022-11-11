@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Scripts -->
-    
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/sidebar.js') }}" defer></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -64,7 +64,7 @@
         <!-- end topbar -->
 		<div class="wrapper">
         <!-- sidebar -->
-        <section  id="section_sidebar">
+        <div  id="sidebar" class="sidebar">
         <nav class="nav-sidebar">
         <ul class="list-unstyled components navbar-brand ">
             <li class="active">
@@ -109,17 +109,28 @@
                 <a href="{{ url('/') }}" class=" my-button navbar-brand">{{ config('app.name', 'bnsite') }}</a>
                 <a href="{{ route('home') }}" class=" my-button navbar-brand">uytiuyukg</a>
                 <a href="{{ route('home') }}" class=" my-button navbar-brand">home</a>
-        </section>
+        </div>
         <!-- end sidebar -->
         <!-- content -->
-        <section  id="section_content">
+        <div  id="content" class="content">
             @yield('content')
-        </section>
+        </div>
          <!-- end content -->
 		</div>
     </div>
-    
+    <!-- javascripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script>
+//sidebar
+$(document).ready(function () {
+    $('#Toggle_Sidebar').on('click', function () {
+      
+		$('#sidebar').toggleClass('active');
+    });
+});
+</script>
 </body>
 </html>
