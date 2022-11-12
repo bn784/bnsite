@@ -20,3 +20,5 @@ Route::get('/', 'welcomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/home/{lang}', 'HomeController@preferred_language')->name('preferred_language');

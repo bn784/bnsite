@@ -1,0 +1,48 @@
+.wrapper {
+    left: 0;
+    top: 0;
+    padding-top: 55px;
+    position: absolute;
+    display: flex;
+    align-items: stretch;
+    
+}
+.content{
+    padding: 10px;
+    margin-left: 300px;
+    background-color: #29d812 ;
+
+}
+.content.active{
+     
+    margin-left: 0px;
+
+}
+.sidebar{
+    background-color: rgb(53, 5, 5);
+    position: fixed;
+    min-width: 300px;
+    max-width: 300px;
+    height: 100vh;
+   
+   
+}
+.sidebar.active{
+    margin-left: -300px;
+}
+.bnSidebar{
+   
+    width: 300px;
+    color: white;
+    overflow: hidden ;
+    
+}
+.bnSidebar:hover{
+    color: white;
+    background-color:  rgb(116, 14, 14) ;
+   
+}
+
+
+
+

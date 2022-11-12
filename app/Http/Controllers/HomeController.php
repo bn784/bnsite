@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function preferred_language($lang)
+    {
+       // $user = \Auth::user();
+       // $user ->preferred_language = $lang ;
+      //  $user->save();
+      session(['locale' => $lang]);
+
+        return redirect()->back();
+    }
 }

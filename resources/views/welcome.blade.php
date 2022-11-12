@@ -13,7 +13,6 @@
     <div class="row row2">
 	row2
     </div>
-  
 </div>
 @endsection
 
