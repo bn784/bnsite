@@ -70,15 +70,15 @@
         <ul class="nav flex-column navbar-brand ">
             <li class="nav-item ">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link bnSidebar">@lang('messages.preferred_language')</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
+                <ul class="nav collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="{{ route('preferred_language', ['lang' => 'ru'])}}" class="nav-link bnSidebar">@lang('messages.RU')</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'ru'])}}" class="nav-link bnSidebar-dropdown">@lang('messages.RU')</a>
                     </li>
                     <li>
-                        <a href="{{ route('preferred_language', ['lang' => 'uk'])}}" class="nav-link bnSidebar">@lang('messages.UKR')</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'uk'])}}" class="nav-link bnSidebar-dropdown">@lang('messages.UKR')</a>
                     </li>
                     <li>
-                        <a href="{{ route('preferred_language', ['lang' => 'en'])}}" class="nav-link bnSidebar">@lang('messages.EN')</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'en'])}}" class="nav-link bnSidebar-dropdown">@lang('messages.EN')</a>
                     </li>
                 </ul>
             </li>
