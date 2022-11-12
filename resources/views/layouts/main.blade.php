@@ -18,22 +18,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 	<style>
-	.main   {
-                background-color: antiquewhite;
-				position: absolute;
-                top: 55px;
-				width: 100%;
-        }
-	.row1col1   {
-                background-color: red;
-        }
-	.row1col2   {
-                background-color: blue;
-        }
-	.row2   {
-                background-color: green;
-        }	
+	
 	</style>
 </head>
 <body>
@@ -43,24 +30,41 @@
                 
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-					@auth
 					<li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">Home</a>
+                        <a class="nav-link navbar-brand active" href="#row1" aria-current="page">row1</a>
                     </li>
-					@endauth
-
+                    <li class="nav-item">
+                        <a class="nav-link navbar-brand active" href="#row2" aria-current="page">row2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-brand active" href="#row3" aria-current="page">row3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-brand active" href="#row4" aria-current="page">row4</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-brand active" href="#row5" aria-current="page">row5</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-brand active" href="#row6" aria-current="page">row6</a>
+                    </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto top-right">
+                    @auth
+					<li class="nav-item">
+                        <a class="nav-link navbar-brand active " href="{{ route('home') }}">Home</a>
+                    </li>
+					@endauth
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link navbar-brand active " href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link navbar-brand active" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
