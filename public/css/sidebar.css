@@ -9,7 +9,8 @@
 }
 .content{
     padding: 10px;
-    margin-left: 250px;
+    margin-left: 300px;
+    background-color: #29d812 ;
 
 }
 .content.active{
@@ -18,68 +19,23 @@
 
 }
 .sidebar{
-    background-color: #12cbd8 ;
+    background-color: rgb(113, 191, 218);
     position: fixed;
-    min-width: 250px;
-    max-width: 250px;
-    height: 100vh; 
+    min-width: 300px;
+    max-width: 300px;
+    height: 100vh;
+   
+   
 }
 .sidebar.active{
-    margin-left: -250px;
+    margin-left: -300px;
+}
+.bnSidebar{
+    background-color: rgb(223, 31, 31);
+    width: 300px;
+    
 }
 
-.nav-sidebar {
-    padding: 5px 10px 5px 10px;
-}
 
 
-.my-button {
-    border: none;
-    display: inline-block;
-    padding: 8px 16px;
-    vertical-align: middle;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    background-color: inherit;
-    text-align: center;
-    cursor: pointer;
-    white-space: nowrap;
-    width: 100%;
-    border:0px ;
 
-}
-.my-button:hover {
-    color: #fff;
-    background-color: #bcbcbc ;
-    text-decoration: none;
-}
-.my-button:active {
-    color: #ffffff ;
-    background-color: #959595 ;
-}
-.bn-button {
-    border: none;
-    display: inline-block;
-    padding: 8px 16px;
-    vertical-align: middle;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    background-color: #555555;
-    text-align: center;
-    cursor: pointer;
-    white-space: nowrap;
-    width: 100%;
-    border:0px ;
-
-}
-.bn-button:hover {
-    color: #fff;
-    background-color: #bcbcbc ;
-    text-decoration: none;
-}
-.bn-button:active {
-    color: #ffffff ;
-    background-color: #959595 ;
-}

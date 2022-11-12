@@ -67,23 +67,23 @@
         <!-- sidebar -->
         <div  id="sidebar" class="sidebar">
        
-        <ul class="nav flex-column ">
-            <li class="nav-item">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">@lang('messages.preferred_language')</a>
+        <ul class="nav flex-column navbar-brand ">
+            <li class="nav-item ">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link bnSidebar">@lang('messages.preferred_language')</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="{{ route('preferred_language', ['lang' => 'ru'])}}" class="nav-link">@lang('messages.RU')</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'ru'])}}" class="nav-link bnSidebar">@lang('messages.RU')</a>
                     </li>
                     <li>
-                        <a href="{{ route('preferred_language', ['lang' => 'uk'])}}" class="nav-link">@lang('messages.UKR')</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'uk'])}}" class="nav-link bnSidebar">@lang('messages.UKR')</a>
                     </li>
                     <li>
-                        <a href="{{ route('preferred_language', ['lang' => 'en'])}}" class="nav-link">@lang('messages.EN')</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'en'])}}" class="nav-link bnSidebar">@lang('messages.EN')</a>
                     </li>
                 </ul>
             </li>
-            <li>
-                <a href="#" class="nav-link">About</a>
+            <li class="nav-item">
+                <a href="#" class="nav-link bnSidebar">About</a>
             </li>
             
         </ul>
