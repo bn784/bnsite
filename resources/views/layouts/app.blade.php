@@ -66,47 +66,28 @@
 		<div class="wrapper">
         <!-- sidebar -->
         <div  id="sidebar" class="sidebar">
-        <nav class="nav-sidebar">
-        <ul class="list-unstyled components navbar-brand ">
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">@lang('messages.preferred_language')</a>
+       
+        <ul class="nav flex-column ">
+            <li class="nav-item">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">@lang('messages.preferred_language')</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="{{ route('preferred_language', ['lang' => 'ru'])}}">@lang('messages.RU')</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'ru'])}}" class="nav-link">@lang('messages.RU')</a>
                     </li>
                     <li>
-                        <a href="{{ route('preferred_language', ['lang' => 'uk'])}}">@lang('messages.UKR')</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'uk'])}}" class="nav-link">@lang('messages.UKR')</a>
                     </li>
                     <li>
-                        <a href="{{ route('preferred_language', ['lang' => 'en'])}}">@lang('messages.EN')</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'en'])}}" class="nav-link">@lang('messages.EN')</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="#">About</a>
+                <a href="#" class="nav-link">About</a>
             </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Page 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Portfolio</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
+            
         </ul>
-    </nav>
+   
                
         </div>
         <!-- end sidebar -->
@@ -120,7 +101,7 @@
     <!-- javascripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-//sidebar
+//sidebar Toggle
 $(document).ready(function () {
      $('#Toggle_Sidebar').on('click', function () {
      $('#sidebar').toggleClass('active');
