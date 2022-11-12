@@ -1,3 +1,4 @@
+{{ App::setLocale(session('locale')) }}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -68,16 +69,16 @@
         <nav class="nav-sidebar">
         <ul class="list-unstyled components navbar-brand ">
             <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">@lang('messages.preferred_language')</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="#">Home 1</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'ru'])}}">@lang('messages.RU')</a>
                     </li>
                     <li>
-                        <a href="#">Home 2</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'uk'])}}">@lang('messages.UKR')</a>
                     </li>
                     <li>
-                        <a href="#">Home 3</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'en'])}}">@lang('messages.EN')</a>
                     </li>
                 </ul>
             </li>
