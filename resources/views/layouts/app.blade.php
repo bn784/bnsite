@@ -107,9 +107,7 @@
             </li>
         </ul>
     </nav>
-                <a href="{{ url('/') }}" class=" my-button navbar-brand">{{ config('app.name', 'bnsite') }}</a>
-                <a href="{{ route('home') }}" class=" my-button navbar-brand">uytiuyukg</a>
-                <a href="{{ route('home') }}" class=" my-button navbar-brand">home</a>
+               
         </div>
         <!-- end sidebar -->
         <!-- content -->
