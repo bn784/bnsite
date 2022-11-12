@@ -29,7 +29,7 @@
             <div class="container-fluid">
                 
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav mr-auto" id="menu">
 					<li class="nav-item">
                         <a class="nav-link navbar-brand active" href="#row1" aria-current="page">row1</a>
                     </li>
@@ -79,6 +79,22 @@
             @yield('content')
         </main>
     </div>
+
+    <!-- javascripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+//smooth transition
+ $(document).ready(function(){
+    $("#menu").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top - 50;
+        $('body,html').animate({scrollTop: top}, 0);
+    });
+});
+</script>
+
+
 </body>
 </html>
 

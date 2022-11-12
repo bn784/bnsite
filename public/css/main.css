@@ -7,7 +7,7 @@
 }
 .row1 {
                 background-color: red;
-				height: 100vh;
+				height: 95vh;
 }	
 .row1col1 {
                 background-color: ;
@@ -35,7 +35,11 @@
 .row6 {
                 background-color: brown;
 				height: 100vh;
-}	   
+}
+.current {
+                color: red;
+				
+}		   
 
 
 
