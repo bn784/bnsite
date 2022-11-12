@@ -19,7 +19,7 @@
 
 }
 .sidebar{
-    background-color: rgb(113, 191, 218);
+    background-color: rgb(53, 5, 5);
     position: fixed;
     min-width: 300px;
     max-width: 300px;
@@ -31,9 +31,16 @@
     margin-left: -300px;
 }
 .bnSidebar{
-    background-color: rgb(223, 31, 31);
+   
     width: 300px;
+    color: white;
+    overflow: hidden ;
     
+}
+.bnSidebar:hover{
+    color: white;
+    background-color:  rgb(116, 14, 14) ;
+   
 }
 
 
