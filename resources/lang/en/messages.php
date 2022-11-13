@@ -32,9 +32,11 @@ return [
 	'Register'=> 'Register',
 	'Remember Me' => 'Remember Me',
 	//s
+	'site-management' => 'Site-management',
 	//t
 	//u
 	'Ukrainian' => 'Ukrainian',
+	'user-management' => 'user-management',
 	//w
 	//v
 	//x

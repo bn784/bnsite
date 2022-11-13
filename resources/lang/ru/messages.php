@@ -33,9 +33,11 @@ return [
 	'Register'=> 'Регистрироваться',
 	'Remember Me' => 'Запомните меня',
 	//s
+	'site-management' => 'Управление сайтом',
 	//t
 	//u
 	'Ukrainian' => 'Український',
+	'user-management' => 'Управление пользователями',
 	//w
 	//v
 	//x
