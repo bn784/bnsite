@@ -52,7 +52,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto top-right">
                     <li class="links nav-item dropdown">
-                    <button class="btn-secondary btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn-dark btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     {{ App::getLocale()}}
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">

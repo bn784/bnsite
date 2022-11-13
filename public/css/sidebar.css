@@ -19,7 +19,7 @@
 
 }
 .sidebar{
-    background-color: rgb(50, 10, 10);
+    /*background-color: rgb(50, 10, 10);*/
     position: fixed;
     min-width: 300px;
     max-width: 300px;
@@ -39,11 +39,11 @@
 }
 .bnSidebar:hover{
     color: white;
-    background-color:  rgb(100, 30, 30) ;
+    /*background-color:  rgb(100, 30, 30) ;*/
    
 }
 .bnSidebar-dropdown{
-    background-color: rgb(15, 50, 15);
+    /*background-color: rgb(15, 50, 15);*/
     width: 300px;
     color: white;
     overflow: hidden ;
@@ -52,7 +52,7 @@
 
 .bnSidebar-dropdown:hover{
     color: white;
-    background-color:   rgb(15, 100, 15) ;
+    /*background-color:   rgb(15, 100, 15) ;*/
    
 }
 
