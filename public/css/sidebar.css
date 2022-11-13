@@ -19,7 +19,7 @@
 
 }
 .sidebar{
- /*   background-color: rgb(50, 10, 10);*/
+    background-color: rgb(50, 10, 10);
     position: fixed;
     min-width: 300px;
     max-width: 300px;
@@ -35,21 +35,21 @@
 }
 .bnSidebar:hover{
     color: white;
-    background-color:  rgb(95, 21, 21) ;  
+    background-color:  rgb(95, 21, 21);  
 }
 .bnSidebar:active{
     color: rgb(187, 58, 122);
-    background-color:  rgb(71, 10, 10) ;  
+    background-color:  rgb(71, 10, 10);  
 }
 .bnSidebar:visited{
     color: white;
-   /* background-color:  rgb(24, 100, 17) ; */
+    background-color:  rgb(24, 100, 17); 
 }
 .bnSidebar-dropdown{
     background-color: rgb(15, 50, 15);
     width: 300px;
     color: white;
-    overflow: hidden ;  
+    overflow: hidden;  
 }
 
 .bnSidebar-dropdown:hover{
