@@ -1,3 +1,4 @@
+{{ App::setLocale(session('locale')) }}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -7,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'bnsite') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -19,9 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-	<style>
-	
-	</style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 </head>
 <body>
     <div id="app">
@@ -52,6 +51,16 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto top-right">
+                    <li class="links nav-item dropdown">
+                    <button class="btn-secondary btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ App::getLocale()}}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'en'])}}">English</a></li>
+                        <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'ua'])}}">Український</a></li>
+                        <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'ru'])}}">Русский</a></li>
+                    </ul>  
+                    </li>
                     @auth
 					<li class="nav-item">
                         <a class="nav-link navbar-brand active " href="{{ route('home') }}">Home</a>
@@ -81,6 +90,7 @@
     </div>
 
     <!-- javascripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 //smooth transition
