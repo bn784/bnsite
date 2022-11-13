@@ -5,21 +5,17 @@
     position: absolute;
     display: flex;
     align-items: stretch;
-    
 }
 .content{
     padding: 10px;
     margin-left: 300px;
     background-color: #29d812 ;
-
 }
 .content.active{
-     
     margin-left: 0px;
-
 }
 .sidebar{
-    background-color: rgb(50, 10, 10);
+    background-color: rgb(59, 11, 11);
     position: fixed;
     min-width: 300px;
     max-width: 300px;
@@ -38,12 +34,10 @@
     background-color:  rgb(95, 21, 21);  
 }
 .bnSidebar:active{
-    color: rgb(187, 58, 122);
     background-color:  rgb(71, 10, 10);  
 }
 .bnSidebar:visited{
     color: white;
-    background-color:  rgb(24, 100, 17); 
 }
 .bnSidebar-dropdown{
     background-color: rgb(15, 50, 15);
@@ -51,13 +45,7 @@
     color: white;
     overflow: hidden;  
 }
-
 .bnSidebar-dropdown:hover{
     color: white;
-    background-color:   rgb(7, 66, 7);  
+    background-color:   rgb(9, 71, 9);  
 }
-
-
-
-
-

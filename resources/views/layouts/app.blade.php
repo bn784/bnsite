@@ -33,6 +33,16 @@
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                    <li class="links nav-item dropdown">
+                    <button class="btn-dark btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ App::getLocale()}}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'EN'])}}">English</a></li>
+                        <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'UA'])}}">Український</a></li>
+                        <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'RU'])}}">Русский</a></li>
+                    </ul>  
+                    </li>
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -74,13 +84,13 @@
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link bnSidebar">@lang('messages.preferred_language')</a>
                 <ul class="nav collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="{{ route('preferred_language', ['lang' => 'ru'])}}" class="nav-link bnSidebar-dropdown">@lang('messages.RU')</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'RU'])}}" class="nav-link bnSidebar-dropdown">@lang('messages.RU')</a>
                     </li>
                     <li>
-                        <a href="{{ route('preferred_language', ['lang' => 'uk'])}}" class="nav-link bnSidebar-dropdown">@lang('messages.UKR')</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'UA'])}}" class="nav-link bnSidebar-dropdown">@lang('messages.UKR')</a>
                     </li>
                     <li>
-                        <a href="{{ route('preferred_language', ['lang' => 'en'])}}" class="nav-link bnSidebar-dropdown">@lang('messages.EN')</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'EN'])}}" class="nav-link bnSidebar-dropdown">@lang('messages.EN')</a>
                     </li>
                 </ul>
             </li>

@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
-    public function setlocale($locale)
-    {
-       
-      session(['locale' => $locale]);
-      return redirect()->back();
-    }
+  public function index()
+  {
+    return view('welcome');
+  }
+  public function setlocale($locale)
+  {
+    session(['locale' => $locale]);
+    return redirect()->back();
+  }
 }

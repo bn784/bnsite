@@ -57,9 +57,9 @@
                     {{ App::getLocale()}}
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'en'])}}">English</a></li>
-                        <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'ua'])}}">Український</a></li>
-                        <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'ru'])}}">Русский</a></li>
+                        <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'EN'])}}">English</a></li>
+                        <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'UA'])}}">Український</a></li>
+                        <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'RU'])}}">Русский</a></li>
                     </ul>  
                     </li>
                     @auth
