@@ -4,6 +4,7 @@ return [
 	//a
 	//b
 	//c
+	'Change password' => 'Change password',
 	//d
 	//e
 	'English' => 'English',

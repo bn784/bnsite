@@ -5,6 +5,7 @@ return [
 	//a
 	//b
 	//c
+	'Change password' => 'Сменить пароль',
 	//d
 	//e
 	'English' => 'Английский',
