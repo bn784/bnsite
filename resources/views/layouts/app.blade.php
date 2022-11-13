@@ -28,7 +28,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                     <a class="navbar-brand nav-link active" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'bnsite') }}
                     </a>
                     </ul>
                     <!-- Right Side Of Navbar -->
@@ -46,11 +46,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link navbar-brand active" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link navbar-brand active" href="{{ route('login') }}">{{ __('messages.Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link navbar-brand active" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link navbar-brand active" href="{{ route('register') }}">{{ __('messages.Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -81,10 +81,10 @@
        
         <ul class="nav flex-column navbar-brand">
             <li class="nav-item ">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link bnSidebar">@lang('messages.preferred_language')</a>
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link bnSidebar">{{ __('messages.preferred_language')}}</a>
                 <ul class="nav collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="{{ route('preferred_language', ['lang' => 'RU'])}}" class="nav-link bnSidebar-dropdown">@lang('messages.Russian')</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'RU'])}}" class="nav-link bnSidebar-dropdown">{{ __('messages.Russian')}}</a>
                     </li>
                     <li>
                         <a href="{{ route('preferred_language', ['lang' => 'UA'])}}" class="nav-link bnSidebar-dropdown">@lang('messages.Ukrainian')</a>
