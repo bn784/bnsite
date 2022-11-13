@@ -95,9 +95,14 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link bnSidebar">{{ __('messages.Change password')}}</a>
+                <a href="{{ route('showChangePasswordForm') }}" class="nav-link bnSidebar">{{ __('messages.Change password')}}</a>
             </li>
-            
+            <li class="nav-item">
+                <a href="#" class="nav-link bnSidebar">{{ __('messages.user-management')}}</a>
+            </li>
+			<li class="nav-item">
+                <a href="#" class="nav-link bnSidebar">{{ __('messages.site-management')}}</a>
+            </li>
         </ul>
    
                
