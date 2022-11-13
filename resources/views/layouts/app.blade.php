@@ -14,9 +14,10 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    
 </head>
 <body>
     <div id="app">
@@ -68,7 +69,7 @@
         <!-- sidebar -->
         <div  id="sidebar" class="sidebar">
        
-        <ul class="nav flex-column navbar-brand ">
+        <ul class="nav flex-column navbar-brand">
             <li class="nav-item ">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link bnSidebar">@lang('messages.preferred_language')</a>
                 <ul class="nav collapse list-unstyled" id="homeSubmenu">
