@@ -25,5 +25,5 @@ Route::get('/home/{lang}', 'HomeController@preferred_language')->name('preferred
 
 Route::get('/welcome/{locale}', 'SiteController@setlocale')->name('setlocale');
 // Change Password Routes...
-Route::get('/showChangePasswordForm', 'admin\ChangePasswordController@showChangePasswordForm')->name('showChangePasswordForm');
-Route::post('/change_password', 'admin\ChangePasswordController@changePassword')->name('change_password');
+Route::get('/showChangePasswordForm', 'ChangePasswordController@showChangePasswordForm')->name('showChangePasswordForm');
+Route::post('/change_password', 'ChangePasswordController@changePassword')->name('change_password');
