@@ -5,9 +5,11 @@ return [
 	//b
 	//c
 	'Change password' => 'Change password',
+	'Confirm Password' => 'Confirm Password',
 	//d
 	//e
 	'English' => 'English',
+	'E-Mail Address'=> 'E-Mail Address', 
 	//f
 	//g
 	//h
@@ -19,13 +21,16 @@ return [
 	'Logout' => 'Logout',
 	//m
 	//n
+	'Name' => 'Name',
 	//o
 	//p
 	'preferred_language' => 'Preferred language',
+	'Password' => 'Password',
 	//q
 	//r
 	'Russian' => 'Russian',
 	'Register'=> 'Register',
+	'Remember Me' => 'Remember Me',
 	//s
 	//t
 	//u
