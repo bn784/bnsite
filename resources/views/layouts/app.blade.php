@@ -79,25 +79,24 @@
     width: 100%;
 }
 .change_password_container{
-    height: 500px;
+    height: 95vh;
     background-color:pink;
-    width: 500px;
-    /*align-content: center;*/
-   /* padding-top: center;*/
+    width: 1000px;
+    padding: 100px 150px 150px 100px;
+    
 }
 .bn{
-    height: 200px;
+    height: 500px;
     background-color:green;
-    width: 200px;
+    width: 700px;
+    align-content: center;
     
-   /* padding-top: center;*/
 }
-.bn{
-    height: 100px;
-    /*background-color:blue;*/
-    width: 100px;
-    
-   /* padding-top: center;*/
+.bn2{
+    height: 300px;
+    background-color:blue;
+    width: 300px;
+   
 }
 </style>
 </head>
