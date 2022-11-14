@@ -12,15 +12,75 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/showChangePasswordForm.css') }}" rel="stylesheet">
+    
+	<style type="text/css">
+	.wrapper {
+    left: 0;
+    top: 0;
+    padding-top: 55px;
+    
+   
+    background-color: #b1af46 ;
+   
+	width: 100%;
+}
+.content{
+    padding: 10px;
+    margin-left: 250px;
+    background-color: blue ;
+    width: 100%;
+	
+
+
+}
+.content.active{
+    margin-left: 0px;
+}
+.sidebar{
+    background-color: rgb(80,80,80);
+    position: fixed;
+    width: 250px;
+    
+    height: 100vh;
+    
+}
+.sidebar.active{
+    margin-left: -250px;
+}
+.btnSidebar{    
+    width: 250px;
+   
+    overflow: hidden ;  
+}
+.btnSidebar:hover{
+   
+    background-color:  rgb(95, 21, 21);  
+}
+.btnSidebar:active{
+    background-color:  rgb(71, 10, 10);  
+}
+.btnSidebar-dropdown{
+    background-color: rgb(15, 50, 15);
+    width: 250px;
+    
+    overflow: hidden;  
+}
+.btnSidebar-dropdown:hover{
+    
+    background-color:   rgb(9, 80, 9);  
+}
+.btnSidebar-dropdown:active{
+   
+    background-color:   rgb(9, 70, 9);  
+}
+</style>
 </head>
 <body>
     <div id="app">
         <!-- topbar -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm fixed-top">
             <div class="container-fluid">
-                <button id="Toggle_Sidebar" class=" btn btn-success nav-link navbar-brand">Toggle Sidebar</button>
+                <button id="Toggle_Sidebar" class=" btn btn-success nav-link navbar-brand">{{ __('messages.Sidebar') }}</button>
                     <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <a class="navbar-brand nav-link active" href="{{ url('/') }}">
@@ -72,33 +132,33 @@
         <!-- end topbar -->
 		<div class="wrapper">
         <!-- sidebar -->
-        <div  id="sidebar" class="sidebar">
-        <ul class="nav flex-column navbar-brand">
+        
+        <ul id="sidebar" class="nav flex-column navbar-brand sidebar">
             <li class="nav-item ">
-                <a href="#homeSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link bnSidebar">{{ __('messages.preferred_language')}}</a>
+                <a href="#homeSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link btnSidebar text-white">{{ __('messages.preferred_language')}}</a>
                 <ul class="nav collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="{{ route('preferred_language', ['lang' => 'RU'])}}" class="nav-link bnSidebar-dropdown">{{ __('messages.Russian')}}</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'RU'])}}" class="nav-link btnSidebar-dropdown text-white">{{ __('messages.Russian')}}</a>
                     </li>
                     <li>
-                        <a href="{{ route('preferred_language', ['lang' => 'UA'])}}" class="nav-link bnSidebar-dropdown">@lang('messages.Ukrainian')</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'UA'])}}" class="nav-link btnSidebar-dropdown text-white">@lang('messages.Ukrainian')</a>
                     </li>
                     <li>
-                        <a href="{{ route('preferred_language', ['lang' => 'EN'])}}" class="nav-link bnSidebar-dropdown">@lang('messages.English')</a>
+                        <a href="{{ route('preferred_language', ['lang' => 'EN'])}}" class="nav-link btnSidebar-dropdown text-white">@lang('messages.English')</a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="{{ route('showChangePasswordForm') }}" class="nav-link bnSidebar">{{ __('messages.Change password')}}</a>
+                <a href="{{ route('showChangePasswordForm') }}" class="nav-link btnSidebar text-white">{{ __('messages.Change password')}}</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link bnSidebar">{{ __('messages.user-management')}}</a>
+                <a href="#" class="nav-link btnSidebar text-white">{{ __('messages.user-management')}}</a>
             </li>
 			<li class="nav-item">
-                <a href="#" class="nav-link bnSidebar">{{ __('messages.site-management')}}</a>
+                <a href="#" class="nav-link btnSidebar text-white">{{ __('messages.site-management')}}</a>
             </li>
         </ul>
-        </div>
+       
         <!-- end sidebar -->
         <!-- content -->
         <div  id="content" class="content">

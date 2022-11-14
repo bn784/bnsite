@@ -36,6 +36,7 @@ return [
 	'Remember Me' => 'Запомните меня',
 	//s
 	'site-management' => 'Управление сайтом',
+	'Sidebar' => 'Боковая панель',
 	//t
 	//u
 	'Ukrainian' => 'Український',

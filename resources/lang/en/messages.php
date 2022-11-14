@@ -35,6 +35,7 @@ return [
 	'Remember Me' => 'Remember Me',
 	//s
 	'site-management' => 'Site-management',
+	'Sidebar' => 'Sidebar',
 	//t
 	//u
 	'Ukrainian' => 'Ukrainian',
