@@ -20,14 +20,14 @@
     padding-top: 55px;
     
    
-    background-color: #b1af46 ;
+    /*background-color: #b1af46 ;*/
    
 	width: 100%;
 }
 .content{
-    padding: 10px;
+    
     margin-left: 250px;
-    background-color: blue ;
+    background-color:  ;
     width: 100%;
 	
 
@@ -72,6 +72,32 @@
 .btnSidebar-dropdown:active{
    
     background-color:   rgb(9, 70, 9);  
+}
+.change_password{
+    height: 95vh;
+    background-color:cyan;
+    width: 100%;
+}
+.change_password_container{
+    height: 500px;
+    background-color:pink;
+    width: 500px;
+    /*align-content: center;*/
+   /* padding-top: center;*/
+}
+.bn{
+    height: 200px;
+    background-color:green;
+    width: 200px;
+    
+   /* padding-top: center;*/
+}
+.bn{
+    height: 100px;
+    /*background-color:blue;*/
+    width: 100px;
+    
+   /* padding-top: center;*/
 }
 </style>
 </head>

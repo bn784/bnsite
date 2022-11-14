@@ -5,8 +5,8 @@ return [
 	//b
 	//c
 	'Change password' => 'Change password',
-	'Confirm Password' => 'Confirm Password',
-	'Current_password' => 'Current_password',
+	'Confirm password' => 'Confirm password',
+	'Current password' => 'Current password',
 	//d
 	//e
 	'English' => 'English',

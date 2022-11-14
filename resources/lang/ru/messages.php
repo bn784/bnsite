@@ -6,8 +6,8 @@ return [
 	//b
 	//c
 	'Change password' => 'Сменить пароль',
-	'Confirm Password' => 'Подтвердить Пароль',
-	'Current_password' => 'Текущий пароль',
+	'Confirm password' => 'Подтвердить пароль',
+	'Current password' => 'Текущий пароль',
 	//d
 	//e
 	'English' => 'Английский',
