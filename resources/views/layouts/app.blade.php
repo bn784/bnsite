@@ -78,26 +78,15 @@
     background-color:cyan;
     width: 100%;
 }
-.change_password_container{
-    height: 95vh;
-    background-color:pink;
-    width: 1000px;
-    padding: 100px 150px 150px 100px;
-    
-}
+
 .bn{
     height: 500px;
-    background-color:green;
+   /* background-color:green;*/
     width: 700px;
     align-content: center;
     
 }
-.bn2{
-    height: 300px;
-    background-color:blue;
-    width: 300px;
-   
-}
+
 </style>
 </head>
 <body>
