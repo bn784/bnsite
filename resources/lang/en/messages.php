@@ -41,6 +41,7 @@ return [
 	'Ukrainian' => 'Ukrainian',
 	'user-management' => 'user-management',
 	//w
+	'Website' => 'Website',
 	//v
 	//x
 	//y

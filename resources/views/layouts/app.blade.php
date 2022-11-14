@@ -82,13 +82,13 @@
             <div class="container-fluid">
                 <button id="Toggle_Sidebar" class=" btn btn-success nav-link navbar-brand">{{ __('messages.Sidebar') }}</button>
                     <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav me-auto">
                     <a class="navbar-brand nav-link active" href="{{ url('/') }}">
-                    {{ config('app.name', 'bnsite') }}
+                    {{ __('messages.Website') }}
                     </a>
                 </ul>
                     <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ms-auto">
                     <li class="links nav-item dropdown">
                         <button class="btn-dark btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ App::getLocale()}}

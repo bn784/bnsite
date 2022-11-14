@@ -42,6 +42,7 @@ return [
 	'Ukrainian' => 'Український',
 	'user-management' => 'Управление пользователями',
 	//w
+	'Website' => 'Сайт',
 	//v
 	//x
 	//y
