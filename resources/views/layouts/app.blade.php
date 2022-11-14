@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'bnsite') }}</title>
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>  
+    
     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -43,10 +43,11 @@
                         <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'RU'])}}">Русский</a></li>
                     </ul>  
                     </li>
+                   
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link navbar-brand active" href="{{ route('login') }}">{{ __('messages.Login') }}</a>
+                                <a class="nav-link navbar-brand active" href="{{ route('login') }}" onclick="event.preventDefault(); >{{ __('messages.Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
@@ -54,21 +55,21 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle navbar-brand active" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item " href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('messages.Logout') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        <li class="links nav-item dropdown">
+                            <button class="btn-dark btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ Auth::user()->name }}
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form2').submit();">{{ __('messages.Logout') }}</a>
+                                </li>
+                                <form id="logout-form2" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
-                                    </form>
-                                </div>
-                            </li>
+                                </form>
+                       
+                            </ul>  
+                        </li>
                         @endguest
                     </ul>
                 </div>
@@ -81,7 +82,7 @@
        
         <ul class="nav flex-column navbar-brand">
             <li class="nav-item ">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link bnSidebar">{{ __('messages.preferred_language')}}</a>
+                <a href="#homeSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link bnSidebar">{{ __('messages.preferred_language')}}</a>
                 <ul class="nav collapse list-unstyled" id="homeSubmenu">
                     <li>
                         <a href="{{ route('preferred_language', ['lang' => 'RU'])}}" class="nav-link bnSidebar-dropdown">{{ __('messages.Russian')}}</a>
