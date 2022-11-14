@@ -11,7 +11,7 @@
 		</div>
 		@else
 		<div class="container change_password_container">
-			<div class="row  bn">
+			<div class="row bn">
 				<div class="col-md-12">
 				<div class="card">
 						<div class="card-header">@lang('messages.Change password')</div>
