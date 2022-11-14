@@ -8,14 +8,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'bnsite') }}</title>
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>  
     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
     <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/showChangePasswordForm.css') }}" rel="stylesheet">
 </head>
@@ -24,7 +24,7 @@
         <!-- topbar -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm fixed-top">
             <div class="container-fluid">
-                <button id="Toggle_Sidebar" class=" btn btn-info nav-link navbar-brand">Toggle Sidebar</button>
+                <button id="Toggle_Sidebar" class=" btn btn-success nav-link navbar-brand">Toggle Sidebar</button>
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                     <a class="navbar-brand nav-link active" href="{{ url('/') }}">

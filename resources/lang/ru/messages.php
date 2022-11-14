@@ -7,6 +7,7 @@ return [
 	//c
 	'Change password' => 'Сменить пароль',
 	'Confirm Password' => 'Подтвердить Пароль',
+	'Current_password' => 'Текущий пароль',
 	//d
 	//e
 	'English' => 'Английский',
@@ -23,6 +24,7 @@ return [
 	//m
 	//n
 	'Name' => 'Имя',
+	'New password' => 'Новый пароль',
 	//o
 	//p
 	'preferred_language' => 'Предпочтительный язык',

@@ -6,6 +6,7 @@ return [
 	//c
 	'Change password' => 'Change password',
 	'Confirm Password' => 'Confirm Password',
+	'Current_password' => 'Current_password',
 	//d
 	//e
 	'English' => 'English',
@@ -22,6 +23,7 @@ return [
 	//m
 	//n
 	'Name' => 'Name',
+	'New password' => 'New password',
 	//o
 	//p
 	'preferred_language' => 'Preferred language',

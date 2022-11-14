@@ -1,17 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-	
-		t34tg4yg4
-		
-
-	
-@stop
-
-<div class="container">
+	<div class="">
+		@if(session('success'))
+				<!-- If password successfully show message -->
+		<div class="row">
+			<div class="alert alert-success">
+				{{ session('success') }}
+			</div>
+		</div>
+		@else
+		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-8">
-					<div class="">
+					<div class="card">
 						<div class="card-header">@lang('messages.change_password')</div>
 
 						<div class="card-body">
@@ -74,3 +76,7 @@
 			</div>
 		</div>
 	</div>
+
+	@endif
+@stop
+
