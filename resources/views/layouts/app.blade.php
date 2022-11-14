@@ -7,15 +7,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'bnsite') }}</title>
-    <!-- Scripts -->
-    
-    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    
     <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/showChangePasswordForm.css') }}" rel="stylesheet">
 </head>
@@ -26,60 +22,57 @@
             <div class="container-fluid">
                 <button id="Toggle_Sidebar" class=" btn btn-success nav-link navbar-brand">Toggle Sidebar</button>
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto">
                     <a class="navbar-brand nav-link active" href="{{ url('/') }}">
                     {{ config('app.name', 'bnsite') }}
                     </a>
-                    </ul>
+                </ul>
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto">
                     <li class="links nav-item dropdown">
-                    <button class="btn-dark btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{ App::getLocale()}}
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'EN'])}}">English</a></li>
-                        <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'UA'])}}">Український</a></li>
-                        <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'RU'])}}">Русский</a></li>
-                    </ul>  
+                        <button class="btn-dark btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ App::getLocale()}}
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                             <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'EN'])}}">English</a></li>
+                             <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'UA'])}}">Український</a></li>
+                             <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'RU'])}}">Русский</a></li>
+                        </ul>  
                     </li>
-                   
                         <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link navbar-brand active" href="{{ route('login') }}" onclick="event.preventDefault(); >{{ __('messages.Login') }}</a>
+                    @guest
+                    <li class="nav-item">
+                        <a class="nav-link navbar-brand active" href="{{ route('login') }}" onclick="event.preventDefault();">{{ __('messages.Login') }}</a>
+                    </li>
+                         
+                    <li class="nav-item">
+                        <a class="nav-link navbar-brand active" href="{{ route('register') }}">{{ __('messages.Register') }}</a>
+                    </li>
+                           
+                    @else
+                    <li class="links nav-item dropdown">
+                        <button class="btn-dark btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ Auth::user()->name }}
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    document.getElementById('logout-form2').submit();">{{ __('messages.Logout') }}</a>
                             </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link navbar-brand active" href="{{ route('register') }}">{{ __('messages.Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                        <li class="links nav-item dropdown">
-                            <button class="btn-dark btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ Auth::user()->name }}
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form2').submit();">{{ __('messages.Logout') }}</a>
-                                </li>
-                                <form id="logout-form2" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                </form>
-                       
-                            </ul>  
-                        </li>
-                        @endguest
-                    </ul>
-                </div>
+                            <form id="logout-form2" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </ul>  
+                    </li>
+                    @endguest
+                </ul>
+                
             </div>
         </nav>
         <!-- end topbar -->
 		<div class="wrapper">
         <!-- sidebar -->
         <div  id="sidebar" class="sidebar">
-       
         <ul class="nav flex-column navbar-brand">
             <li class="nav-item ">
                 <a href="#homeSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link bnSidebar">{{ __('messages.preferred_language')}}</a>
@@ -105,8 +98,6 @@
                 <a href="#" class="nav-link bnSidebar">{{ __('messages.site-management')}}</a>
             </li>
         </ul>
-   
-               
         </div>
         <!-- end sidebar -->
         <!-- content -->
