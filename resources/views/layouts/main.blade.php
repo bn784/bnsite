@@ -61,7 +61,7 @@
                     </li>
                     @auth
 					<li class="nav-item">
-                        <a class="nav-link navbar-brand active " href="{{ route('home') }}">Home</a>
+                        <a class="nav-link navbar-brand active " href="{{ route('home') }}">{{ __('messages.Home')}}</a>
                     </li>
 					@endauth
                         <!-- Authentication Links -->

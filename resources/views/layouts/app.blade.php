@@ -148,6 +148,9 @@
         <!-- sidebar -->
         
         <ul id="sidebar" class="nav flex-column navbar-brand sidebar">
+            <li class="nav-item">
+                <a href="{{ route('home') }}" class="nav-link btnSidebar text-white">{{ __('messages.Home')}}</a>
+            </li>
             <li class="nav-item ">
                 <a href="#homeSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link btnSidebar text-white">{{ __('messages.preferred_language')}}</a>
                 <ul class="nav collapse list-unstyled" id="homeSubmenu">

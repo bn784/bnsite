@@ -14,6 +14,7 @@ return [
 	//f
 	//g
 	//h
+	'Home' => 'Home',
 	//i
 	//j
 	//k
