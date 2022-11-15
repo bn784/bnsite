@@ -86,7 +86,10 @@
     align-content: center;
     
 }
-
+.bn{
+   
+    
+}
 </style>
 </head>
 <body>
