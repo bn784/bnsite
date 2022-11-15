@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Gate;
+
 
 class UserController extends Controller
 {
@@ -16,10 +18,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        if (! Gate::allows('user_access')) {
-            return abort(401);
+        //if (! Gate::allows('user_access')) {
+        //    return abort(401);
         }
         $users = User::all();
+        dd($users);
 
         return view('admin.index', compact('users'));
     }

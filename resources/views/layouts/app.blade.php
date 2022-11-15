@@ -169,7 +169,7 @@
                 <a href="{{ route('showChangePasswordForm') }}" class="nav-link btnSidebar text-white">{{ __('messages.Change password')}}</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link btnSidebar text-white">{{ __('messages.user-management')}}</a>
+                <a href="{{ route('user_index') }}" class="nav-link btnSidebar text-white">{{ __('messages.user-management')}}</a>
             </li>
 			<li class="nav-item">
                 <a href="#" class="nav-link btnSidebar text-white">{{ __('messages.site-management')}}</a>
