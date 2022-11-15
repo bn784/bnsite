@@ -1,8 +1,5 @@
-@extends('layouts.auth')
-<?php
-$locale = Auth::user()->preferred_language;
-App::setLocale($locale);
-?>
+@extends('layouts.app')
+
 @section('content')
 @if(session('warning'))
         <!--  warning show message -->
@@ -23,7 +20,7 @@ App::setLocale($locale);
     <h3 class="page-title">@lang('messages.users.title')</h3>
     @can('user_create')
     <p>
-        <a href="{{ route('admin.users.create') }}" class="btn btn-success">@lang('messages.add_new')</a>
+        <a href="{{ route('user_create') }}" class="btn btn-success">@lang('messages.add_new')</a>
 
     </p>
     @endcan

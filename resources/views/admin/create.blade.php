@@ -1,8 +1,5 @@
-@extends('layouts.auth')
-<?php
-$locale = Auth::user()->preferred_language;
-App::setLocale($locale);
-?>
+@extends('layouts.app')
+
 @section('content')
 <div class="content">
     @if(session('warning'))
@@ -28,7 +25,7 @@ App::setLocale($locale);
                         <div class="card-header">@lang('messages.users.title')</div>
 
                         <div class="card-body">
-                            {!! Form::open(['method' => 'POST', 'route' => ['admin.users.store']]) !!}
+                            {!! Form::open(['method' => 'POST', 'route' => ['user_store']]) !!}
 
                             @csrf
 
