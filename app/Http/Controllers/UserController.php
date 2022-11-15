@@ -8,9 +8,12 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Gate;
 
-
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -18,11 +21,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //if (! Gate::allows('user_access')) {
-        //    return abort(401);
-        }
+       
         $users = User::all();
-        dd($users);
+        
 
         return view('admin.index', compact('users'));
     }
@@ -33,9 +34,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        if (! Gate::allows('user_create')) {
-            return abort(401);
-        }
+      
 
        
         return view('admin.create');
@@ -48,9 +47,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        if (! Gate::allows('user_create')) {
-            return abort(401);
-        }
+       
         $this->validate($request, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -71,6 +68,22 @@ class UserController extends Controller
         return redirect()->route('admin.index')->with('success', $user->name.' create successfully!');
     }
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        
+
+       
+
+        $user = User::findOrFail($id);
+
+        return view('admin.edit', compact('user'));
+    }
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -79,9 +92,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (! Gate::allows('user_edit')) {
-            return abort(401);
-        }
+        
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,'.$id,
@@ -113,9 +124,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        if (! Gate::allows('user_delete')) {
-            return abort(401);
-        }
+        
 
         $user = User::findOrFail($id);
 

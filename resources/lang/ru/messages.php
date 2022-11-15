@@ -3,15 +3,19 @@
 return [
 
 	//a
+	'add_new' => 'Добавить новый',
 	//b
 	//c
 	'Change password' => 'Сменить пароль',
 	'Confirm password' => 'Подтвердить пароль',
 	'Current password' => 'Текущий пароль',
+	'create' => 'Создать',
 	//d
+	'Delete' => 'Удалить',
 	//e
 	'English' => 'Английский',
-	'E-Mail Address'=> 'Адрес электронной почты', 
+	'E-Mail Address'=> 'Адрес электронной почты',
+	'edit' => 'Редактировать',
 	//f
 	//g
 	//h
@@ -22,6 +26,7 @@ return [
 	//l
 	'Login' => 'Войти',
 	'Logout' => 'Выйти',
+	'list' => 'Список',
 	//m
 	//n
 	'Name' => 'Имя',
@@ -38,10 +43,12 @@ return [
 	//s
 	'site-management' => 'Управление сайтом',
 	'Sidebar' => 'Боковая панель',
+	'save' => 'Сохранить',
 	//t
 	//u
 	'Ukrainian' => 'Український',
 	'user-management' => 'Управление пользователями',
+	'users_title' => 'Пользователи',
 	//w
 	'Website' => 'Сайт',
 	//v

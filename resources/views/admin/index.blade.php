@@ -1,38 +1,48 @@
 @extends('layouts.app')
 {{ App::setLocale(session('locale')) }}
 @section('content')
-@if(session('warning'))
-        <!--  warning show message -->
-<div class="row">
-    <div class="alert alert-warning">
-        {{ session('warning') }}
-    </div>
-</div>
-@endif
-@if(session('success'))
-        <!--  successfully show message -->
-<div class="row">
+<div class="container-fluid">
+    
+    <div class="row" style="height: 50px;">
+    <!--  successfully show message -->
+    @if(session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
     </div>
-</div>
-@endif
-    <h3 class="page-title">@lang('messages.users_title')</h3>
+    @endif
+    </div>
+    <div class="row">
+    <div class="col-2"></div>
+	<div class="col-5"><h3 class="page-title">@lang('messages.users_title')</h3></div>
+    <div class="col-5"></div>
+    </div>
+    <div class="row">
+    <div class="col-2"></div>
+	<div class="col-5">
     @auth
     <p>
         <a href="{{ route('user_create') }}" class="btn btn-success">@lang('messages.add_new')</a> 
     </p>
     @endauth
+    </div>
+    <div class="col-5"></div>
+    </div>
+    
+    <div class="row">
+    <div class="col-2"></div>
+	<div class="col-5">
     <div class="panel panel-default">
         <div class="panel-heading">
             @lang('messages.list')
         </div>
         <div class="panel-body table-responsive">
-            <table class="table table-bordered table-striped" style="width:50%">
+    </div>
+    <table class="table table-bordered table-striped">
                 <thead>
                 <tr>
                     <th>@lang('messages.Name')</th>
                     <th>@lang('messages.E-Mail Address')</th>
+                    <th> </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -55,6 +65,10 @@
                 @endif
                 </tbody>
             </table>
-        </div>
     </div>
+    <div class="col-5"></div>
+    </div>
+   
+</div>
+
 @stop

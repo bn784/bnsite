@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+{{ App::setLocale(session('locale')) }}
 @section('content')
     <div class="content">
         @if(session('warning'))
@@ -24,7 +24,7 @@
                             <div class="card-header">@lang('messages.users.title')</div>
 
                             <div class="card-body">
-                                {!! Form::model($user, ['method' => 'PUT', 'route' => ['admin.users.update', $user->id]]) !!}
+                                {!! Form::model($user, ['method' => 'PUT', 'route' => ['users_update', $user->id]]) !!}
 
                                     @csrf
 
@@ -58,23 +58,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group row">
-                                        <label for="srole" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
-
-                                        <div class="col-md-6">
-                                            <select id="srole" style="height: 35px" name="role_id" >
-                                                <option selected value="{{$user->role->id}}">{{$user->role->title}}</option>
-                                                @foreach ($roles as $role)
-                                                    <option value="{{$role->id}}">{{$role->title}}</option>
-                                                @endforeach
-                                            </select>
-                                            @if ($errors->has('role'))
-                                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('role') }}</strong>
-                                    </span>
-                                            @endif
-                                        </div>
-                                    </div>
+                                    
 
                                     <div class="form-group row">
                                         <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>

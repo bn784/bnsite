@@ -2,15 +2,19 @@
 
 return [
 	//a
+	'add_new' => 'Add new',
 	//b
 	//c
 	'Change password' => 'Change password',
 	'Confirm password' => 'Confirm password',
 	'Current password' => 'Current password',
+	'create' => 'Create',
 	//d
+	'Delete' => 'Delete',
 	//e
 	'English' => 'English',
-	'E-Mail Address'=> 'E-Mail Address', 
+	'E-Mail Address'=> 'E-Mail Address',
+	'edit' => 'Edit',
 	//f
 	//g
 	//h
@@ -21,6 +25,7 @@ return [
 	//l
 	'Login' => 'Login',
 	'Logout' => 'Logout',
+	'list' => 'List',
 	//m
 	//n
 	'Name' => 'Name',
@@ -37,10 +42,12 @@ return [
 	//s
 	'site-management' => 'Site-management',
 	'Sidebar' => 'Sidebar',
+	'save' => 'Save',
 	//t
 	//u
 	'Ukrainian' => 'Ukrainian',
 	'user-management' => 'user-management',
+	'users_title' => 'Users',
 	//w
 	'Website' => 'Website',
 	//v

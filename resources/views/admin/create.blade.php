@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+{{ App::setLocale(session('locale')) }}
 @section('content')
 <div class="content">
     @if(session('warning'))
