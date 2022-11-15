@@ -26,7 +26,8 @@
 
                         <div class="card-body">
                             <!--{!! Form::open(['method' => 'POST', 'route' => ['user_store']]) !!}-->
-                            {{ Form::open(array('route' => 'user_store')) }}
+                            {!! Form::open(array(route => 'user_store')) !!}
+                            <form action="{{ route('user_store') }}" method="POST">
 
                             @csrf
 
@@ -104,7 +105,6 @@
                                 </div>
                             </div>
                             {!! Form::close() !!}
-
                         </div>
                     </div>
                 </div>
