@@ -9,12 +9,14 @@ return [
 	'Confirm password' => 'Confirm password',
 	'Current password' => 'Current password',
 	'create' => 'Create',
+	'Creating user' => 'Creating user',
 	//d
 	'Delete' => 'Delete',
 	//e
 	'English' => 'English',
 	'E-Mail Address'=> 'E-Mail Address',
 	'edit' => 'Edit',
+	'Editing user' => 'Editing user',
 	//f
 	//g
 	//h
