@@ -41,7 +41,7 @@
                             </div>    
                                 
                                 <div class="col-md-8">
-                                <select id="preferred_language_create" name="preferred_language_create">
+                                <select id="select_preferred_language_create" name="{{ $user->preferred_language}}">
                                     <option value="RU">{{ __('messages.Russian')}}</option>
                                     <option value="UA">@lang('messages.Ukrainian')</option>
                                     <option value="ENG">@lang('messages.English')</option>
@@ -55,7 +55,7 @@
 
                                 <div class="col-md-6">
                                     <input id="name_input" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                           name="$user->name" required autocomplete="$user->name">
+                                           name="{{ $user->name }}" required autocomplete="{{ $user->name }}" value="{{ $user->name }}">
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -70,7 +70,7 @@
 
                                 <div class="col-md-6">
                                     <input id="email_input" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="{{ $user->email }}" required autocomplete="{{ $user->email }}">
+                                           name="{{ $user->email }}" required autocomplete="{{ $user->email }}" value="{{ $user->email }}">
 
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
