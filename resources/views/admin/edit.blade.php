@@ -1,8 +1,5 @@
-@extends('layouts.auth')
-<?php
-$locale = Auth::user()->preferred_language;
-App::setLocale($locale);
-?>
+@extends('layouts.app')
+
 @section('content')
     <div class="content">
         @if(session('warning'))

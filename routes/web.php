@@ -21,7 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/home/{lang}', 'HomeController@preferred_language')->name('preferred_language');
 
 Route::get('/welcome/{locale}', 'SiteController@setlocale')->name('setlocale');
 // Change Password Routes...
@@ -30,4 +29,7 @@ Route::post('/change_password', 'ChangePasswordController@changePassword')->name
 
 Route::get('/index', 'UserController@index')->name('user_index');
 Route::get('/create', 'UserController@create')->name('user_create');
-Route::post('/index', 'ChangePasswordController@store')->name('user_store');
+Route::post('/index', 'UserController@store')->name('user_store');
+Route::get('/index/{id}', 'UserController@update')->name('user_update');
+Route::get('/index/{id}', 'UserController@destroy')->name('user_destroy');
+Route::get('/home/{lang}', 'UserController@preferred_language')->name('preferred_language');

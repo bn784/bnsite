@@ -59,11 +59,9 @@
                             <td field-key='email'>{{ $user->email }}</td>
                             <td field-key='role'>{{ $user->role->title}}</td>
                             <td>
-                                @can('user_view')
-                                <a href="{{ route('admin.users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('messages.view')</a>
-                                @endcan
+                                
                                 @can('user_edit')
-                                <a href="{{ route('admin.users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
+                                <a href="{{ route('users_edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
                                 @endcan
                                 @can('user_delete')
                                 @if(!in_array($user->email, ['administrator@example.com']))
@@ -71,7 +69,7 @@
                                                                         'style' => 'display: inline-block;',
                                                                         'method' => 'DELETE',
                                                                         'onsubmit' => "return confirm('".trans("messages.are_you_sure")."');",
-                                                                        'route' => ['admin.users.destroy', $user->id])) !!}
+                                                                        'route' => ['user_destroy', $user->id])) !!}
                                 {!! Form::submit(trans('messages.delete'), array('class' => 'btn btn-xs btn-danger')) !!}
                                 {!! Form::close() !!}
                                 @endif
