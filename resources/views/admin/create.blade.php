@@ -22,10 +22,11 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">@lang('messages.users.title')</div>
+                        <div class="card-header">@lang('messages.user_title')</div>
 
                         <div class="card-body">
-                            {!! Form::open(['method' => 'POST', 'route' => ['user_store']]) !!}
+                            <!--{!! Form::open(['method' => 'POST', 'route' => ['user_store']]) !!}-->
+                            {{ Form::open(array('route' => 'user_store')) }}
 
                             @csrf
 
@@ -59,16 +60,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <label for="role_id" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
-                                <div class="col-md-6">
-                                    <select id="role_id" style="height: 35px" name="role_id" >
-                                        @foreach ($roles as $role)
-                                            <option value="{{$role->id}}">{{$role->title}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
+                           
                             <div class="form-group row">
                                 {!! Form::label('preferred_language', 'preferred_language', array('class' => 'col-md-4 col-form-label text-md-right')) !!}
                                 <div class="col-md-6">

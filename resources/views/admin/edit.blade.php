@@ -21,7 +21,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="card">
-                            <div class="card-header">@lang('messages.users.title')</div>
+                            <div class="card-header">@lang('messages.user_title')</div>
 
                             <div class="card-body">
                                 {!! Form::model($user, ['method' => 'PUT', 'route' => ['users_update', $user->id]]) !!}
