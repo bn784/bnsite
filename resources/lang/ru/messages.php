@@ -10,12 +10,14 @@ return [
 	'Confirm password' => 'Подтвердить пароль',
 	'Current password' => 'Текущий пароль',
 	'create' => 'Создать',
+	'Creating user' => 'Создание пользователя',
 	//d
 	'Delete' => 'Удалить',
 	//e
 	'English' => 'Английский',
 	'E-Mail Address'=> 'Адрес электронной почты',
 	'edit' => 'Редактировать',
+	'Editing user' => 'Редактирование пользователя',
 	//f
 	//g
 	//h

@@ -28,7 +28,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">@lang('messages.users_title')</div>
+                        <div class="card-header">@lang('messages.Creating user')</div>
 
                         <div class="card-body">
                             <form method="POST" action="{{ route('user_store') }}">

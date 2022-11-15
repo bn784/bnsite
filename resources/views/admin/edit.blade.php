@@ -1,96 +1,155 @@
 @extends('layouts.app')
 {{ App::setLocale(session('locale')) }}
 @section('content')
-    <div class="content">
-        @if(session('warning'))
-        <div class="row">
-            <div class="alert alert-warning">
-                {{ session('warning') }}
-            </div>
+<div class="container-fluid"  style="background-color:cyan; height: 95vh;">
+    
+    <div class="row" style="height: 50px;">
+   @if(session('warning'))
+            <!-- If password successfully show message -->
+    <div class="row">
+        <div class="alert alert-warning">
+            {{ session('warning') }}
         </div>
-        @endif
-        @if(session('success'))
-                <!-- If password successfully show message -->
-        <div class="row">
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
+    </div>
+    @endif
+    @if(session('success'))
+            <!-- If password successfully show message -->
+    <div class="row">
+        <div class="alert alert-success">
+            {{ session('success') }}
         </div>
-        @else
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-header">@lang('messages.user_title')</div>
+    </div>
+    @else
+    </div>
+    <div class="row">
+    <div class="col-1"></div>
+	<div class="col-7">
+    <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">@lang('messages.Editing user')</div>
 
-                            <div class="card-body">
-                                {!! Form::model($user, ['method' => 'PUT', 'route' => ['users_update', $user->id]]) !!}
+                        <div class="card-body">
+                            <form method="POST" action="{{ route('user_store') }}">
+                            
+                            @csrf
 
-                                    @csrf
+                            <div class="form-group row" style="height: 50px;">
+                            <div class="col-md-4"> 
+                            <label for="preferred_language_create">{{ __('messages.preferred_language')}}</label>
+                            </div>    
+                                
+                                <div class="col-md-8">
+                                <select id="preferred_language_create" name="preferred_language_create">
+                                    <option value="RU">{{ __('messages.Russian')}}</option>
+                                    <option value="UA">@lang('messages.Ukrainian')</option>
+                                    <option value="ENG">@lang('messages.English')</option>
+  
+                                </select> 
+                                </div>
+                            </div>
 
-                                    <div class="form-group row">
-                                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <div class="form-group row" style="height: 50px;">
+                                <label for="name_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.Name') }}</label>
 
-                                        <div class="col-md-6">
-                                            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                                   name="name" required autocomplete="name" value="{{$user->name}}">
+                                <div class="col-md-6">
+                                    <input id="name_input" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                           name="$user->name" required autocomplete="$user->name">
 
-                                            @if ($errors->has('name'))
-                                                <span class="invalid-feedback" role="alert">
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
-                                            @endif
-                                        </div>
-                                    </div>
+                                    @endif
+                                </div>
+                            </div>
 
-                                    <div class="form-group row">
-                                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
+                            <div class="form-group row" style="height: 50px;">
+                                <label for="email_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.E-Mail Address') }}</label>
 
-                                        <div class="col-md-6">
-                                            <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                                   name="email" required autocomplete="email" value="{{$user->email}}">
+                                <div class="col-md-6">
+                                    <input id="email_input" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                           name="{{ $user->email }}" required autocomplete="{{ $user->email }}">
 
-                                            @if ($errors->has('email'))
-                                                <span class="invalid-feedback" role="alert">
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                                            @endif
-                                        </div>
-                                    </div>
+                                    @endif
+                                </div>
+                            </div>
 
-                                    
+                            
+                           
 
-                                    <div class="form-group row">
-                                        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <div class="form-group row" style="height: 50px;">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('messages.Password') }}</label>
 
-                                        <div class="col-md-6">
-                                            <input id="password" type="password" class="form-control" name="password" required autocomplete="password">
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control" name="password" required autocomplete="password">
 
-                                            @if ($errors->has('password'))
-                                                <span class="invalid-feedback" role="alert">
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                                            @endif
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row mb-0">
-                                        <div class="col-md-6 offset-md-4">
-                                            <button type="submit" class="btn btn-primary">
-                                                @lang('messages.update')
-                                            </button>
-                                        </div>
-                                    </div>
-                                        {!! Form::close() !!}
-
+                                    @endif
+                                </div>
                             </div>
+
+                            <div class="form-group row" style="height: 50px;">
+                                <label for="password_confirmation" class="col-md-4 col-form-label text-md-right">{{ __('messages.Confirm password') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+
+                                    @if ($errors->has('password_confirmation'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row mb-0" style="height: 50px;">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        @lang('messages.edit')
+                                    </button>
+                                </div>
+                            </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
             </div>
-    @endif
-
+        </div>
+        @endif
+</div>
     </div>
+    <div class="col-4"></div>
+    </div>
+    <div class="row">
+    <div class="col-2"></div>
+	<div class="col-5">
+   
+    </div>
+    <div class="col-5"></div>
+    </div>
+    
+    <div class="row">
+    <div class="col-2"></div>
+	<div class="col-5">
+    
+    <div class="col-5"></div>
+    </div>
+   
+</div>
+
+
 
 @stop
+
+
 

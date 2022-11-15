@@ -20,7 +20,7 @@
 							<form method="POST" action="{{ route('change_password') }}">
 								@csrf
 
-								<div class="form-group row">
+								<div class="form-group row" style="height: 50px;">
 									<label for="current_password" class="col-md-4 col-form-label text-md-right">{{ __('messages.Current password') }}</label>
 
 									<div class="col-md-6">
@@ -34,7 +34,7 @@
 									</div>
 								</div>
 
-								<div class="form-group row">
+								<div class="form-group row" style="height: 50px;">
 									<label for="new_password" class="col-md-4 col-form-label text-md-right">{{ __('messages.New password') }}</label>
 
 									<div class="col-md-6">
@@ -48,7 +48,7 @@
 									</div>
 								</div>
 
-								<div class="form-group row">
+								<div class="form-group row" style="height: 50px;">
 									<label for="new_password_confirmation" class="col-md-4 col-form-label text-md-right">{{ __('messages.Confirm password') }}</label>
 
 									<div class="col-md-6">
@@ -62,7 +62,7 @@
 									</div>
 								</div>
 
-								<div class="form-group row mb-0">
+								<div class="form-group row mb-0" style="height: 50px;">
 									<div class="col-md-6 offset-md-4">
 										<button type="submit" class="btn btn-primary">
 											 @lang('messages.Change password')
