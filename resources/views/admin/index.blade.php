@@ -54,7 +54,7 @@
                             <td>
                                <a href="{{ route('user_edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
                            
-                               <a href="{{ route('user_destroy',[$user->id]) }}" class="btn btn-xs btn-danger">@lang('messages.Delete')</a>
+                               <a href="{{ route('user_destroy',[$user->id]) }}" class="btn btn-xs btn-danger" onclick="myFunction()">@lang('messages.Delete')</a>
                             </td>
                         </tr>
                     @endforeach
@@ -72,3 +72,8 @@
 </div>
 
 @stop
+<script>
+function myFunction() {
+  alert("I am an alert box!");
+}
+</script>

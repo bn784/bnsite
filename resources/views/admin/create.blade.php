@@ -38,14 +38,14 @@
 
                             <div class="form-group row" style="height: 50px;">
                             <div class="col-md-4"> 
-                            <label for="preferred_language_create">{{ __('messages.preferred_language')}}</label>
+                            <label for="select_preferred_language_create">{{ __('messages.preferred_language')}}</label>
                             </div>    
                                 
-                                <div class="col-md-8">
-                                <select id="select_preferred_language_create" name="preferred_language">
+                                <div class="col-md-6">
+                                <select id="select_preferred_language_create" name="preferred_language" class="form-control">
                                     <option value="RU">{{ __('messages.Russian')}}</option>
                                     <option value="UA" selected>@lang('messages.Ukrainian')</option>
-                                    <option value="ENG">@lang('messages.English')</option>
+                                    <option value="EN">@lang('messages.English')</option>
   
                                 </select> 
                                 </div>
