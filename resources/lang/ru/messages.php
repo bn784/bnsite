@@ -4,6 +4,7 @@ return [
 
 	//a
 	'add_new' => 'Добавить новый',
+	'Are you sure?' => 'Вы уверены?',
 	//b
 	//c
 	'Change password' => 'Сменить пароль',
@@ -11,6 +12,7 @@ return [
 	'Current password' => 'Текущий пароль',
 	'create' => 'Создать',
 	'Creating user' => 'Создание пользователя',
+	'Close' => 'Закрыть',
 	//d
 	'Delete' => 'Удалить',
 	//e

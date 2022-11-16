@@ -3,7 +3,15 @@
 @section('content')
 <div class="container-fluid">
     
-    <div class="row" style="height: 50px;">
+    <div class="row" style="height: 70px;">
+    @if(session('warning'))
+     <!--  warning show message -->
+    <div class="row">
+    <div class="alert alert-warning">
+        {{ session('warning') }}
+    </div>
+    </div>
+    @endif
     <!--  successfully show message -->
     @if(session('success'))
     <div class="alert alert-success">
@@ -53,8 +61,8 @@
                             <td field-key='email'>{{ $user->email }}</td>
                             <td>
                                <a href="{{ route('user_edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
-                           
-                               <a href="{{ route('user_destroy',[$user->id]) }}" class="btn btn-xs btn-danger" onclick="myFunction()">@lang('messages.Delete')</a>
+                                                          
+                               <a href="" class="btn btn-xs btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">@lang('messages.Delete')</a>
                             </td>
                         </tr>
                     @endforeach
@@ -70,10 +78,19 @@
     </div>
    
 </div>
-
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+      @lang('messages.Are you sure?')
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('messages.Close')</button>
+        <a href="{{ route('user_destroy',[$user->id]) }}" class="btn btn-xs btn-danger" onclick="myFunction()">@lang('messages.Delete')</a>
+      </div>
+    </div>
+  </div>
+</div>
 @stop
-<script>
-function myFunction() {
-  alert("I am an alert box!");
-}
-</script>

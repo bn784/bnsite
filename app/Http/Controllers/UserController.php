@@ -111,8 +111,8 @@ class UserController extends Controller
         }
         $user->delete();
         $users = User::all();
-       // return redirect()->with('success', ' delete successfully!');
-        return view('admin.index', compact('users'))->with('success', ' delete successfully!');
+        return redirect()->back()->with('success', 'delete successfully!');
+        
     }
     /**
      * 

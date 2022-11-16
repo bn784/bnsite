@@ -3,6 +3,7 @@
 return [
 	//a
 	'add_new' => 'Add new',
+	'Are you sure?' => 'Are you sure?',
 	//b
 	//c
 	'Change password' => 'Change password',
@@ -10,6 +11,7 @@ return [
 	'Current password' => 'Current password',
 	'create' => 'Create',
 	'Creating user' => 'Creating user',
+	'Close' => 'Close',
 	//d
 	'Delete' => 'Delete',
 	//e
