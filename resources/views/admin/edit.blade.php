@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid"  style="background-color:cyan; height: 95vh;">
     
-    <div class="row" style="height: 50px;">
+    <div class="row" style="height: 70px;">
    @if(session('warning'))
             <!-- If password successfully show message -->
     <div class="row">
@@ -19,7 +19,7 @@
             {{ session('success') }}
         </div>
     </div>
-    @else
+    @endif
     </div>
     <div class="row">
     <div class="col-1"></div>
@@ -35,13 +35,13 @@
                             
                             @csrf
 
-                            <div class="form-group row" style="height: 50px;">
+                            <div class="form-group row" style="height: 70px;">
                             <div class="col-md-4"> 
-                            <label for="preferred_language_create">{{ __('messages.preferred_language')}}</label>
+                            <label for="select_preferred_language_create">{{ __('messages.preferred_language')}}</label>
                             </div>    
                                 
                                 <div class="col-md-8">
-                                <select id="select_preferred_language_create" name="{{ $user->preferred_language}}">
+                                <select id="select_preferred_language_create" name="preferred_language">
                                     <option value="RU">{{ __('messages.Russian')}}</option>
                                     <option value="UA">@lang('messages.Ukrainian')</option>
                                     <option value="ENG">@lang('messages.English')</option>
@@ -50,12 +50,12 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row" style="height: 50px;">
+                            <div class="form-group row" style="height: 70px;">
                                 <label for="name_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.Name') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="name_input" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                           name="{{ $user->name }}" required autocomplete="{{ $user->name }}" value="{{ $user->name }}">
+                                           name="name" value="{{ $user->name }}">
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -65,12 +65,12 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row" style="height: 50px;">
+                            <div class="form-group row" style="height: 70px;">
                                 <label for="email_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.E-Mail Address') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email_input" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="{{ $user->email }}" required autocomplete="{{ $user->email }}" value="{{ $user->email }}">
+                                           name="email" value="{{ $user->email }}">
 
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
@@ -83,11 +83,11 @@
                             
                            
 
-                            <div class="form-group row" style="height: 50px;">
+                            <div class="form-group row" style="height: 70px;">
                                 <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('messages.Password') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control" name="password" required autocomplete="password">
+                                    <input id="password" type="password" class="form-control" name="password">
 
                                     @if ($errors->has('password'))
                                         <span class="invalid-feedback" role="alert">
@@ -97,11 +97,11 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row" style="height: 50px;">
+                            <div class="form-group row" style="height: 70px;">
                                 <label for="password_confirmation" class="col-md-4 col-form-label text-md-right">{{ __('messages.Confirm password') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                    <input id="password_confirmation" type="password" class="form-control" name="password_confirmation">
 
                                     @if ($errors->has('password_confirmation'))
                                         <span class="invalid-feedback" role="alert">
@@ -111,7 +111,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row mb-0" style="height: 50px;">
+                            <div class="form-group row mb-0" style="height: 70px;">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
                                         @lang('messages.edit')
@@ -125,7 +125,7 @@
                 </div>
             </div>
         </div>
-        @endif
+       
 </div>
     </div>
     <div class="col-4"></div>

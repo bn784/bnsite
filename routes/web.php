@@ -29,7 +29,7 @@ Route::post('/change_password', 'ChangePasswordController@changePassword')->name
 
 Route::get('/index', 'UserController@index')->name('user_index');
 Route::get('/create', 'UserController@create')->name('user_create');
-Route::post('/index', 'UserController@store')->name('user_store');
+Route::post('/create', 'UserController@store')->name('user_store');
 Route::get('/edit/{id}', 'UserController@edit')->name('user_edit');
 Route::post('/index/{id}', 'UserController@update')->name('user_update');
 Route::get('/index/{id}', 'UserController@destroy')->name('user_destroy');

@@ -1,12 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Gate;
 
 class UserController extends Controller
 {
@@ -21,10 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-       
         $users = User::all();
-        
-
         return view('admin.index', compact('users'));
     }
     /**
@@ -34,7 +28,6 @@ class UserController extends Controller
      */
     public function create()
     {
-             
         return view('admin.create');
     }
     /**
@@ -45,13 +38,11 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-       
         $this->validate($request, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
-
         if ($request->name == 'administrator') {
             return redirect()->back()->with('warning', 'Cannot create name "administrator"!');
         }
@@ -59,11 +50,9 @@ class UserController extends Controller
         $user->preferred_language = $request->preferred_language;
         $user->name = $request->name;
         $user->email = $request->email;
-        
         $user->password = bcrypt($request->password);
         $user->save();
-
-        return redirect()->route('admin.index')->with('success', $user->name.' create successfully!');
+        return redirect()->back()->with('success', $user->name.' create successfully!');
     }
     /**
      * Show the form for editing the specified resource.
@@ -73,10 +62,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        
-       
         $user = User::findOrFail($id);
-
         return view('admin.edit', compact('user'));
     }
     /**
@@ -88,7 +74,6 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,'.$id,
@@ -106,11 +91,10 @@ class UserController extends Controller
             $user->email = $request->email;
             $user->role_id = $request->role_id;
             $user->save();
-            return redirect()->route('admin.index')->with('success', $user->name.' update successfully!');
+            return redirect();
         }else{
             return redirect()->back()->with('warning', 'Wrong password!');
         }
-
     }
     /**
      * Remove the specified resource from storage.
@@ -120,17 +104,14 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        
-
         $user = User::findOrFail($id);
-
         if ($user->email == 'administrator@example.com' ) {
             return redirect()->back()->with('warning', 'Cannot delete "administrator@example.com"!');
         }
-
         $user->delete();
-
-        return redirect()->route('admin.index')->with('success', $user->name.' delete successfully!');
+        $users = User::all();
+       // return redirect()->with('success', ' delete successfully!');
+        return view('admin.index', compact('users'))->with('success', ' delete successfully!');
     }
     /**
      * 
@@ -143,7 +124,6 @@ class UserController extends Controller
         //$user ->preferred_language = $lang ;
         //$user->save();
         session(['locale' => $lang]);
-
         return redirect()->back();
     }
 }

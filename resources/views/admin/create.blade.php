@@ -1,9 +1,9 @@
 @extends('layouts.app')
 {{ App::setLocale(session('locale')) }}
 @section('content')
-<div class="container-fluid"  style="background-color:cyan; height: 95vh;">
+<div class="container-fluid"  style="background-color:; height: 95vh;">
     
-    <div class="row" style="height: 50px;">
+    <div class="row" style="height: 70px;">
    @if(session('warning'))
             <!-- If password successfully show message -->
     <div class="row">
@@ -19,7 +19,7 @@
             {{ session('success') }}
         </div>
     </div>
-    @else
+    @endif
     </div>
     <div class="row">
     <div class="col-1"></div>
@@ -31,6 +31,7 @@
                         <div class="card-header">@lang('messages.Creating user')</div>
 
                         <div class="card-body">
+                             <!-- form -->
                             <form method="POST" action="{{ route('user_store') }}">
                             
                             @csrf
@@ -41,9 +42,9 @@
                             </div>    
                                 
                                 <div class="col-md-8">
-                                <select id="preferred_language_create" name="preferred_language_create">
+                                <select id="select_preferred_language_create" name="preferred_language">
                                     <option value="RU">{{ __('messages.Russian')}}</option>
-                                    <option value="UA">@lang('messages.Ukrainian')</option>
+                                    <option value="UA" selected>@lang('messages.Ukrainian')</option>
                                     <option value="ENG">@lang('messages.English')</option>
   
                                 </select> 
@@ -55,7 +56,7 @@
 
                                 <div class="col-md-6">
                                     <input id="name_input" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                           name="name" required autocomplete="name">
+                                           name="name">
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -70,7 +71,7 @@
 
                                 <div class="col-md-6">
                                     <input id="email_input" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="email" required autocomplete="email">
+                                           name="email">
 
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
@@ -119,13 +120,13 @@
                                 </div>
                             </div>
                             </form>
-
+                            <!-- end form -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        @endif
+       
 </div>
     </div>
     <div class="col-4"></div>
