@@ -76,22 +76,23 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,'.$id,
+            //'email' => 'required|string|email|max:255|unique:users,email,'.$id,
             'password' => ['required', 'string', 'min:8'],
         ]);
         $user = User::findOrFail($id);
         if (Hash::check($request->get('password'), $user->password)) {
-            if (($user->role_id == 1) && ($user->name == 'administrator') ) {
-                return redirect()->route('admin.index')->with('warning', 'Cannot edit "administrator"!');
+            if ($user->name == 'administrator') {
+                return redirect()->back()->with('warning', 'Cannot edit "administrator"!');
             }
-            if ($request->name == 'administrator' ) {
+            if ($request->name == 'administrator') {
                 return redirect()->back()->with('warning', 'Cannot use name "administrator"!');
             }
             $user->name = $request->name;
-            $user->email = $request->email;
-            $user->role_id = $request->role_id;
+            //$user->email = $request->email;
+            $user->preferred_language = $request->preferred_language;
+           
             $user->save();
-            return redirect();
+            return redirect()->back()->with('success', $user->email.' update successfully!');
         }else{
             return redirect()->back()->with('warning', 'Wrong password!');
         }
@@ -120,9 +121,9 @@ class UserController extends Controller
      */
     public function preferred_language($lang)
     {
-        //$user = \Auth::user();
-        //$user ->preferred_language = $lang ;
-        //$user->save();
+        $user = \Auth::user();
+        $user ->preferred_language = $lang ;
+        $user->save();
         session(['locale' => $lang]);
         return redirect()->back();
     }
