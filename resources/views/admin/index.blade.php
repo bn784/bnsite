@@ -88,7 +88,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('messages.Close')</button>
-        <a href="{{ route('user_destroy',[$user->id]) }}" class="btn btn-xs btn-danger" onclick="myFunction()">@lang('messages.Delete')</a>
+        <a href="{{ route('user_destroy',[$user->id]) }}" class="btn btn-xs btn-danger">@lang('messages.Delete')</a>
       </div>
     </div>
   </div>

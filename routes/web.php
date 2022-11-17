@@ -35,5 +35,3 @@ Route::post('/edit/{id}', 'UserController@update')->name('user_update');
 Route::get('/index/{id}', 'UserController@destroy')->name('user_destroy');
 Route::get('/home/{lang}', 'UserController@preferred_language')->name('preferred_language');
 
-Route::resource('modals', ModalController::class);
-Route::post('modals/{id}', 'ModalController@update')->name('modals_update2');
