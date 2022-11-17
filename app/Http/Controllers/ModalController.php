@@ -21,6 +21,7 @@ class ModalController extends Controller
     public function index()
     {
         $users = User::all();
+        
         return view('admin.modal', compact('users'));
     }
 
@@ -43,7 +44,23 @@ class ModalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            
+        ]);
+        if ($request->name == 'administrator') {
+            return redirect()->back()->with('warning', 'Cannot create name "administrator"!');
+        }
+        $user = new User();
+        $user->preferred_language = $request->preferred_language;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->save();
+        $users = User::all();
+        return view('admin.modal', compact('users'))->with('success', $user->name.' create successfully!');
     }
 
     /**
@@ -78,8 +95,30 @@ class ModalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $ass='update';
-        dd($ass);
+        //DD($request->name);
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            //'email' => 'required|string|email|max:255|unique:users,email,'.$id,
+            'password' => ['required', 'string', 'min:8'],
+        ]);
+        $user = User::findOrFail($id);
+       DUMP($user->name,$request->name);
+            if ($user->name == 'administrator') {
+                return redirect()->back()->with('warning', 'Cannot edit "administrator"!');
+            }
+            if ($request->name == 'administrator') {
+                return redirect()->back()->with('warning', 'Cannot use name "administrator"!');
+            }
+            $user->name = $request->name;
+            //$user->email = $request->email;
+            $user->preferred_language = $request->preferred_language;
+           
+            $user->save();
+            $users = User::all();
+            DD($users);
+
+            return view('admin.modal', compact('users'))->with('success', $user->email.' update successfully!');
+       
     }
 
     /**
@@ -90,8 +129,7 @@ class ModalController extends Controller
      */
     public function destroy($id)
     {
-        //$ass='destroy';
-        //dd($ass,$id);
+        
         $user = User::findOrFail($id);
         if ($user->email == 'administrator@example.com' ) {
             $users = User::all();

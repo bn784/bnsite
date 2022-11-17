@@ -111,7 +111,7 @@
       
       <div class="modal-body">
         <!-- form -->
-        <form method="Post" action="{{ route('modals.store') }}">
+        <form method="POST" action="{{ route('modals.store') }}">
                             
                             @csrf
 
@@ -217,12 +217,12 @@
       
       <div class="modal-body">
       <!-- form -->
-      <form method="POST" action="{{ route('modals.update',[$user->id])}}">
+      <form method="POST" action="{{ route('modals_update2', $user->id) }}">
                             
                             @csrf
 
-                            <div class="form-group row" style="height: 50px;">
-                            <div class="col-md-6"> 
+                            <div class="form-group row" style="height: 70px;">
+                            <div class="col-md-4"> 
                             <label for="select_preferred_language_create">{{ __('messages.preferred_language')}}</label>
                             </div>    
                                 
@@ -236,12 +236,11 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row" style="height: 50px;">
-                                <label for="name_input" class="col-md-6 col-form-label text-md-right">{{ __('messages.Name') }}</label>
+                            <div class="form-group row" style="height: 70px;">
+                                <label for="name_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.Name') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="name_input" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                           name="name">
+                                    <input id="name_input" type="text" class="form-control" name="name">
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -251,26 +250,13 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row" style="height: 50px;">
-                                <label for="email_input" class="col-md-6 col-form-label text-md-right">{{ __('messages.E-Mail Address') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="email_input" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="email">
-
-                                    @if ($errors->has('email'))
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
+                           
 
                             
                            
 
-                            <div class="form-group row" style="height: 50px;">
-                                <label for="password" class="col-md-6 col-form-label text-md-right">{{ __('messages.Password') }}</label>
+                            <div class="form-group row" style="height: 70px;">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('messages.Password') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password" class="form-control" name="password">
@@ -283,11 +269,11 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row" style="height: 50px;">
-                                <label for="password_confirmation" class="col-md-6 col-form-label text-md-right">{{ __('messages.Confirm password') }}</label>
+                            <div class="form-group row" style="height: 70px;">
+                                <label for="password_confirmation" class="col-md-4 col-form-label text-md-right">{{ __('messages.Confirm password') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password_confirmation" type="password" class="form-control" name="password_confirmation">
+                                    <input id="password_confirmation" type="password" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="password_confirmation">
 
                                     @if ($errors->has('password_confirmation'))
                                         <span class="invalid-feedback" role="alert">
@@ -297,10 +283,10 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row mb-0" style="height: 50px;">
+                            <div class="form-group row mb-0" style="height: 70px;">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        @lang('messages.create')
+                                        @lang('messages.edit')
                                     </button>
                                 </div>
                             </div>
