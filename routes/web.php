@@ -34,3 +34,13 @@ Route::get('/edit/{id}', 'UserController@edit')->name('user_edit');
 Route::post('/edit/{id}', 'UserController@update')->name('user_update');
 Route::get('/index/{id}', 'UserController@destroy')->name('user_destroy');
 Route::get('/home/{lang}', 'UserController@preferred_language')->name('preferred_language');
+
+Route::get('/modals', 'ModalController@index')->name('modals.index');
+//Route::post('/modals', 'UserController@store')->name('modals.store');
+Route::get('/modals/{id}', 'ModalController@destroy')->name('modals.destroy'); 
+
+
+//Route::resource('user', ModalController::class);
+//Route::resource('modals', ModalController::class)->names([
+ //   'destroy' => 'modals.destroy'
+//]);

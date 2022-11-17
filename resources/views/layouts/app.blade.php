@@ -166,7 +166,7 @@
                 <a href="#" class="nav-link btnSidebar text-white">{{ __('messages.site-management')}}</a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link btnSidebar text-white">bn</a>
+                <a href="{{ route('modals.index') }}" class="nav-link btnSidebar text-white">Modal</a>
             </li>
         </ul>
        
