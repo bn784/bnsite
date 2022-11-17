@@ -1,5 +1,14 @@
 @extends('layouts.main')
+@auth
+{{ App::setLocale(Auth::user()->preferred_language) }}
+@else
+@if (session('locale'))
 {{ App::setLocale(session('locale')) }}
+@else
+<?php session(['locale' =>'UA']); ?>
+{{ App::setLocale(session('locale')) }}
+@endif
+@endauth
 @section('content')
 <div class="container-fluid">
     <div id="row1" class="row row1" style="background-color:blue;">

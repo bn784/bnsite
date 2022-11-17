@@ -1,7 +1,36 @@
 {{ App::setLocale(session('locale')) }}
-@extends('layouts.app')
-
-@section('content')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>@lang('messages.massage')</title>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+		<link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <!-- Styles -->
+		<link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+        <style>
+            html, body {
+                color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
+            .content {
+                text-align: center;
+				background-color: steelblue;
+				height: 100%;
+				display: flex;
+                align-items: center;
+			}
+        </style>
+    </head>
+    <body>
+    <!-- Content -->
+<div class="content">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -75,4 +104,6 @@
         </div>
     </div>
 </div>
-@endsection
+</div>
+    </body>
+</html>

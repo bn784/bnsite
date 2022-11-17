@@ -1,4 +1,4 @@
-{{ App::setLocale(session('locale')) }}
+{{ App::setLocale(Auth::user()->preferred_language) }}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -103,16 +103,7 @@
                 </ul>
                     <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">
-                    <li class="links nav-item dropdown">
-                        <button class="btn-dark btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{ App::getLocale()}}
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                             <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'EN'])}}">English</a></li>
-                             <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'UA'])}}">Український</a></li>
-                             <li><a class="dropdown-item" href="{{route('setlocale',['locale'=>'RU'])}}">Русский</a></li>
-                        </ul>  
-                    </li>
+                    
                         <!-- Authentication Links -->
                     @guest
                     <li class="nav-item">

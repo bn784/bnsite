@@ -1,5 +1,5 @@
 @extends('layouts.app')
-{{ App::setLocale(session('locale')) }}
+{{ App::setLocale(Auth::user()->preferred_language) }}
 @section('content')
 	<div class="change_password">
 		@if(session('success'))

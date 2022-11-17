@@ -1,4 +1,12 @@
+@auth
+{{ App::setLocale(Auth::user()->preferred_language) }}
+@else
+@if (session('locale'))
 {{ App::setLocale(session('locale')) }}
+@else
+{{ App::setLocale('UA') }}
+@endif
+@endauth
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>

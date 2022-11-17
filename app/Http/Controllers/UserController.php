@@ -124,7 +124,7 @@ class UserController extends Controller
         $user = \Auth::user();
         $user ->preferred_language = $lang ;
         $user->save();
-        session(['locale' => $lang]);
+       // session(['locale' => $lang]);
         return redirect()->back();
     }
 }

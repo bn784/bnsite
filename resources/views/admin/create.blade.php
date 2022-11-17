@@ -1,5 +1,5 @@
 @extends('layouts.app')
-{{ App::setLocale(session('locale')) }}
+{{ App::setLocale(Auth::user()->preferred_language) }}
 @section('content')
 <div class="container-fluid"  style="background-color:; height: 95vh;">
     
