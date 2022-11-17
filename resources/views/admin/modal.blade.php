@@ -29,7 +29,8 @@
 	<div class="col-5">
     @auth
     <p>
-        <a href="" class="btn btn-success">@lang('messages.add_new')</a> 
+        
+        <a href="" class="btn btn-xs btn-success" data-bs-toggle="modal" data-bs-target="#createModal">@lang('messages.add_new')</a>
     </p>
     @endauth
     </div>
@@ -87,39 +88,226 @@
       @lang('messages.Are you sure?')
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('messages.Close')</button>
-        <a href="{{ route('modals.destroy',[$user->id]) }}" class="btn btn-xs btn-danger" onclick="myFunction()">@lang('messages.Delete')</a>
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('messages.Close')</button>
+        <form method="post" action="{{ route('modals.destroy',[$user->id]) }}">
+        @csrf
+        <input type="hidden" name="_method" value="delete" />
+        <input class="btn btn-default btn-danger" type="submit" value="Delete" />
+
+        </form>
+        
+        
       </div>
     </div>
   </div>
 </div>
+
+
+
 <!-- Modal create-->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="createModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       
       <div class="modal-body">
-      @lang('messages.Are you sure?')
+        <!-- form -->
+        <form method="Post" action="{{ route('modals.store') }}">
+                            
+                            @csrf
+
+                            <div class="form-group row" style="height: 50px;">
+                            <div class="col-md-6"> 
+                            <label for="select_preferred_language_create">{{ __('messages.preferred_language')}}</label>
+                            </div>    
+                                
+                                <div class="col-md-6">
+                                <select id="select_preferred_language_create" name="preferred_language" class="form-control">
+                                    <option value="RU">{{ __('messages.Russian')}}</option>
+                                    <option value="UA" selected>@lang('messages.Ukrainian')</option>
+                                    <option value="EN">@lang('messages.English')</option>
+  
+                                </select> 
+                                </div>
+                            </div>
+
+                            <div class="form-group row" style="height: 50px;">
+                                <label for="name_input" class="col-md-6 col-form-label text-md-right">{{ __('messages.Name') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="name_input" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                           name="name">
+
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row" style="height: 50px;">
+                                <label for="email_input" class="col-md-6 col-form-label text-md-right">{{ __('messages.E-Mail Address') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="email_input" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                           name="email">
+
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            
+                           
+
+                            <div class="form-group row" style="height: 50px;">
+                                <label for="password" class="col-md-6 col-form-label text-md-right">{{ __('messages.Password') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control" name="password">
+
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row" style="height: 50px;">
+                                <label for="password_confirmation" class="col-md-6 col-form-label text-md-right">{{ __('messages.Confirm password') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="password_confirmation" type="password" class="form-control" name="password_confirmation">
+
+                                    @if ($errors->has('password_confirmation'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row mb-0" style="height: 50px;">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        @lang('messages.create')
+                                    </button>
+                                </div>
+                            </div>
+                            </form>
+                            <!-- end form -->
+      
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('messages.Close')</button>
-        <a href="" class="btn btn-xs btn-danger" onclick="myFunction()">@lang('messages.Delete')</a>
-      </div>
+      
     </div>
   </div>
 </div>
+
+
+
+
 <!-- Modal edit-->
 <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       
       <div class="modal-body">
-      @lang('messages.Are you sure?')
+      <!-- form -->
+      <form method="POST" action="{{ route('modals.update',[$user->id])}}">
+                            
+                            @csrf
+
+                            <div class="form-group row" style="height: 50px;">
+                            <div class="col-md-6"> 
+                            <label for="select_preferred_language_create">{{ __('messages.preferred_language')}}</label>
+                            </div>    
+                                
+                                <div class="col-md-6">
+                                <select id="select_preferred_language_create" name="preferred_language" class="form-control">
+                                    <option value="RU">{{ __('messages.Russian')}}</option>
+                                    <option value="UA" selected>@lang('messages.Ukrainian')</option>
+                                    <option value="EN">@lang('messages.English')</option>
+  
+                                </select> 
+                                </div>
+                            </div>
+
+                            <div class="form-group row" style="height: 50px;">
+                                <label for="name_input" class="col-md-6 col-form-label text-md-right">{{ __('messages.Name') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="name_input" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                           name="name">
+
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row" style="height: 50px;">
+                                <label for="email_input" class="col-md-6 col-form-label text-md-right">{{ __('messages.E-Mail Address') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="email_input" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                           name="email">
+
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            
+                           
+
+                            <div class="form-group row" style="height: 50px;">
+                                <label for="password" class="col-md-6 col-form-label text-md-right">{{ __('messages.Password') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control" name="password">
+
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row" style="height: 50px;">
+                                <label for="password_confirmation" class="col-md-6 col-form-label text-md-right">{{ __('messages.Confirm password') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="password_confirmation" type="password" class="form-control" name="password_confirmation">
+
+                                    @if ($errors->has('password_confirmation'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row mb-0" style="height: 50px;">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        @lang('messages.create')
+                                    </button>
+                                </div>
+                            </div>
+                            </form>
+                            <!-- end form -->
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('messages.Close')</button>
-        <a href="" class="btn btn-xs btn-danger" onclick="myFunction()">@lang('messages.Edit')</a>
-      </div>
+      
     </div>
   </div>
 </div>
