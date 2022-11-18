@@ -35,3 +35,4 @@ Route::post('/edit/{id}', 'UserController@update')->name('user_update');
 Route::get('/user/{id}', 'UserController@destroy')->name('user_destroy');
 Route::get('/home/{lang}', 'UserController@preferred_language')->name('preferred_language');
 
+Route::resource('roles', RoleController::class);
