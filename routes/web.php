@@ -32,6 +32,6 @@ Route::get('/create', 'UserController@create')->name('user_create');
 Route::post('/create', 'UserController@store')->name('user_store');
 Route::get('/edit/{id}', 'UserController@edit')->name('user_edit');
 Route::post('/edit/{id}', 'UserController@update')->name('user_update');
-Route::get('/index/{id}', 'UserController@destroy')->name('user_destroy');
+Route::get('/user/{id}', 'UserController@destroy')->name('user_destroy');
 Route::get('/home/{lang}', 'UserController@preferred_language')->name('preferred_language');
 

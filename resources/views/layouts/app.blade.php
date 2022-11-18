@@ -187,6 +187,8 @@ $(document).ready(function () {
      $('#content').toggleClass('active');
      });
 });
+
+    </script>
 </script>
 </body>
 </html>

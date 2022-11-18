@@ -105,6 +105,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+        //dd($id);
         $user = User::findOrFail($id);
         if ($user->email == 'administrator@example.com' ) {
             return redirect()->back()->with('warning', 'Cannot delete "administrator@example.com"!');
