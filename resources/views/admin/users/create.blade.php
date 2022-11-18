@@ -32,7 +32,7 @@
 
                         <div class="card-body">
                              <!-- form -->
-                            <form method="POST" action="{{ route('user_store') }}">
+                            <form method="POST" action="{{ route('users.store') }}">
                             
                             @csrf
 

@@ -29,7 +29,7 @@
 	<div class="col-5">
     @auth
     <p>
-        <a href="{{ route('user_create') }}" class="btn btn-success">@lang('messages.add_new')</a> 
+        <a href="{{ route('users.create') }}" class="btn btn-success">@lang('messages.add_new')</a> 
     </p>
     @endauth
     </div>
@@ -56,19 +56,13 @@
                 <tbody>
                 @if (count($users) > 0)
                     @foreach ($users as $user)
-                        <tr data-entry-id="{{ $user->id }}" class="">
+                        <tr data-entry-id="" class="">
                             <td field-key='name'>{{ $user->name }}</td>
                             <td field-key='email'>{{ $user->email }}</td>
                             <td>
-                               <a href="{{ route('user_edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
-                               <a href="{{ route('user_destroy',[$user->id]) }}" class="btn btn-xs btn-danger">@lang('messages.Delete')</a>
-                             <!--  <form method="post" action="{{ route('user_destroy',[$user->id]) }}">
-                                @csrf
-                               <input type="hidden" name="_method" value="delete" />
-                               <input class="btn btn-default btn-danger" type="submit" value="Delete" />-->
-
-        </form>                          
-                               <!--<a href="" class="btn btn-xs btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">@lang('messages.Delete')</a>-->
+                               <a href="{{ route('users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
+                               <a href="{{ route('users.destroy',[$user->id]) }}" class="btn btn-xs btn-danger">@lang('messages.Delete')</a>
+                            
                             </td>
                         </tr>
                     @endforeach
@@ -84,21 +78,5 @@
     </div>
    
 </div>
-<!-- Modal -->
-<!--
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      
-      <div class="modal-body">
-      @lang('messages.Are you sure?')
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('messages.Close')</button>
-        <a href="{{ route('user_destroy',[$user->id]) }}" class="btn btn-xs btn-danger">@lang('messages.Delete')</a>
-      </div>
-    </div>
-  </div>
-</div>
--->
+
 @stop

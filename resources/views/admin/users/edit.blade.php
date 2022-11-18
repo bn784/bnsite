@@ -31,7 +31,7 @@
                         <div class="card-header">@lang('messages.Editing user'): &nbsp; {{ $user->email }}</div>
 
                         <div class="card-body">
-                            <form method="POST" action="{{ route('user_update', $user->id) }}">
+                            <form method="POST" action="{{ route('users.update', $user->id) }}">
                             
                             @csrf
 

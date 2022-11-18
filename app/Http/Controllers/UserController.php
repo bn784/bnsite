@@ -7,10 +7,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +16,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('admin.index', compact('users'));
+        return view('admin.users.index', compact('users'));
     }
     /**
      * Show the form for creating a new resource.
@@ -28,7 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+        return view('admin.users.create');
     }
     /**
      * Store a newly created resource in storage.
@@ -63,7 +60,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('admin.edit', compact('user'));
+        return view('admin.users.edit', compact('user'));
     }
     /**
      * Update the specified resource in storage.
@@ -105,7 +102,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //dd($id);
+        
         $user = User::findOrFail($id);
         if ($user->email == 'administrator@example.com' ) {
             return redirect()->back()->with('warning', 'Cannot delete "administrator@example.com"!');
