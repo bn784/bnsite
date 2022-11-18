@@ -4,10 +4,14 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -74,25 +78,26 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required|string|max:255',
             //'email' => 'required|string|email|max:255|unique:users,email,'.$id,
-            'password' => ['required', 'string', 'min:8'],
+            
+            'new_password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
         $user = User::findOrFail($id);
-        if (Hash::check($request->get('password'), $user->password)) {
+        dd($user,$request);
             if ($user->name == 'administrator') {
                 return redirect()->back()->with('warning', 'Cannot edit "administrator"!');
             }
             if ($request->name == 'administrator') {
                 return redirect()->back()->with('warning', 'Cannot use name "administrator"!');
             }
+            //dd($user,$request);
             $user->name = $request->name;
             //$user->email = $request->email;
             $user->preferred_language = $request->preferred_language;
+            $user->password = bcrypt($request->new_password);
            
             $user->save();
             return redirect()->back()->with('success', $user->email.' update successfully!');
-        }else{
-            return redirect()->back()->with('warning', 'Wrong password!');
-        }
+        
     }
     /**
      * Remove the specified resource from storage.
@@ -102,10 +107,14 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        
+        $userAuth = Auth::getUser();
         $user = User::findOrFail($id);
+        //dd($user,$userAuth);
         if ($user->email == 'administrator@example.com' ) {
             return redirect()->back()->with('warning', 'Cannot delete "administrator@example.com"!');
+        }
+        if ($user->email == $userAuth->email ) {
+            return redirect()->back()->with('warning', 'You can not remove yourself!');
         }
         $user->delete();
         $users = User::all();

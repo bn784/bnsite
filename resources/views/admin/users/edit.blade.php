@@ -31,6 +31,7 @@
                         <div class="card-header">@lang('messages.Editing user'): &nbsp; {{ $user->email }}</div>
 
                         <div class="card-body">
+                             <!-- form -->
                             <form method="POST" action="{{ route('users.update', $user->id) }}">
                             
                             @csrf
@@ -42,8 +43,8 @@
                                 
                                 <div class="col-md-6">
                                 <select id="select_preferred_language_create" name="preferred_language" class="form-control">
-                                    <option value="RU">{{ __('messages.Russian')}}</option>
-                                    <option value="UA" selected>@lang('messages.Ukrainian')</option>
+                                    <option value="RU" selected>{{ __('messages.Russian')}}</option>
+                                    <option value="UA">@lang('messages.Ukrainian')</option>
                                     <option value="EN">@lang('messages.English')</option>
   
                                 </select> 
@@ -71,10 +72,10 @@
                            
 
                             <div class="form-group row" style="height: 70px;">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('messages.New password') }}</label>
+                                <label for="new_password" class="col-md-4 col-form-label text-md-right">{{ __('messages.New password') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control" name="password">
+                                    <input id="new_password" type="password" class="form-control" name="new_password">
 
                                     @if ($errors->has('password'))
                                         <span class="invalid-feedback" role="alert">
@@ -85,14 +86,14 @@
                             </div>
 
                             <div class="form-group row" style="height: 70px;">
-                                <label for="password_confirmation" class="col-md-4 col-form-label text-md-right">{{ __('messages.Confirm password') }}</label>
+                                <label for="new_password_confirmation" class="col-md-4 col-form-label text-md-right">{{ __('messages.Confirm password') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password_confirmation" type="password" class="form-control" name="password_confirmation">
+                                    <input id="new_password_confirmation" type="password" class="form-control" name="new_password_confirmation">
 
-                                    @if ($errors->has('password_confirmation'))
+                                    @if ($errors->has('new_password_confirmation'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                        <strong>{{ $errors->first('new_password_confirmation') }}</strong>
                                     </span>
                                     @endif
                                 </div>

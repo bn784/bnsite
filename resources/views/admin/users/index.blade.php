@@ -56,7 +56,7 @@
                 <tbody>
                 @if (count($users) > 0)
                     @foreach ($users as $user)
-                        <tr data-entry-id="" class="">
+                        <tr data-entry-id="{{ $user->id }}" class="">
                             <td field-key='name'>{{ $user->name }}</td>
                             <td field-key='email'>{{ $user->email }}</td>
                             <td>
