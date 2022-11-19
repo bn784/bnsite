@@ -109,7 +109,7 @@ class UserController extends Controller
     {
         $userAuth = Auth::getUser();
         $user = User::findOrFail($id);
-        //dd($user,$userAuth);
+       
         if ($user->email == 'administrator@example.com' ) {
             return redirect()->back()->with('warning', 'Cannot delete "administrator@example.com"!');
         }

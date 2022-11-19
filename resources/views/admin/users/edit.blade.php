@@ -35,13 +35,15 @@
                             <form method="POST" action="{{ route('users.update', $user->id) }}">
                             
                             @csrf
+                           
+                            <input type="hidden" name="_method" value="PATCH" />
 
                             <div class="form-group row" style="height: 70px;">
                             <div class="col-md-4"> 
                             <label for="select_preferred_language_create">{{ __('messages.preferred_language')}}</label>
                             </div>    
                                 
-                                <div class="col-md-6">
+                                <div class="col-md-7">
                                 <select id="select_preferred_language_create" name="preferred_language" class="form-control">
                                     <option value="RU" selected>{{ __('messages.Russian')}}</option>
                                     <option value="UA">@lang('messages.Ukrainian')</option>
@@ -54,9 +56,8 @@
                             <div class="form-group row" style="height: 70px;">
                                 <label for="name_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.Name') }}</label>
 
-                                <div class="col-md-6">
-                                    <input id="name_input" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                           name="name">
+                                <div class="col-md-7">
+                                    <input id="name_input" type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ $user->name }}">
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -74,12 +75,12 @@
                             <div class="form-group row" style="height: 70px;">
                                 <label for="new_password" class="col-md-4 col-form-label text-md-right">{{ __('messages.New password') }}</label>
 
-                                <div class="col-md-6">
-                                    <input id="new_password" type="password" class="form-control" name="new_password">
+                                <div class="col-md-7">
+                                    <input id="new_password" type="password" class="form-control{{ $errors->has('new_password') ? ' is-invalid' : '' }}" name="new_password">
 
-                                    @if ($errors->has('password'))
+                                    @if ($errors->has('new_password'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong>{{ $errors->first('new_password') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -88,8 +89,9 @@
                             <div class="form-group row" style="height: 70px;">
                                 <label for="new_password_confirmation" class="col-md-4 col-form-label text-md-right">{{ __('messages.Confirm password') }}</label>
 
-                                <div class="col-md-6">
-                                    <input id="new_password_confirmation" type="password" class="form-control" name="new_password_confirmation">
+                                <div class="col-md-7">
+                                    <input id="new_password_confirmation" type="password" class="form-control" 
+                                    name="new_password_confirmation">
 
                                     @if ($errors->has('new_password_confirmation'))
                                         <span class="invalid-feedback" role="alert">
