@@ -38,22 +38,22 @@
     
     <div class="row">
     <div class="col-2"></div>
-	<div class="col-5">
+	<div class="col-4">
     <div class="panel panel-default">
         <div class="panel-heading">
             @lang('messages.list')
         </div>
-        <div class="panel-body table-responsive">
-    </div>
+        <div class="panel-body table-responsive"></div>
     <table class="table table-bordered table-striped">
                
                 <tbody>
-                @if (count($users) > 0)
-                    @foreach ($users as $user)
-                        <tr data-entry-id="" class="">
-                            
+                @if (count($roles) > 0)
+                    @foreach ($roles as $role)
+                        <tr data-entry-id="{{ $role->id }}">
+                        <td field-key='title'>{{ $role->title }}</td> 
                             <td>
                                <a href="{{ route('roles.show',[$role->id]) }}" class="btn btn-xs btn-info">@lang('messages.View')</a>
+                               <a href="{{ route('roles.edit',[$role->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
                               
                                {!! Form::open(array(
                                                                         'style' => 'display: inline-block;',
@@ -73,7 +73,7 @@
                 </tbody>
             </table>
     </div>
-    <div class="col-5"></div>
+    <div class="col-6"></div>
     </div>
    
 </div>

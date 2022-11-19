@@ -25,7 +25,7 @@ class RoleController extends Controller
         
         $roles = Role::all();
         $users = User::all();
-        dd($roles, $users);
+        //dd($roles, $users);
         return view('admin.roles.index')->with(compact('roles'))->with(compact('users'));
     }
 
