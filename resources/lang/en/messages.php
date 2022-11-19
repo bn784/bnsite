@@ -43,6 +43,7 @@ return [
 	'Russian' => 'Russian',
 	'Register'=> 'Register',
 	'Remember Me' => 'Remember Me',
+	'Role management' => 'Role management',
 	//s
 	'site-management' => 'Site-management',
 	'Sidebar' => 'Sidebar',
