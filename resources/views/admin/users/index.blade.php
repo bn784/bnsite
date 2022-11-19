@@ -61,8 +61,14 @@
                             <td field-key='email'>{{ $user->email }}</td>
                             <td>
                                <a href="{{ route('users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
-                               <a href="{{ route('users.destroy',[$user->id]) }}" class="btn btn-xs btn-danger">@lang('messages.Delete')</a>
-                            
+                              
+                               {!! Form::open(array(
+                                                                        'style' => 'display: inline-block;',
+                                                                        'method' => 'DELETE',
+                                                                        'onsubmit' => "return confirm('".trans("messages.Are you sure?")."');",
+                                                                        'route' => ['users.destroy', $user->id])) !!}
+                                {!! Form::submit(trans('messages.Delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                {!! Form::close() !!}
                             </td>
                         </tr>
                     @endforeach

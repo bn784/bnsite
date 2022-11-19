@@ -38,7 +38,7 @@ Route::get('/create', 'UserController@create')->name('users.create');
 Route::post('/create', 'UserController@store')->name('users.store');
 Route::get('/edit/{id}', 'UserController@edit')->name('users.edit');
 Route::post('/edit/{id}', 'UserController@update')->name('users.update');
-Route::get('/user/{id}', 'UserController@destroy')->name('users.destroy');
+Route::delete('/user/{id}', 'UserController@destroy')->name('users.destroy');
 Route::get('/home/{lang}', 'UserController@preferred_language')->name('preferred_language');
 
 Route::resource('roles', RoleController::class);
