@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddAddGatesColumnsToRoles extends Migration
+class AddGatesColumnsToRoles extends Migration
 {
     /**
      * Run the migrations.
@@ -36,7 +36,16 @@ class AddAddGatesColumnsToRoles extends Migration
     public function down()
     {
         Schema::table('roles', function (Blueprint $table) {
-            Schema::dropIfExists('add_gates_columns_to_roles');
+            $table->dropColumn('management_access');
+			$table->dropColumn('user_access');
+			$table->dropColumn('user_edit');
+			$table->dropColumn('user_view');
+			$table->dropColumn('user_delete');
+			$table->dropColumn('role_access');
+			$table->dropColumn('role_create');
+			$table->dropColumn('role_edit');
+			$table->dropColumn('role_view');
+			$table->dropColumn('role_delete');
         });
     }
 }
