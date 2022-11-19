@@ -1,8 +1,5 @@
-@extends('layouts.auth')
-<?php
-$locale = Auth::user()->preferred_language;
-App::setLocale($locale);
-?>
+@extends('layouts.app')
+{{ App::setLocale(Auth::user()->preferred_language) }}
 @section('content')
     <h3 class="page-title">@lang('messages.roles.title')</h3>
 

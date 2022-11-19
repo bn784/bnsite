@@ -3,9 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Role;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class RoleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +22,11 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        
+        $roles = Role::all();
+        $users = User::all();
+        dd($roles, $users);
+        return view('admin.roles.index')->with(compact('roles'))->with(compact('users'));
     }
 
     /**

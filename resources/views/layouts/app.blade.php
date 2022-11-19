@@ -162,6 +162,9 @@
             <li class="nav-item">
                 <a href="{{ route('users.index') }}" class="nav-link btnSidebar text-white">{{ __('messages.user-management')}}</a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('roles.index') }}" class="nav-link btnSidebar text-white">{{ __('messages.Role management')}}</a>
+            </li>
 			<li class="nav-item">
                 <a href="#" class="nav-link btnSidebar text-white">{{ __('messages.site-management')}}</a>
             </li>

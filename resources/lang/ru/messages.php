@@ -44,6 +44,8 @@ return [
 	'Russian' => 'Русский',
 	'Register'=> 'Регистрироваться',
 	'Remember Me' => 'Запомните меня',
+	'Role management' => 'Управление ролями',
+	'roles_title' => 'Роли',
 	//s
 	'site-management' => 'Управление сайтом',
 	'Sidebar' => 'Боковая панель',
@@ -56,6 +58,7 @@ return [
 	//w
 	'Website' => 'Сайт',
 	//v
+	'View' => 'Посмотреть',
 	//x
 	//y
 	//z   

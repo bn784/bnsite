@@ -44,6 +44,7 @@ return [
 	'Register'=> 'Register',
 	'Remember Me' => 'Remember Me',
 	'Role management' => 'Role management',
+	'roles_title' => 'Roles',
 	//s
 	'site-management' => 'Site-management',
 	'Sidebar' => 'Sidebar',
@@ -56,6 +57,7 @@ return [
 	//w
 	'Website' => 'Website',
 	//v
+	'View' => 'View',
 	//x
 	//y
 	//z   
