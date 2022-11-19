@@ -57,7 +57,7 @@
                                 <label for="name_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.Name') }}</label>
 
                                 <div class="col-md-7">
-                                    <input id="name_input" type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ $user->name }}">
+                                    <input id="name_input" type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}">
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
