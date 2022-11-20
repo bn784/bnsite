@@ -1,8 +1,7 @@
 @extends('layouts.app')
 {{ App::setLocale(Auth::user()->preferred_language) }}
 @section('content')
-<div class="container-fluid"  style="background-color:; height: 95vh;">
-    
+<div class="container-fluid"  style="background-color:cyan; height: 95vh;">
     <div class="row" style="height: 70px;">
    @if(session('warning'))
             <!-- If password successfully show message -->
@@ -22,133 +21,116 @@
     @endif
     </div>
     <div class="row">
-    <div class="col-1"></div>
-	<div class="col-7">
-    <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">@lang('messages.Creating user')</div>
+        <div class="col-1"></div>
+	    <div class="col-7">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">@lang('messages.Role')</div>
+                            <div class="card-body">
+                                 <!-- form -->
+                                <form method="POST" action="{{ route('roles.store') }}">
+                                    @csrf
+                                    <input type="hidden" name="_method" value="PATCH" />
+                                    <div class="form-group row" style="height: 50px;">
+                                        <label for="title_input" class="col-md-2 col-form-label text-md-right">{{ __('messages.Role') }}</label>
 
-                        <div class="card-body">
-                             <!-- form -->
-                            <form method="POST" action="{{ route('users.store') }}">
-                            
-                            @csrf
+                                        <div class="col-md-6">
+                                             <input id="title_input" type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title">
 
-                            <div class="form-group row" style="height: 50px;">
-                            <div class="col-md-4"> 
-                            <label for="select_preferred_language_create">{{ __('messages.preferred_language')}}</label>
-                            </div>    
-                                
-                                <div class="col-md-6">
-                                <select id="select_preferred_language_create" name="preferred_language" class="form-control">
-                                    <option value="RU">{{ __('messages.Russian')}}</option>
-                                    <option value="UA" selected>@lang('messages.Ukrainian')</option>
-                                    <option value="EN">@lang('messages.English')</option>
-  
-                                </select> 
-                                </div>
+                                            @if ($errors->has('title'))
+                                                <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('title') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" style="">
+                                        <div class="col-md-8"> 
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="management_access" name="management_access">
+                                                <label class="form-check-label" for="management_access">@lang('messages.admin access')</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="user_access" name="user_access"> 
+                                                    
+                                                <label class="form-check-label" for="user_access">@lang('messages.user access')</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="user_create" name="user_create"> 
+                                                    
+                                                <label class="form-check-label" for="user_create">@lang('messages.user create')</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="user_edit" name="user_edit"> 
+                                                     
+                                                <label class="form-check-label" for="user_edit">@lang('messages.user edit')</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="user_view" name="user_view"> 
+                                                    
+                                                <label class="form-check-label" for="user_view">@lang('messages.user view')</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="user_delete" name="user_delete"> 
+                                                     
+                                                <label class="form-check-label" for="user_delete">@lang('messages.user delete')</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="role_access" name="role_access"> 
+                                                    
+                                                <label class="form-check-label" for="role_access">@lang('messages.role access')</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="role_create" name="role_create"> 
+                                                     
+                                                <label class="form-check-label" for="user_create">@lang('messages.role create')</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="role_edit" name="role_edit"> 
+                                                     
+                                                <label class="form-check-label" for="user_edit">@lang('messages.role edit')</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="role_view" name="role_view"> 
+                                                     
+                                                <label class="form-check-label" for="role_view">@lang('messages.role view')</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="role_delete" name="role_delete"> 
+                                                    
+                                                <label class="form-check-label" for="role_delete">@lang('messages.role delete')</label>
+                                            </div>
+                                        </div>    
+                                        <div class="col-md-4"></div></div>
+                                    </div>
+                                    
+                                    <div class="form-group row mb-0" style="height: 70px;">
+                                        <div class="col-md-6 offset-md-4">
+                                            <button type="submit" class="btn btn-primary">@lang('messages.create')</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-
-                            <div class="form-group row" style="height: 50px;">
-                                <label for="name_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.Name') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="name_input" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                           name="name">
-
-                                    @if ($errors->has('name'))
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group row" style="height: 50px;">
-                                <label for="email_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.E-Mail Address') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="email_input" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="email">
-
-                                    @if ($errors->has('email'))
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            
-                           
-
-                            <div class="form-group row" style="height: 50px;">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('messages.Password') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control" name="password">
-
-                                    @if ($errors->has('password'))
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group row" style="height: 50px;">
-                                <label for="password_confirmation" class="col-md-4 col-form-label text-md-right">{{ __('messages.Confirm password') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="password_confirmation" type="password" class="form-control" name="password_confirmation">
-
-                                    @if ($errors->has('password_confirmation'))
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group row mb-0" style="height: 50px;">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        @lang('messages.create')
-                                    </button>
-                                </div>
-                            </div>
-                            </form>
-                            <!-- end form -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-       
-</div>
     </div>
-    <div class="col-4"></div>
+    <div class="col-6"></div>
     </div>
     <div class="row">
     <div class="col-2"></div>
 	<div class="col-5">
-   
     </div>
     <div class="col-5"></div>
     </div>
-    
     <div class="row">
     <div class="col-2"></div>
 	<div class="col-5">
-    
     <div class="col-5"></div>
     </div>
-   
 </div>
-
-
-
 @stop
-

@@ -36,7 +36,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.roles.create');
     }
 
     /**
@@ -61,7 +61,7 @@ class RoleController extends Controller
         $users = User::where('role_id', $id)->get();
 
         $roles = Role::findOrFail($id);
-        //dd($users, $roles);
+        
 
        
         return view('admin.roles.show', compact('roles', 'users'));
@@ -91,7 +91,19 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //dd($request, $id);
+        //dd($users, $roles);
+        $role = Role::findOrFail($id);
+        if ($role->title == 'administrator' ) {
+            return redirect()->route('roles.index')->with('warning', 'Cannot update administrator!');
+        }
+        if ($role->title == 'user' ) {
+            return redirect()->route('roles.index')->with('warning', 'Cannot update user!');
+        }
+
+        $role->update($request->all());
+
+        return redirect()->route('roles.index')->with('success', $role->title.' update successfully!');
     }
 
     /**
@@ -102,6 +114,16 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $role = Role::findOrFail($id);
+
+        if ($role->title == 'administrator' ) {
+            return redirect()->back()->with('warning', 'Cannot delete role "administrator"!');
+        }
+        if ($role->title == 'user' ) {
+            return redirect()->back()->with('warning', 'Cannot delete role "user"!');
+        }
+        $role->delete();
+        return redirect()->route('roles.index')->with('success', $role->title.' delete successfully!');
     }
 }
