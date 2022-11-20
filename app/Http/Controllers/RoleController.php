@@ -25,7 +25,7 @@ class RoleController extends Controller
         
         $roles = Role::all();
         $users = User::all();
-        //dd($roles, $users);
+        
         return view('admin.roles.index')->with(compact('roles'))->with(compact('users'));
     }
 
@@ -58,7 +58,13 @@ class RoleController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::where('role_id', $id)->get();
+
+        $roles = Role::findOrFail($id);
+        //dd($users, $roles);
+
+       
+        return view('admin.roles.show')->with(compact('roles'))->with(compact('users'));
     }
 
     /**

@@ -13,7 +13,7 @@
                 <div class="col-md-6">
                     <table class="table table-bordered table-striped">
                         <tr>
-                            <th>@lang('messages.roles.fields.title')</th>
+                            <th>@lang('messages.fields.title')</th>
                             <td field-key='title'>{{ $role->title }}</td>
                         </tr>
                     </table>
@@ -45,23 +45,21 @@
                 <tr data-entry-id="{{ $user->id }}">
                     <td field-key='name'>{{ $user->name }}</td>
                     <td field-key='email'>{{ $user->email }}</td>
-                    <td field-key='role'>{{ $user->role->title }}</td>
+                    <td field-key='role'></td>
                     <td>
-                        @can('user_view')
-                        <a href="{{ route('admin.users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('messages.view')</a>
-                        @endcan
-                        @can('user_edit')
-                        <a href="{{ route('admin.users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
-                        @endcan
-                        @can('user_delete')
+                       
+                        <a href="{{ route('users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('messages.view')</a>
+                       
+                        <a href="{{ route('users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
+                        
                         {!! Form::open(array(
                                                                 'style' => 'display: inline-block;',
                                                                 'method' => 'DELETE',
                                                                 'onsubmit' => "return confirm('".trans("messages.are_you_sure")."');",
-                                                                'route' => ['admin.users.destroy', $user->id])) !!}
+                                                                'route' => ['users.destroy', $user->id])) !!}
                         {!! Form::submit(trans('messages.delete'), array('class' => 'btn btn-xs btn-danger')) !!}
                         {!! Form::close() !!}
-                        @endcan
+                        
                     </td>
 
                 </tr>
@@ -78,7 +76,7 @@
 
             <p>&nbsp;</p>
 
-            <a href="{{ route('admin.roles.index') }}" class="btn btn-default">@lang('messages.back_to_list')</a>
+            <a href="{{ route('roles.index') }}" class="btn btn-default">@lang('messages.back_to_list')</a>
         </div>
     </div>
 @stop
