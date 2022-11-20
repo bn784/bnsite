@@ -25,8 +25,8 @@ class RoleController extends Controller
         
         $roles = Role::all();
         $users = User::all();
-        
-        return view('admin.roles.index')->with(compact('roles'))->with(compact('users'));
+        return view('admin.roles.index', compact('roles', 'users'));
+        //return view('admin.roles.index')->with(compact('users'))->with(compact('roles'));
     }
 
     /**
@@ -64,7 +64,7 @@ class RoleController extends Controller
         //dd($users, $roles);
 
        
-        return view('admin.roles.show')->with(compact('roles'))->with(compact('users'));
+        return view('admin.roles.show', compact('roles', 'users'));
     }
 
     /**
@@ -77,9 +77,9 @@ class RoleController extends Controller
     {
         
         $roles = Role::findOrFail($id);
-        $users = User::where('role_id', $id)->get();
-        //dd($users, $roles);
-        return view('admin.roles.edit')->with(compact('roles'))->with(compact('users'));
+        
+        
+        return view('admin.roles.edit', compact('roles'));
     }
 
     /**

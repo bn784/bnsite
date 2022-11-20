@@ -2,7 +2,6 @@
 {{ App::setLocale(Auth::user()->preferred_language) }}
 @section('content')
 <div class="container-fluid">
-    
     <div class="row" style="height: 70px;">
     @if(session('warning'))
      <!--  warning show message -->
@@ -35,7 +34,6 @@
     </div>
     <div class="col-5"></div>
     </div>
-    
     <div class="row">
     <div class="col-2"></div>
 	<div class="col-4">
@@ -45,16 +43,14 @@
         </div>
         <div class="panel-body table-responsive"></div>
     <table class="table table-bordered table-striped">
-               
                 <tbody>
                 @if (count($roles) > 0)
                     @foreach ($roles as $role)
                         <tr data-entry-id="{{ $role->id }}">
                         <td field-key='title'>{{ $role->title }}</td> 
                             <td>
-                               <a href="{{ route('roles.show',[$role->id]) }}" class="btn btn-xs btn-info">@lang('messages.View')</a>
+                            <a href="{{ route('roles.show',[$role->id]) }}" class="btn btn-xs btn-primary">@lang('messages.View')</a>
                                <a href="{{ route('roles.edit',[$role->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
-                              
                                {!! Form::open(array(
                                                                         'style' => 'display: inline-block;',
                                                                         'method' => 'DELETE',
@@ -75,7 +71,5 @@
     </div>
     <div class="col-6"></div>
     </div>
-   
 </div>
-
 @stop

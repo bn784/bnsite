@@ -4,6 +4,7 @@ return [
 	//a
 	'add_new' => 'Add new',
 	'Are you sure?' => 'Are you sure?',
+	'admin access' => 'admin access',
 	//b
 	//c
 	'Change password' => 'Change password',
@@ -31,6 +32,7 @@ return [
 	'Logout' => 'Logout',
 	'list' => 'List',
 	//m
+	
 	//n
 	'Name' => 'Name',
 	'New password' => 'New password',
@@ -45,6 +47,7 @@ return [
 	'Remember Me' => 'Remember Me',
 	'Role management' => 'Role management',
 	'roles_title' => 'Roles',
+	'Role' => 'Role',
 	//s
 	'site-management' => 'Site-management',
 	'Sidebar' => 'Sidebar',
@@ -55,6 +58,11 @@ return [
 	'Ukrainian' => 'Ukrainian',
 	'user-management' => 'user-management',
 	'users_title' => 'Users',
+	'user access' => 'user access',
+	'user create' => 'user create',
+	'user edit' => 'user edit',
+	'user view' => 'user view',
+	'user delete' => 'user delete',
 	//w
 	'Website' => 'Website',
 	//v
