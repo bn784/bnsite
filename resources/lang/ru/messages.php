@@ -49,6 +49,11 @@ return [
 	'Role management' => 'Управление ролями',
 	'roles_title' => 'Роли',
 	'Role' => 'Роль',
+	'role access' => 'ролевой доступ',
+	'role create' => 'создание роли',
+	'role edit' => 'редактирование роли',
+	'role view' => 'просмотр роли',
+	'role delete' => 'удаление роли',
 	//s
 	'site-management' => 'Управление сайтом',
 	'Sidebar' => 'Боковая панель',

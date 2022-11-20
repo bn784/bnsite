@@ -47,30 +47,53 @@
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="1" id="user_create" name="user_create" 
-                                                     @if($roles->management_access === 1) checked @endif >
+                                                     @if($roles->user_create === 1) checked @endif >
                                                 <label class="form-check-label" for="user_create">@lang('messages.user create')</label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="1" id="user_edit" name="user_edit" 
-                                                     @if($roles->management_access === 1) checked @endif >
+                                                     @if($roles->user_edit === 1) checked @endif >
                                                 <label class="form-check-label" for="user_edit">@lang('messages.user edit')</label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="1" id="user_view" name="user_view" 
-                                                     @if($roles->management_access === 1) checked @endif >
+                                                     @if($roles->user_view === 1) checked @endif >
                                                 <label class="form-check-label" for="user_view">@lang('messages.user view')</label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="1" id="user_delete" name="user_delete" 
-                                                     @if($roles->management_access === 1) checked @endif >
+                                                     @if($roles->user_delete === 1) checked @endif >
                                                 <label class="form-check-label" for="user_delete">@lang('messages.user delete')</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="role_access" name="role_access" 
+                                                     @if($roles->role_access === 1) checked @endif >
+                                                <label class="form-check-label" for="role_access">@lang('messages.role access')</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="role_create" name="role_create" 
+                                                     @if($roles->role_create === 1) checked @endif >
+                                                <label class="form-check-label" for="user_create">@lang('messages.role create')</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="role_edit" name="role_edit" 
+                                                     @if($roles->role_edit === 1) checked @endif >
+                                                <label class="form-check-label" for="user_edit">@lang('messages.role edit')</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="role_view" name="role_view" 
+                                                     @if($roles->role_view === 1) checked @endif >
+                                                <label class="form-check-label" for="role_view">@lang('messages.role view')</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="role_delete" name="role_delete" 
+                                                     @if($roles->role_delete === 1) checked @endif >
+                                                <label class="form-check-label" for="role_delete">@lang('messages.role delete')</label>
                                             </div>
                                         </div>    
                                         <div class="col-md-4"></div></div>
                                     </div>
                                     
-
-
                                     <div class="form-group row mb-0" style="height: 70px;">
                                         <div class="col-md-6 offset-md-4">
                                             <button type="submit" class="btn btn-primary">@lang('messages.edit')</button>

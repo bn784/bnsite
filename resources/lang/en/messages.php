@@ -48,6 +48,11 @@ return [
 	'Role management' => 'Role management',
 	'roles_title' => 'Roles',
 	'Role' => 'Role',
+	'role access' => 'role access',
+	'role create' => 'role create',
+	'role edit' => 'role edit',
+	'role view' => 'role view',
+	'role delete' => 'role delete',
 	//s
 	'site-management' => 'Site-management',
 	'Sidebar' => 'Sidebar',
