@@ -75,7 +75,11 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $roles = Role::findOrFail($id);
+        $users = User::where('role_id', $id)->get();
+        //dd($users, $roles);
+        return view('admin.roles.edit')->with(compact('roles'))->with(compact('users'));
     }
 
     /**
