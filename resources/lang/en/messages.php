@@ -49,6 +49,7 @@ return [
 	'site-management' => 'Site-management',
 	'Sidebar' => 'Sidebar',
 	'save' => 'Save',
+	'Show' => 'Show',
 	//t
 	//u
 	'Ukrainian' => 'Ukrainian',
