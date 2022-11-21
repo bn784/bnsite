@@ -35,11 +35,11 @@ Route::post('/change_password', 'ChangePasswordController@changePassword')->name
 // UserController Routes...
 Route::get('/index', 'UserController@index')->name('users.index');
 Route::get('/create', 'UserController@create')->name('users.create');
-Route::post('/create', 'UserController@store')->name('users.store');
+Route::post('/store', 'UserController@store')->name('users.store');
 Route::get('/edit/{id}', 'UserController@edit')->name('users.edit');
-Route::patch('/edit/{id}', 'UserController@update')->name('users.update');
-Route::delete('/user/{id}', 'UserController@destroy')->name('users.destroy');
-Route::get('/home/{lang}', 'UserController@preferred_language')->name('preferred_language');
+Route::patch('/update/{id}', 'UserController@update')->name('users.update');
+Route::delete('/destroy/{id}', 'UserController@destroy')->name('users.destroy');
+Route::get('/preferred_language/{lang}', 'UserController@preferred_language')->name('preferred_language');
 Route::patch('/update_name/{id}', 'UserController@update_name')->name('users.update_name');
 Route::patch('/update_preferred_language/{id}', 'UserController@update_preferred_language')->name('users.update_preferred_language');
 Route::patch('/update_role/{id}', 'UserController@update_role')->name('users.update_role');
