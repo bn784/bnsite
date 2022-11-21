@@ -50,6 +50,7 @@
                 <tr>
                     <th>@lang('messages.Name')</th>
                     <th>@lang('messages.E-Mail Address')</th>
+                    <th>@lang('messages.Role')</th>
                     <th> </th>
                 </tr>
                 </thead>
@@ -59,6 +60,7 @@
                         <tr data-entry-id="{{ $user->id }}" class="">
                             <td field-key='name'>{{ $user->name }}</td>
                             <td field-key='email'>{{ $user->email }}</td>
+                            <td field-key='role'>{{ $user->roles->title}}</td>
                             <td>
                                <a href="{{ route('users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
                               
