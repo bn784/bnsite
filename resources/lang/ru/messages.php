@@ -10,6 +10,7 @@ return [
 	//c
 	'Change password' => 'Сменить пароль',
 	'Confirm password' => 'Подтвердить пароль',
+	'Confirm new password' => 'Подтвердите новый пароль',
 	'Current password' => 'Текущий пароль',
 	'create' => 'Создать',
 	'Creating user' => 'Создание пользователя',

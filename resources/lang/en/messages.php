@@ -9,6 +9,7 @@ return [
 	//c
 	'Change password' => 'Change password',
 	'Confirm password' => 'Confirm password',
+	'Confirm new password' => 'Confirm new password',
 	'Current password' => 'Current password',
 	'create' => 'Create',
 	'Creating user' => 'Creating user',

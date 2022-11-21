@@ -65,8 +65,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
-        return view('admin.users.edit', compact('user'));
+        $users = User::findOrFail($id);
+        $roles = Role::all();
+        return view('admin.users.edit', compact('users', 'roles'));
+
+        
     }
     /**
      * Update the specified resource in storage.
