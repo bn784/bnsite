@@ -47,7 +47,13 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+        $this->validate($request, [
+            'title' => ['required', 'string', 'max:255','unique:roles']
+        ]);
+        $role = Role::create($request->all());
+        $roles = Role::all();
+        return view('admin.roles.index', compact('roles'))->with('success', $role->title.' create successfully!');
     }
 
     /**
@@ -91,7 +97,7 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //dd($request, $id);
+        
         //dd($users, $roles);
         $role = Role::findOrFail($id);
         if ($role->title == 'administrator' ) {

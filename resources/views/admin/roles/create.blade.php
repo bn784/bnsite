@@ -32,8 +32,8 @@
                                  <!-- form -->
                                 <form method="POST" action="{{ route('roles.store') }}">
                                     @csrf
-                                    <input type="hidden" name="_method" value="PATCH" />
-                                    <div class="form-group row" style="height: 50px;">
+                                    
+                                    <div class="form-group row" style="height: 70px;">
                                         <label for="title_input" class="col-md-2 col-form-label text-md-right">{{ __('messages.Role') }}</label>
 
                                         <div class="col-md-6">
