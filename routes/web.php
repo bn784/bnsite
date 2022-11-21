@@ -40,5 +40,8 @@ Route::get('/edit/{id}', 'UserController@edit')->name('users.edit');
 Route::patch('/edit/{id}', 'UserController@update')->name('users.update');
 Route::delete('/user/{id}', 'UserController@destroy')->name('users.destroy');
 Route::get('/home/{lang}', 'UserController@preferred_language')->name('preferred_language');
+Route::patch('/update_name/{id}', 'UserController@update_name')->name('users.update_name');
+Route::patch('/update_preferred_language/{id}', 'UserController@update_preferred_language')->name('users.update_preferred_language');
+Route::patch('/update_role/{id}', 'UserController@update_role')->name('users.update_role');
 
 Route::resource('roles', RoleController::class);
