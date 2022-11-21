@@ -5,8 +5,7 @@
 @if (session('locale'))
 {{ App::setLocale(session('locale')) }}
 @else
-<?php session(['locale' =>'UA']); ?>
-{{ App::setLocale(session('locale')) }}
+{{ App::setLocale('UA') }}
 @endif
 @endauth
 @section('content')

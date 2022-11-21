@@ -21,17 +21,13 @@
     </div>
     <div class="row">
     <div class="col-2"></div>
-	<div class="col-5"><h3 class="page-title">@lang('messages.users_title')</h3></div>
+	<div class="col-5"><h3 class="page-title">@lang('messages.Role'): {{ $roles->title}}</h3></div>
     <div class="col-5"></div>
     </div>
     <div class="row">
     <div class="col-2"></div>
 	<div class="col-5">
-    @auth
-    <p>
-        <a href="{{ route('user_create') }}" class="btn btn-success">@lang('messages.add_new')</a> 
-    </p>
-    @endauth
+   
     </div>
     <div class="col-5"></div>
     </div>
@@ -50,6 +46,7 @@
                 <tr>
                     <th>@lang('messages.Name')</th>
                     <th>@lang('messages.E-Mail Address')</th>
+                    <th>@lang('messages.Role')</th>
                     <th> </th>
                 </tr>
                 </thead>
@@ -59,10 +56,17 @@
                         <tr data-entry-id="{{ $user->id }}" class="">
                             <td field-key='name'>{{ $user->name }}</td>
                             <td field-key='email'>{{ $user->email }}</td>
+                            <td field-key='role'>{{ $user->roles->title}}</td>
                             <td>
-                               <a href="{{ route('user_edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
-                               <a href="{{ route('user_destroy',[$user->id]) }}" class="btn btn-xs btn-danger">@lang('messages.Delete')</a>                           
-                               <!--<a href="" class="btn btn-xs btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">@lang('messages.Delete')</a>-->
+                               <a href="{{ route('users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
+                              
+                               {!! Form::open(array(
+                                                                        'style' => 'display: inline-block;',
+                                                                        'method' => 'DELETE',
+                                                                        'onsubmit' => "return confirm('".trans("messages.Are you sure?")."');",
+                                                                        'route' => ['users.destroy', $user->id])) !!}
+                                {!! Form::submit(trans('messages.Delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                {!! Form::close() !!}
                             </td>
                         </tr>
                     @endforeach
@@ -78,21 +82,4 @@
     </div>
    
 </div>
-<!-- Modal -->
-<!--
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      
-      <div class="modal-body">
-      @lang('messages.Are you sure?')
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('messages.Close')</button>
-        <a href="{{ route('user_destroy',[$user->id]) }}" class="btn btn-xs btn-danger">@lang('messages.Delete')</a>
-      </div>
-    </div>
-  </div>
-</div>
--->
 @stop
