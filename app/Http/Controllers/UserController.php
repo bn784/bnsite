@@ -36,9 +36,14 @@ class UserController extends Controller
      */
     public function create()
     {
+        //$user = \Auth::user();
+        /*if ($user->can('create', $user)) {
+            return abort(401);
+        }*/
         if (! Gate::allows('user_create')) {
             return abort(401);
         }
+        
         return view('admin.users.create');
     }
     /**
@@ -143,9 +148,7 @@ class UserController extends Controller
      */
     public function preferred_language($lang)
     {
-        if (! Gate::allows('admin_access')) {
-            return abort(401);
-        }
+       
         $user = \Auth::user();
         $user ->preferred_language = $lang ;
         $user->save();
