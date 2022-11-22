@@ -100,6 +100,16 @@
                     <a class="navbar-brand nav-link active" href="{{ url('/') }}">
                     {{ __('messages.Website') }}
                     </a>
+                    @can('admin_access')
+                    <li class="nav-item">
+                    <a class="navbar-brand nav-link active btn btn-warning" href="">can only see the admin access</a>
+                    </li>
+                    @endcan
+                    @can('user_access')
+                    <li class="nav-item">
+                    <a class="navbar-brand nav-link active btn btn-danger" href="">can only see the user access</a>
+                    </li>
+                    @endcan
                 </ul>
                     <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">
