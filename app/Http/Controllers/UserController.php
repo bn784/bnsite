@@ -1,11 +1,14 @@
 <?php
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
+
 class UserController extends Controller
 {
     public function __construct()
@@ -19,6 +22,9 @@ class UserController extends Controller
      */
     public function index()
     {
+        if (! Gate::allows('user_access')) {
+            return abort(401);
+        }
         $users = User::all();
         $roles = Role::all();
         return view('admin.users.index', compact('users', 'roles'));
@@ -30,6 +36,9 @@ class UserController extends Controller
      */
     public function create()
     {
+        if (! Gate::allows('user_create')) {
+            return abort(401);
+        }
         return view('admin.users.create');
     }
     /**
@@ -40,6 +49,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        if (! Gate::allows('user_create')) {
+            return abort(401);
+        }
         $this->validate($request, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -64,6 +76,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+        if (! Gate::allows('user_edit')) {
+            return abort(401);
+        }
         $users = User::findOrFail($id);
         $roles = Role::all();
         return view('admin.users.edit', compact('users', 'roles'));
@@ -77,6 +92,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if (! Gate::allows('user_edit')) {
+            return abort(401);
+        }
         $this->validate($request, [
             
             'new_password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -87,7 +105,7 @@ class UserController extends Controller
                 return redirect()->back()->with('warning', 'Cannot edit "administrator"!');
             }
             
-            //dd($user,$request);
+           
            
             
             
@@ -103,6 +121,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+        if (! Gate::allows('user_delete')) {
+            return abort(401);
+        }
         $userAuth = Auth::getUser();
         $user = User::findOrFail($id);
         if ($user->email == 'administrator@example.com' ) {
@@ -122,6 +143,9 @@ class UserController extends Controller
      */
     public function preferred_language($lang)
     {
+        if (! Gate::allows('admin_access')) {
+            return abort(401);
+        }
         $user = \Auth::user();
         $user ->preferred_language = $lang ;
         $user->save();
@@ -136,6 +160,9 @@ class UserController extends Controller
      */
     public function update_name(Request $request, $id)
     {
+        if (! Gate::allows('admin_access')) {
+            return abort(401);
+        }
         $this->validate($request, [
             'name' => 'required|string|max:255',
         ]);
@@ -159,6 +186,9 @@ class UserController extends Controller
      */
     public function update_preferred_language(Request $request, $id)
     {
+            if (! Gate::allows('admin_access')) {
+                return abort(401);
+            }
             $user = User::findOrFail($id);
             $user->preferred_language = $request->preferred_language;
             $user->save();
@@ -173,6 +203,9 @@ class UserController extends Controller
      */
     public function update_role(Request $request, $id)
     {
+            if (! Gate::allows('admin_access')) {
+                return abort(401);
+            }
             $user = User::findOrFail($id);
             if (($user->role_id == 1) && ($user->name == 'administrator') ) {
                 return redirect()->back()->with('warning', 'Cannot edit "administrator"!');

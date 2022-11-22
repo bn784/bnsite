@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -8,6 +7,7 @@ use App\Role;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class RoleController extends Controller
 {
@@ -22,13 +22,14 @@ class RoleController extends Controller
      */
     public function index()
     {
-        
+        if (! Gate::allows('role_access')) {
+            return abort(401);
+        }
         $roles = Role::all();
         $users = User::all();
         return view('admin.roles.index', compact('roles', 'users'));
         //return view('admin.roles.index')->with(compact('users'))->with(compact('roles'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -36,9 +37,11 @@ class RoleController extends Controller
      */
     public function create()
     {
+        if (! Gate::allows('role_create')) {
+            return abort(401);
+        }
         return view('admin.roles.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -47,7 +50,9 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
+        if (! Gate::allows('role_create')) {
+            return abort(401);
+        }
         $this->validate($request, [
             'title' => ['required', 'string', 'max:255','unique:roles']
         ]);
@@ -55,7 +60,6 @@ class RoleController extends Controller
         $roles = Role::all();
         return view('admin.roles.index', compact('roles'))->with('success', $role->title.' create successfully!');
     }
-
     /**
      * Display the specified resource.
      *
@@ -64,15 +68,13 @@ class RoleController extends Controller
      */
     public function show($id)
     {
+        if (! Gate::allows('role_view')) {
+            return abort(401);
+        }
         $users = User::where('role_id', $id)->get();
-
         $roles = Role::findOrFail($id);
-        
-
-       
         return view('admin.roles.show', compact('roles', 'users'));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -81,13 +83,12 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        
+        if (! Gate::allows('role_edit')) {
+            return abort(401);
+        }
         $roles = Role::findOrFail($id);
-        
-        
         return view('admin.roles.edit', compact('roles'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -97,8 +98,9 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        
+        if (! Gate::allows('role_edit')) {
+            return abort(401);
+        }
         $role = Role::findOrFail($id);
         if ($role->title == 'administrator' ) {
             return redirect()->route('roles.index')->with('warning', 'Cannot update administrator!');
@@ -106,8 +108,6 @@ class RoleController extends Controller
         if ($role->title == 'user' ) {
             return redirect()->route('roles.index')->with('warning', 'Cannot update user!');
         }
-
-        
         if ($request->management_access == '1' ) {
             $role->management_access = '1';
         } else {
@@ -163,12 +163,9 @@ class RoleController extends Controller
         } else {
             $role->role_delete = '0'; 
         }
-        
         $role->update();
-
         return redirect()->route('roles.index')->with('success', $role->title.' update successfully!');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -177,9 +174,10 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        
+        if (! Gate::allows('role_delete')) {
+            return abort(401);
+        }
         $role = Role::findOrFail($id);
-
         if ($role->title == 'administrator' ) {
             return redirect()->back()->with('warning', 'Cannot delete role "administrator"!');
         }
