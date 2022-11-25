@@ -43,5 +43,6 @@ Route::get('/preferred_language/{lang}', 'UserController@preferred_language')->n
 Route::patch('/update_name/{id}', 'UserController@update_name')->name('users.update_name');
 Route::patch('/update_preferred_language/{id}', 'UserController@update_preferred_language')->name('users.update_preferred_language');
 Route::patch('/update_role/{id}', 'UserController@update_role')->name('users.update_role');
+Route::get('/show/{id}', 'UserController@show')->name('users.show');
 
 Route::resource('roles', RoleController::class);

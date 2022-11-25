@@ -21,17 +21,13 @@
     </div>
     <div class="row">
     <div class="col-2"></div>
-	<div class="col-5"><h3 class="page-title">@lang('messages.users_title')</h3></div>
+	<div class="col-5"><h3 class="page-title">@lang('messages.Role'): {{ $roles->title}}</h3></div>
     <div class="col-5"></div>
     </div>
     <div class="row">
     <div class="col-2"></div>
 	<div class="col-5">
-    @auth
-    <p>
-        <a href="{{ route('users.create') }}" class="btn btn-success">@lang('messages.add_new')</a> 
-    </p>
-    @endauth
+   
     </div>
     <div class="col-5"></div>
     </div>
@@ -62,7 +58,6 @@
                             <td field-key='email'>{{ $user->email }}</td>
                             <td field-key='role'>{{ $user->roles->title}}</td>
                             <td>
-                               <a href="{{ route('users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('messages.Show')</a>
                                <a href="{{ route('users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
                               
                                {!! Form::open(array(
@@ -87,5 +82,4 @@
     </div>
    
 </div>
-
 @stop
