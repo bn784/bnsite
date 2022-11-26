@@ -47,8 +47,8 @@
                 <tr>
                     <th>@lang('messages.Name')</th>
                     <th>@lang('messages.E-Mail Address')</th>
+                    <th>@lang('messages.preferred_language')</th>
                     <th>@lang('messages.Role')</th>
-                    <th> </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -56,17 +56,10 @@
                         <tr data-entry-id="{{ $users->id }}" class="">
                             <td field-key='name'>{{ $users->name }}</td>
                             <td field-key='email'>{{ $users->email }}</td>
+                            <td field-key='preferred_language'>{{ $users->preferred_language }}</td>
                             <td field-key='role'>{{ $roles }}</td>
                             <td>
                                <a href="{{ route('users.edit',[$users->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
-                              
-                               {!! Form::open(array(
-                                                                        'style' => 'display: inline-block;',
-                                                                        'method' => 'DELETE',
-                                                                        'onsubmit' => "return confirm('".trans("messages.Are you sure?")."');",
-                                                                        'route' => ['users.destroy', $users->id])) !!}
-                                {!! Form::submit(trans('messages.Delete'), array('class' => 'btn btn-xs btn-danger')) !!}
-                                {!! Form::close() !!}
                             </td>
                         </tr>
                    
