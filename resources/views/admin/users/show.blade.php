@@ -1,6 +1,7 @@
 @extends('layouts.app')
 {{ App::setLocale(Auth::user()->preferred_language) }}
 @section('content')
+<?php //dd($users, $roles); ?>
 <div class="container-fluid">
     
     <div class="row" style="height: 70px;">
@@ -21,7 +22,7 @@
     </div>
     <div class="row">
     <div class="col-2"></div>
-	<div class="col-5"><h3 class="page-title">@lang('messages.Role'): {{ $users->roles->title}}</h3></div>
+	<div class="col-5"><h3 class="page-title">@lang('messages.Role'): {{ $roles }}</h3></div>
     <div class="col-5"></div>
     </div>
     <div class="row">
@@ -51,30 +52,25 @@
                 </tr>
                 </thead>
                 <tbody>
-                @if (count($users) > 0)
-                    @foreach ($users as $user)
-                        <tr data-entry-id="{{ $user->id }}" class="">
-                            <td field-key='name'>{{ $user->name }}</td>
-                            <td field-key='email'>{{ $user->email }}</td>
-                            <td field-key='role'>{{ $user->role->title}}</td>
+               
+                        <tr data-entry-id="{{ $users->id }}" class="">
+                            <td field-key='name'>{{ $users->name }}</td>
+                            <td field-key='email'>{{ $users->email }}</td>
+                            <td field-key='role'>{{ $roles }}</td>
                             <td>
-                               <a href="{{ route('users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
+                               <a href="{{ route('users.edit',[$users->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
                               
                                {!! Form::open(array(
                                                                         'style' => 'display: inline-block;',
                                                                         'method' => 'DELETE',
                                                                         'onsubmit' => "return confirm('".trans("messages.Are you sure?")."');",
-                                                                        'route' => ['users.destroy', $user->id])) !!}
+                                                                        'route' => ['users.destroy', $users->id])) !!}
                                 {!! Form::submit(trans('messages.Delete'), array('class' => 'btn btn-xs btn-danger')) !!}
                                 {!! Form::close() !!}
                             </td>
                         </tr>
-                    @endforeach
-                @else
-                    <tr>
-                        <td colspan="10">@lang('messages.no_entries_in_table')</td>
-                    </tr>
-                @endif
+                   
+                 
                 </tbody>
             </table>
     </div>

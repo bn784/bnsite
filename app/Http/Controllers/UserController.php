@@ -49,7 +49,7 @@ class UserController extends Controller
     public function show($id)
     {
         $users = User::findOrFail($id);
-        $roles = Role::all(); 
+        $roles = $users->roles->title; 
        
         
         return view('admin.users.show', compact('users', 'roles'));
