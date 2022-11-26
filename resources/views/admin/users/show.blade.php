@@ -22,7 +22,7 @@
     </div>
     <div class="row">
     <div class="col-2"></div>
-	<div class="col-5"><h3 class="page-title">@lang('messages.Role'): {{ $roles }}</h3></div>
+	<div class="col-5"><h3 class="page-title">@lang('messages.email'): {{ $users->email }}</h3></div>
     <div class="col-5"></div>
     </div>
     <div class="row">
@@ -49,6 +49,7 @@
                     <th>@lang('messages.E-Mail Address')</th>
                     <th>@lang('messages.preferred_language')</th>
                     <th>@lang('messages.Role')</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
