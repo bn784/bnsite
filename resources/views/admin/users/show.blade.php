@@ -21,7 +21,7 @@
     </div>
     <div class="row">
     <div class="col-2"></div>
-	<div class="col-5"><h3 class="page-title">@lang('messages.Role'): {{ $roles->title}}</h3></div>
+	<div class="col-5"><h3 class="page-title">@lang('messages.Role'): {{ $users->roles->title}}</h3></div>
     <div class="col-5"></div>
     </div>
     <div class="row">
@@ -56,7 +56,7 @@
                         <tr data-entry-id="{{ $user->id }}" class="">
                             <td field-key='name'>{{ $user->name }}</td>
                             <td field-key='email'>{{ $user->email }}</td>
-                            <td field-key='role'>{{ $user->roles->title}}</td>
+                            <td field-key='role'>{{ $user->role->title}}</td>
                             <td>
                                <a href="{{ route('users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
                               

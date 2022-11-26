@@ -46,6 +46,14 @@ class UserController extends Controller
         
         return view('admin.users.create');
     }
+    public function show($id)
+    {
+        $users = User::findOrFail($id);
+        $roles = Role::all(); 
+       
+        
+        return view('admin.users.show', compact('users', 'roles'));
+    }
     /**
      * Store a newly created resource in storage.
      *
