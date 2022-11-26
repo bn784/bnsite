@@ -24,9 +24,24 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-   
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+
+    <style type="text/css">
+	.main {
+    left: 0;
+    top: 0;
+    padding-top: 55px;
     
+	width: 100%;
+}
+.rowbnsite {
+    height: 100vh;
+	
+}
+
+
+</style>
+   
+       
 </head>
 <body>
     <div id="app">
@@ -36,22 +51,22 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto" id="menu">
 					<li class="nav-item">
-                        <a class="nav-link navbar-brand active" href="#row1" aria-current="page">row1</a>
+                        <a class="nav-link navbar-brand " href="#row1" aria-current="page">row1</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-brand active" href="#row2" aria-current="page">row2</a>
+                        <a class="nav-link navbar-brand " href="#row2" aria-current="page">row2</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-brand active" href="#row3" aria-current="page">row3</a>
+                        <a class="nav-link navbar-brand" href="#row3" aria-current="page">row3</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-brand active" href="#row4" aria-current="page">row4</a>
+                        <a class="nav-link navbar-brand" href="#row4" aria-current="page">row4</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-brand active" href="#row5" aria-current="page">row5</a>
+                        <a class="nav-link navbar-brand" href="#row5" aria-current="page">row5</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-brand active" href="#row6" aria-current="page">row6</a>
+                        <a class="nav-link navbar-brand" href="#row6" aria-current="page">row6</a>
                     </li>
                     </ul>
 

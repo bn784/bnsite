@@ -10,7 +10,7 @@
 @endauth
 @section('content')
 <div class="container-fluid">
-    <div id="row1" class="row row1" style="background-color:blue;">
+    <div id="row1" class="row row1 rowbnsite" style="background-color:blue;">
      <div class="col row1col1" style="background-color:blue;">
      row1col1
      </div>
@@ -18,19 +18,19 @@
       row1col2
      </div>
     </div>
-    <div id="row2" class="row row2"  style="background-color:red;">
+    <div id="row2" class="row row2 rowbnsite"  style="background-color:red;">
 	row2
     </div>
-    <div id="row3" class="row row3"  style="background-color:grey;">
+    <div id="row3" class="row row3 rowbnsite"  style="background-color:grey;">
 	row3
     </div>
-    <div id="row4" class="row row4"  style="background-color:green;">
+    <div id="row4" class="row row4 rowbnsite"  style="background-color:green;">
 	row4
     </div>
-    <div id="row5" class="row row5"  style="background-color:brown;">
+    <div id="row5" class="row row5 rowbnsite"  style="background-color:brown;">
 	row5
     </div>
-    <div id="row6" class="row row6"  style="background-color:pink;">
+    <div id="row6" class="row row6 rowbnsite"  style="background-color:pink;">
 	row6
     </div>
 </div>
