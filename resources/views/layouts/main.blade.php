@@ -25,19 +25,22 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 
-    <style type="text/css">
-	.main {
+<style type="text/css">
+.main {
     left: 0;
     top: 0;
-    padding-top: 55px;
-    
+    padding-top: 55px;   
 	width: 100%;
 }
 .rowbnsite {
-    height: 100vh;
-	
+    height: 100vh;	
 }
-
+.bnsiteChange.active {
+    background-color:pink;
+}
+.bnsiteChange.hover {
+    background-color:gold;
+}
 
 </style>
    
@@ -72,6 +75,16 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto top-right">
+                    <li class="links nav-item">
+                    <button class="btn-primary btn" type="button" id="change">
+                        change
+                    </button>
+                    </li>
+                    <li class="links nav-item">
+                    <button class="btn-danger btn bnsiteChange" type="button" id="phone">
+                        phone: 0684805419
+                    </button>
+                    </li>
                     <li class="links nav-item dropdown">
                     <button class="btn-dark btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     {{ App::getLocale()}}
@@ -121,6 +134,19 @@
         var id  = $(this).attr('href'),
             top = $(id).offset().top - 50;
         $('body,html').animate({scrollTop: top}, 0);
+    });
+    $(".bnsiteChange").hover(function(){
+        $(this).addClass("hover"); //добавляем класс текущей
+    });
+    $(".bnsiteChange").mouseleave(function(){  
+        $(this).removeClass("hover"); //удаляем класс текущей
+    });
+    $(".bnsiteChange").click(function(){
+        $(this).removeClass("active"); //
+    });
+    $("#change").click(function(){
+        $(".bnsiteChange").addClass("active"); //добавляем класс текущей
+        
     });
 });
 </script>
