@@ -110,6 +110,11 @@
                     <a class="navbar-brand nav-link active btn btn-danger" href="">can only see the user access</a>
                     </li>
                     @endcan
+                    @can('bn_policy')
+                    <li class="nav-item">
+                    <a class="navbar-brand nav-link active btn btn-danger" href="">can only see the bn_policy</a>
+                    </li>
+                    @endcan
                 </ul>
                     <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">

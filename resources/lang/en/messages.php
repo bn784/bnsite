@@ -19,6 +19,7 @@ return [
 	//e
 	'English' => 'English',
 	'E-Mail Address'=> 'E-Mail Address',
+	'email' => 'email',
 	'edit' => 'Edit',
 	'Editing user' => 'Editing user',
 	//f

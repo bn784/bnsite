@@ -62,6 +62,7 @@
                             <td field-key='email'>{{ $user->email }}</td>
                             <td field-key='role'>{{ $user->roles->title}}</td>
                             <td>
+                               <a href="{{ route('users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('messages.Show')</a>
                                <a href="{{ route('users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
                               
                                {!! Form::open(array(
