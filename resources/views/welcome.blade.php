@@ -9,10 +9,6 @@
 @endif
 @endauth
 
-<style type="text/css">
-   
-</style>
-
 @section('content')
 
 <div class="container-fluid">
@@ -44,23 +40,3 @@
 
 @endsection
 
-<!-- javascripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-/*
-$(document).ready(function(){
-  $(".bnsiteChange").hover(function(){
-  //$(".bnsiteChange").mouseover(function(){
-  //$(this).css("background-color", "yellow");
-  $(this).addClass("hover"); //добавляем класс текущей
-  });
-  $(".bnsiteChange").mouseleave(function(){  
-    $(this).removeClass("hover"); //удаляем класс текущей
-    //$(this).css("background-color", "brown");
-  });
-  $(".bnsiteChange").click(function(){
-    $(this).addClass("active"); //добавляем класс текущей
-  });
-});*/
-</script>
