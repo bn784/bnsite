@@ -12,11 +12,11 @@
 @section('content')
 
 <div class="container-fluid">
-    <div id="row1" class="row row1 rowbnsite" style="background-color:blue;">
+    <div id="row1" class="row row1 rowbnsite">
      <div class="col row1col1">
      row1col1
      </div>
-     <div class="col row1col2">
+     <div class="col row1col2 bnsiteChange">
       row1col2
      </div>
     </div>

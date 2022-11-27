@@ -37,15 +37,12 @@
     </div>
     
     <div class="row">
-    <div class="col-2"></div>
-	<div class="col-5">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            @lang('messages.list')
-        </div>
-        <div class="panel-body table-responsive">
-    </div>
-    <table class="table table-bordered table-striped">
+        <div class="col-2"></div>
+	    <div class="col-5">
+            <div class="panel panel-default">
+            <div class="panel-heading">@lang('messages.list')</div>
+            <div class="panel-body table-responsive"></div>
+            <table class="table table-bordered table-striped">
                 <thead>
                 <tr>
                     <th>@lang('messages.Name')</th>
@@ -82,10 +79,9 @@
                 @endif
                 </tbody>
             </table>
+            </div>
+        <div class="col-5"></div>
     </div>
-    <div class="col-5"></div>
-    </div>
-   
 </div>
 
 @stop

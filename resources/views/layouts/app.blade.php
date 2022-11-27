@@ -12,26 +12,17 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    
 	<style type="text/css">
 	.wrapper {
     left: 0;
     top: 0;
     padding-top: 55px;
-    
-   
-    /*background-color: #b1af46 ;*/
-   
 	width: 100%;
 }
 .content{
-    
     margin-left: 250px;
     background-color:  ;
     width: 100%;
-	
-
-
 }
 .content.active{
     margin-left: 0px;
@@ -40,20 +31,16 @@
     background-color: rgb(80,80,80);
     position: fixed;
     width: 250px;
-    
     height: 100vh;
-    
 }
 .sidebar.active{
     margin-left: -250px;
 }
 .btnSidebar{    
     width: 250px;
-   
     overflow: hidden ;  
 }
 .btnSidebar:hover{
-   
     background-color:  rgb(95, 21, 21);  
 }
 .btnSidebar:active{
@@ -62,15 +49,12 @@
 .btnSidebar-dropdown{
     background-color: rgb(15, 50, 15);
     width: 250px;
-    
     overflow: hidden;  
 }
 .btnSidebar-dropdown:hover{
-    
     background-color:   rgb(9, 80, 9);  
 }
 .btnSidebar-dropdown:active{
-   
     background-color:   rgb(9, 70, 9);  
 }
 .change_password{
@@ -78,15 +62,12 @@
     background-color:cyan;
     width: 100%;
 }
-
 .bn{
     height: 500px;
    /* background-color:green;*/
     width: 700px;
     align-content: center;
-    
 }
-
 </style>
 </head>
 <body>
@@ -118,17 +99,14 @@
                 </ul>
                     <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">
-                    
                         <!-- Authentication Links -->
                     @guest
                     <li class="nav-item">
                         <a class="nav-link navbar-brand active" href="{{ route('login') }}" onclick="event.preventDefault();">{{ __('messages.Login') }}</a>
                     </li>
-                         
                     <li class="nav-item">
                         <a class="nav-link navbar-brand active" href="{{ route('register') }}">{{ __('messages.Register') }}</a>
                     </li>
-                           
                     @else
                     <li class="links nav-item dropdown">
                         <button class="btn-dark btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -146,13 +124,11 @@
                     </li>
                     @endguest
                 </ul>
-                
             </div>
         </nav>
         <!-- end topbar -->
 		<div class="wrapper">
         <!-- sidebar -->
-        
         <ul id="sidebar" class="nav flex-column navbar-brand sidebar">
             <li class="nav-item">
                 <a href="{{ route('home') }}" class="nav-link btnSidebar text-white">{{ __('messages.Home')}}</a>
@@ -183,9 +159,7 @@
 			<li class="nav-item">
                 <a href="#" class="nav-link btnSidebar text-white">{{ __('messages.site-management')}}</a>
             </li>
-           
         </ul>
-       
         <!-- end sidebar -->
         <!-- content -->
         <div  id="content" class="content">
@@ -205,7 +179,6 @@ $(document).ready(function () {
      $('#content').toggleClass('active');
      });
 });
-
     </script>
 </script>
 </body>
