@@ -145,25 +145,24 @@
     });
    
     $("#change").click(function(){
-        $(".change").addClass(".bnsiteChange").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal"); // 
+        $(".change").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal").addClass("bnsiteChange");
+        alert($("#modal_phone_2").attr("class"));
+        $(".bnsiteChange").on({
+            mouseenter: function(){
+                $(this).addClass("hover"); //добавляем класс текущей
+            },  
+            mouseleave: function(){
+                $(this).removeClass("hover"); //удаляем класс текущей
+            }, 
+            click: function(){
+                $(this).removeClass("active");
+                var attr_id = $(this).attr("id");
+                $("#exampleModalLabel").text(attr_id);
+                $("#title_input").val(attr_id);
+            }  
+        });
     });
-    //
-    $(".bnsiteChange").on({
-        mouseenter: function(){
-            $(this).addClass("hover"); //добавляем класс текущей
-        },  
-        mouseleave: function(){
-            $(this).removeClass("hover"); //удаляем класс текущей
-        }, 
-        click: function(){
-            $(this).removeClass("active");
-            var attr_id = $(this).attr("id");
-            //alert(attr_id);
-            $("#exampleModalLabel").text(attr_id);
-            $("#title_input").val(attr_id);
-        }  
-    });
-    //  
+    
 });
 //
 
