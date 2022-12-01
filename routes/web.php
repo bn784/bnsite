@@ -15,13 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-Route::get('/', 'SiteController@index');
+Route::get('/', 'BnsiteContentController@index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/welcome/{locale}', 'SiteController@setlocale')->name('setlocale');
+Route::get('/setlocale/{locale}', 'BnsiteContentController@setlocale')->name('setlocale');
 
 
 //Route::group(['middleware' => ['auth']], function () {
@@ -47,4 +47,4 @@ Route::get('/show/{id}', 'UserController@show')->name('users.show');
 // RoleController Routes...
 Route::resource('roles', RoleController::class);
 // BnsiteContents Routes...
-Route::resource('BnsiteContents', RoleController::class);
+Route::resource('BnsiteContents', BnsiteContentController::class);

@@ -22,6 +22,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+     <!-- javascripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 
@@ -33,7 +36,8 @@
 	width: 100%;
 }
 .rowbnsite {
-    height: 100vh;	
+    /*height: 100vh;*/
+    height: 200px;	
 }
 .bnsiteChange.active {
     background-color:pink;
@@ -76,12 +80,17 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto top-right">
                     <li class="links nav-item">
-                    <button class="btn-primary btn" type="button" id="change">
+                    <button id="modal_phone" type="button" class="btn btn-primary bnsiteChange" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    modal phone: 0684805419
+                    </button>
+                    </li>
+                    <li class="links nav-item">
+                    <button id="change" type="button" class="btn-primary btn">
                         change
                     </button>
                     </li>
                     <li class="links nav-item">
-                    <button class="btn-danger btn bnsiteChange" type="button" id="phone">
+                    <button id="modal_phone_2" type="button" class="btn-danger btn bnsiteChange" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         phone: 0684805419
                     </button>
                     </li>
@@ -125,8 +134,7 @@
 
     <!-- javascripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
+ <script>
 //smooth transition
  $(document).ready(function(){
     $("#menu").on("click","a", function (event) {
@@ -135,20 +143,29 @@
             top = $(id).offset().top - 50;
         $('body,html').animate({scrollTop: top}, 0);
     });
-    $(".bnsiteChange").hover(function(){
-        $(this).addClass("hover"); //добавляем класс текущей
-    });
-    $(".bnsiteChange").mouseleave(function(){  
-        $(this).removeClass("hover"); //удаляем класс текущей
-    });
-    $(".bnsiteChange").click(function(){
-        $(this).removeClass("active"); //
-    });
+   
     $("#change").click(function(){
-        $(".bnsiteChange").addClass("active"); //добавляем класс текущей
-        
+        $(".bnsiteChange").addClass("active"); //добавляем класс текущей   
     });
+        $(".bnsiteChange").on({
+          mouseenter: function(){
+        $(this).addClass("hover"); //добавляем класс текущей
+    },  
+    mouseleave: function(){
+        $(this).removeClass("hover"); //удаляем класс текущей
+    }, 
+    click: function(){
+        $(this).removeClass("active");
+        var attr_id = $(this).attr("id");
+        //alert(attr_id);
+        $("#exampleModalLabel").text(attr_id);
+    }  
+    });
+    //
+    
 });
+//
+
 </script>
 
 

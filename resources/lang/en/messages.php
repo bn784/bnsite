@@ -27,6 +27,7 @@ return [
 	//h
 	'Home' => 'Home',
 	//i
+	'id' => 'id',
 	//j
 	//k
 	//l
@@ -59,8 +60,10 @@ return [
 	'site-management' => 'Site-management',
 	'Sidebar' => 'Sidebar',
 	'save' => 'Save',
+	'Save changes' => 'Save changes',
 	'Show' => 'Show',
 	//t
+	'title' => 'Title',
 	//u
 	'Ukrainian' => 'Ukrainian',
 	'user-management' => 'user-management',
