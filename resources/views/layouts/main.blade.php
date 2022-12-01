@@ -80,7 +80,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto top-right">
                     <li class="links nav-item">
-                    <button id="modal_phone" type="button" class="btn btn-primary bnsiteChange" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button id="modal_phone" type="button" class="btn btn-primary change" >
                     modal phone: 0684805419
                     </button>
                     </li>
@@ -90,7 +90,7 @@
                     </button>
                     </li>
                     <li class="links nav-item">
-                    <button id="modal_phone_2" type="button" class="btn-danger btn bnsiteChange" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button id="modal_phone_2" type="button" class="btn-danger btn change" >
                         phone: 0684805419
                     </button>
                     </li>
@@ -145,24 +145,25 @@
     });
    
     $("#change").click(function(){
-        $(".bnsiteChange").addClass("active"); //добавляем класс текущей   
-    });
-        $(".bnsiteChange").on({
-          mouseenter: function(){
-        $(this).addClass("hover"); //добавляем класс текущей
-    },  
-    mouseleave: function(){
-        $(this).removeClass("hover"); //удаляем класс текущей
-    }, 
-    click: function(){
-        $(this).removeClass("active");
-        var attr_id = $(this).attr("id");
-        //alert(attr_id);
-        $("#exampleModalLabel").text(attr_id);
-    }  
+        $(".change").addClass(".bnsiteChange").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal"); // 
     });
     //
-    
+    $(".bnsiteChange").on({
+        mouseenter: function(){
+            $(this).addClass("hover"); //добавляем класс текущей
+        },  
+        mouseleave: function(){
+            $(this).removeClass("hover"); //удаляем класс текущей
+        }, 
+        click: function(){
+            $(this).removeClass("active");
+            var attr_id = $(this).attr("id");
+            //alert(attr_id);
+            $("#exampleModalLabel").text(attr_id);
+            $("#title_input").val(attr_id);
+        }  
+    });
+    //  
 });
 //
 

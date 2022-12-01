@@ -16,24 +16,24 @@
      <div class="col row1col1">
      row1col1
      </div>
-     <div class="col row1col2 bnsiteChange">
+     <div class="col row1col2 change">
       row1col2
      </div>
     </div>
-    <div id="row2" class="row row2 rowbnsite bnsiteChange">
+    <div id="row2" class="row row2 rowbnsite">
     
 	row2
     </div>
-    <div id="row3" class="row row3 rowbnsite bnsiteChange">
+    <div id="row3" class="row row3 rowbnsite">
 	row3
     </div>
-    <div id="row4" class="row row4 rowbnsite bnsiteChange">
+    <div id="row4" class="row row4 rowbnsite">
 	row4
     </div>
-    <div id="row5" class="row row5 rowbnsite bnsiteChange">
+    <div id="row5" class="row row5 rowbnsite">
 	row5
     </div>
-    <div id="row6" class="row row6 rowbnsite bnsiteChange">
+    <div id="row6" class="row row6 rowbnsite">
 	row6
     </div>
 </div>
@@ -50,49 +50,40 @@
         <!-- form -->
         <form method="POST" action="{{ route('BnsiteContents.store') }}">
             @csrf
+            <input id="title_input" type="hidden" name="title" value="">
 
                
 
+                
                 <div class="form-group row" style="height: 50px;">
-                        <label for="name_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.title') }}</label>
+                        <label for="en_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.en_input') }}</label>
                     <div class="col-md-8">
-                        <input id="title_input" type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title">
-                        @if ($errors->has('title'))
+                        <input id="current_value_input" type="text" class="form-control{{ $errors->has('en_input') ? ' is-invalid' : '' }}" name="en_input">
+                        @if ($errors->has('en_input'))
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('title') }}</strong>
+                                <strong>{{ $errors->first('en_input') }}</strong>
                             </span>
                         @endif
                     </div>
                 </div>
                 <div class="form-group row" style="height: 50px;">
-                        <label for="name_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.title') }}</label>
+                        <label for="ru_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.ru_input') }}</label>
                     <div class="col-md-8">
-                        <input id="title_input" type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title">
-                        @if ($errors->has('title'))
+                        <input id="ru_input" type="text" class="form-control{{ $errors->has('ru_input') ? ' is-invalid' : '' }}" name="ru_input">
+                        @if ($errors->has('ru_input'))
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('title') }}</strong>
+                                <strong>{{ $errors->first('ru_input') }}</strong>
                             </span>
                         @endif
                     </div>
                 </div>
                 <div class="form-group row" style="height: 50px;">
-                        <label for="name_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.title') }}</label>
+                        <label for="ua_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.ua_input') }}</label>
                     <div class="col-md-8">
-                        <input id="title_input" type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title">
-                        @if ($errors->has('title'))
+                        <input id="ua_input" type="text" class="form-control{{ $errors->has('ua_input') ? ' is-invalid' : '' }}" name="ua_input">
+                        @if ($errors->has('ua_input'))
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('title') }}</strong>
-                            </span>
-                        @endif
-                    </div>
-                </div>
-                <div class="form-group row" style="height: 50px;">
-                        <label for="name_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.title') }}</label>
-                    <div class="col-md-8">
-                        <input id="title_input" type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title">
-                        @if ($errors->has('title'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('title') }}</strong>
+                                <strong>{{ $errors->first('ua_input') }}</strong>
                             </span>
                         @endif
                     </div>
