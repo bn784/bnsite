@@ -48,53 +48,55 @@
       </div>
       <div class="modal-body">
         <!-- form -->
-        <form method="POST" action="{{ route('BnsiteContents.store') }}">
+        <form method="post" action="{{ route('Bnsitecontents.store') }}">
             @csrf
-            <input id="title_input" type="hidden" name="title" value="">
+            <input id="title_input" type="hidden" name="title" value="title">
 
                
 
                 
                 <div class="form-group row" style="height: 50px;">
-                        <label for="en_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.en_input') }}</label>
+                        <label for="content_en" class="col-md-4 col-form-label text-md-right">{{ __('messages.content_en') }}</label>
                     <div class="col-md-8">
-                        <input id="current_value_input" type="text" class="form-control{{ $errors->has('en_input') ? ' is-invalid' : '' }}" name="en_input">
-                        @if ($errors->has('en_input'))
+                        <input id="content_en_input" type="text" class="form-control{{ $errors->has('content_en') ? ' is-invalid' : '' }}" name="content_en">
+                        @if ($errors->has('content_en'))
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('en_input') }}</strong>
+                                <strong>{{ $errors->first('content_en') }}</strong>
                             </span>
                         @endif
                     </div>
                 </div>
                 <div class="form-group row" style="height: 50px;">
-                        <label for="ru_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.ru_input') }}</label>
+                        <label for="content_ru" class="col-md-4 col-form-label text-md-right">{{ __('messages.content_ru') }}</label>
                     <div class="col-md-8">
-                        <input id="ru_input" type="text" class="form-control{{ $errors->has('ru_input') ? ' is-invalid' : '' }}" name="ru_input">
-                        @if ($errors->has('ru_input'))
+                        <input id="content_ru" type="text" class="form-control{{ $errors->has('content_ru') ? ' is-invalid' : '' }}" name="content_ru">
+                        @if ($errors->has('content_ru'))
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('ru_input') }}</strong>
+                                <strong>{{ $errors->first('content_ru') }}</strong>
                             </span>
                         @endif
                     </div>
                 </div>
                 <div class="form-group row" style="height: 50px;">
-                        <label for="ua_input" class="col-md-4 col-form-label text-md-right">{{ __('messages.ua_input') }}</label>
+                        <label for="content_ua" class="col-md-4 col-form-label text-md-right">{{ __('messages.content_ua') }}</label>
                     <div class="col-md-8">
-                        <input id="ua_input" type="text" class="form-control{{ $errors->has('ua_input') ? ' is-invalid' : '' }}" name="ua_input">
-                        @if ($errors->has('ua_input'))
+                        <input id="content_ua" type="text" class="form-control{{ $errors->has('content_ua') ? ' is-invalid' : '' }}" name="content_ua">
+                        @if ($errors->has('content_ua'))
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('ua_input') }}</strong>
+                                <strong>{{ $errors->first('content_ua') }}</strong>
                             </span>
                         @endif
                     </div>
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('messages.Close') }}</button>
+                    <button type="submit" class="btn btn-primary">{{ __('messages.Save changes') }}</button>
+                </div>
+
         </form>
         <!-- end form -->
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('messages.Close') }}</button>
-        <button type="button" class="btn btn-primary">{{ __('messages.Save changes') }}</button>
-      </div>
+     
     </div>
   </div>
 </div>

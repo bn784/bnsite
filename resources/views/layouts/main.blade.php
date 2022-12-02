@@ -146,7 +146,7 @@
    
     $("#change").click(function(){
         $(".change").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal").addClass("bnsiteChange");
-        alert($("#modal_phone_2").attr("class"));
+        //alert($("#modal_phone_2").attr("class"));
         $(".bnsiteChange").on({
             mouseenter: function(){
                 $(this).addClass("hover"); //добавляем класс текущей
