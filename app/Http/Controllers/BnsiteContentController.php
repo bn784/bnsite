@@ -13,7 +13,9 @@ class BnsitecontentController extends Controller
 {
     public function index()
   {
-    return view('welcome');
+    $bnsitecontents = Bnsitecontent::all();
+    //dd($bnsitecontents);
+    return view('welcome', compact('bnsitecontents'));
   }
   public function setlocale($locale)
   {
@@ -32,8 +34,29 @@ class BnsitecontentController extends Controller
         //dd($request);
         $bnsitecontent = Bnsitecontent::create($request->all());
         //dd($Bnsitecontent);
-        $bnsitecontents = $Bnsitecontent::all();
+        $bnsitecontents = Bnsitecontent::all();
         //return view('admin.roles.index', compact('roles'))->with('success', $role->title.' create successfully!');
+        return redirect()->back();
+    }
+    public function update(Request $request)
+    {
+        //dd($request);
+        $this->validate($request, [
+            'content_en' => [ 'string', 'max:255'],
+            'content_ru' => [ 'string', 'max:255'],
+            'content_ua' => [ 'string', 'max:255'],
+        ]);
+        
+        $bnsitecontent = Bnsitecontent::where('title', $request->title)->firstOrFail();
+        $bnsitecontent->title = $request->title;
+        $bnsitecontent->content_en = $request->content_en; 
+        $bnsitecontent->content_ru = $request->content_ru;
+        $bnsitecontent->content_ua = $request->content_ua;
+        $bnsitecontent->save();
+        //dd($bnsitecontent);
+        //$bnsitecontents = Bnsitecontent::all();
+        //return view('admin.roles.index', compact('roles'))->with('success', $role->title.' create successfully!');
+        //return redirect()->back()->with('bnsitecontents');
         return redirect()->back();
     }
 }

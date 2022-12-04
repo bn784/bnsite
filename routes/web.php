@@ -48,4 +48,5 @@ Route::get('/show/{id}', 'UserController@show')->name('users.show');
 Route::resource('roles', RoleController::class);
 // BnsiteContents Routes...
 //Route::resource('BnsiteContents', BnsiteContentController::class);
-Route::post('/store', 'BnsitecontentController@store')->name('Bnsitecontents.store');
+Route::post('/store', 'BnsitecontentController@store')->name('bnsitecontents.store');
+Route::post('/update', 'BnsitecontentController@update')->name('bnsitecontents.update');

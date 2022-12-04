@@ -81,7 +81,16 @@
                     <ul class="navbar-nav ml-auto top-right">
                     <li class="links nav-item">
                     <button id="modal_phone" type="button" class="btn btn-primary change" title="{{App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->title}}">
-                    modal phone: {{App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->content_en}}
+                    modal phone: 
+                    @if (app()->getLocale() == 'UA')
+                    {{ App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->content_ua }}
+                    @endif
+                    @if (app()->getLocale() == 'RU')
+                    {{ App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->content_ru }}
+                    @endif
+                    @if (app()->getLocale() == 'EN')
+                    {{ App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->content_en }}
+                    @endif
                     </button>
                     </li>
                     <li class="links nav-item">
@@ -91,7 +100,7 @@
                     </li>
                     <li class="links nav-item">
                     <button id="modal_phone_2" type="button" class="btn-danger btn change" title="{{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->title}}">
-                        phone: {{ __('messages.Change')}} {{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->content_en}}
+                        phone:  {{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->content_en}}
                     </button>
                     </li>
                     <li class="links nav-item dropdown">

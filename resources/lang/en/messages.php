@@ -14,6 +14,7 @@ return [
 	'create' => 'Create',
 	'Creating user' => 'Creating user',
 	'Close' => 'Close',
+	'Change' => 'Change',
 	//d
 	'Delete' => 'Delete',
 	//e
