@@ -14,7 +14,7 @@
 <div class="container-fluid">
     <div id="row1" class="row row1 rowbnsite">
      <div class="col row1col1">
-     row1col1
+    
      </div>
      <div class="col row1col2">
       row1col2
@@ -95,6 +95,36 @@
 
         </form>
         <!-- end form -->
+      </div>
+     
+    </div>
+  </div>
+</div>
+<!-- Modal2 -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel2">Modal2</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <div class="row" style="height: 70px;">
+    @if(session('warning'))
+     <!--  warning show message -->
+    <div class="row">
+    <div class="alert alert-warning">
+        {{ session('warning') }}
+    </div>
+    </div>
+    @endif
+    <!--  successfully show message -->
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+    </div>
       </div>
      
     </div>

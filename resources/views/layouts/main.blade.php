@@ -154,7 +154,7 @@
     
    
     $("#change").click(function(){
-        $(".change").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal").addClass("bnsiteChange").text('bn');
+        $(".change").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal").addClass("bnsiteChange").css({"border-style" :"solid","border-color":"gold"});
         //alert($("#modal_phone_2").attr("class"));
        
         $(".bnsiteChange").on({
@@ -172,17 +172,17 @@
 
                 //$("#title_input").val(attr_id);
                 var attr_title = $(this).attr("title");
-                alert(attr_title);
+                //alert(attr_title);
                 $("#title_input").val(attr_title);
                 
                 if (attr_title) {
                     $("#formModal").attr("action","{{ route('bnsitecontents.update') }}");
                     //$("#title_input")val(attr_id);
-                    alert($("#formModal").attr("action"));
+                    //alert($("#formModal").attr("action"));
                     //alert("update");
                 } else {
                     $("#formModal").attr("action","{{ route('bnsitecontents.store') }}");
-                    alert($("#formModal").attr("action"));
+                    //alert($("#formModal").attr("action"));
                     //alert("store");
                 }
                 

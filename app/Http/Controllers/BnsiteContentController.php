@@ -31,16 +31,16 @@ class BnsitecontentController extends Controller
             'content_ru' => [ 'string', 'max:255'],
             'content_ua' => [ 'string', 'max:255'],
         ]);
-        //dd($request);
+       
         $bnsitecontent = Bnsitecontent::create($request->all());
-        //dd($Bnsitecontent);
+       
         $bnsitecontents = Bnsitecontent::all();
         //return view('admin.roles.index', compact('roles'))->with('success', $role->title.' create successfully!');
-        return redirect()->back();
+        return redirect()->back()->with('success',' create successfully!');;
     }
     public function update(Request $request)
     {
-        //dd($request);
+       
         $this->validate($request, [
             'content_en' => [ 'string', 'max:255'],
             'content_ru' => [ 'string', 'max:255'],
@@ -53,10 +53,7 @@ class BnsitecontentController extends Controller
         $bnsitecontent->content_ru = $request->content_ru;
         $bnsitecontent->content_ua = $request->content_ua;
         $bnsitecontent->save();
-        //dd($bnsitecontent);
-        //$bnsitecontents = Bnsitecontent::all();
-        //return view('admin.roles.index', compact('roles'))->with('success', $role->title.' create successfully!');
-        //return redirect()->back()->with('bnsitecontents');
-        return redirect()->back();
+        
+        return redirect()->back()->with('success', 'update successfully!');
     }
 }
