@@ -80,8 +80,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto top-right">
                     <li class="links nav-item">
-                    <button id="modal_phone" type="button" class="btn btn-primary change" title="{{App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->title}}">
-                    modal phone: 
+                    <button id="modal_phone" type="button" class="btn btn-primary change" title="{{App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->title}}"> 
                     @if (app()->getLocale() == 'UA')
                     {{ App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->content_ua }}
                     @endif

@@ -16,7 +16,7 @@
      <div class="col row1col1">
      row1col1
      </div>
-     <div class="col row1col2 change">
+     <div class="col row1col2">
       row1col2
      </div>
     </div>
@@ -55,7 +55,7 @@
                
 
                 
-                <div class="form-group row" style="height: 50px;">
+                <div class="form-group row" style="height: 70px;">
                         <label for="content_en" class="col-md-4 col-form-label text-md-right">{{ __('messages.content_en') }}</label>
                     <div class="col-md-8">
                         <input id="content_en_input" type="text" class="form-control{{ $errors->has('content_en') ? ' is-invalid' : '' }}" name="content_en">
@@ -66,7 +66,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="form-group row" style="height: 50px;">
+                <div class="form-group row" style="height: 70px;">
                         <label for="content_ru" class="col-md-4 col-form-label text-md-right">{{ __('messages.content_ru') }}</label>
                     <div class="col-md-8">
                         <input id="content_ru" type="text" class="form-control{{ $errors->has('content_ru') ? ' is-invalid' : '' }}" name="content_ru">
@@ -77,7 +77,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="form-group row" style="height: 50px;">
+                <div class="form-group row" style="height: 70px;">
                         <label for="content_ua" class="col-md-4 col-form-label text-md-right">{{ __('messages.content_ua') }}</label>
                     <div class="col-md-8">
                         <input id="content_ua" type="text" class="form-control{{ $errors->has('content_ua') ? ' is-invalid' : '' }}" name="content_ua">
