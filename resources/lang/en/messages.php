@@ -44,6 +44,7 @@ return [
 	//p
 	'preferred_language' => 'Preferred language',
 	'Password' => 'Password',
+	'phone' => 'phone',
 	//q
 	//r
 	'Russian' => 'Russian',

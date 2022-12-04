@@ -79,6 +79,13 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto top-right">
+                    @can('admin_access')   
+                    <li class="links nav-item">
+                    <button id="change" type="button" class="btn-primary btn">
+                    {{ __('messages.Change')}}
+                    </button>
+                    </li>
+                    @endcan
                     <li class="links nav-item">
                     <button id="modal_phone" type="button" class="btn btn-primary change" title="{{App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->title}}"> 
                     @if (app()->getLocale() == 'UA')
@@ -92,14 +99,10 @@
                     @endif
                     </button>
                     </li>
-                    <li class="links nav-item">
-                    <button id="change" type="button" class="btn-primary btn">
-                    {{ __('messages.Change')}}
-                    </button>
-                    </li>
+                   
                     <li class="links nav-item">
                     <button id="modal_phone_2" type="button" class="btn-danger btn change" title="{{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->title}}">
-                        phone:  {{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->content_en}}
+                    {{ __('messages.phone')}}: {{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->content_en}}
                     </button>
                     </li>
                     <li class="links nav-item dropdown">
@@ -155,7 +158,7 @@
    
     $("#change").click(function(){
         $(".change").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal").addClass("bnsiteChange").css({"border-style" :"solid","border-color":"gold"});
-        //alert($("#modal_phone_2").attr("class"));
+       
        
         $(".bnsiteChange").on({
             mouseenter: function(){
@@ -165,25 +168,22 @@
                 $(this).removeClass("hover"); //удаляем класс текущей
             }, 
             click: function(){
-                //$(this).removeClass("active");
+                
                 var attr_id = $(this).attr("id");
                 $("#exampleModalLabel").text(attr_id);
-                //alert(attr_id);
+                
 
-                //$("#title_input").val(attr_id);
+                
                 var attr_title = $(this).attr("title");
-                //alert(attr_title);
+                
                 $("#title_input").val(attr_title);
                 
                 if (attr_title) {
                     $("#formModal").attr("action","{{ route('bnsitecontents.update') }}");
-                    //$("#title_input")val(attr_id);
-                    //alert($("#formModal").attr("action"));
-                    //alert("update");
+                    
                 } else {
                     $("#formModal").attr("action","{{ route('bnsitecontents.store') }}");
-                    //alert($("#formModal").attr("action"));
-                    //alert("store");
+                    
                 }
                 
             }  
@@ -194,9 +194,33 @@
 //
 
 </script>
-
-
+@if(session('warning'))
+            <!-- If password successfully show message -->
+<script> 
+    alert("{{ session('warning') }}");
+</script>
+@endif
+@if(session('success'))
+            <!-- If password successfully show message -->
+ <script> 
+    alert("{{ session('success') }}");
+</script>            
+@endif
+@if( $errors->has('content_en'))
+ <script> 
+    alert("The content en must be a string.");
+</script>            
+@endif
+@if( $errors->has('content_ru'))
+ <script> 
+    alert("The content ru must be a string.");
+</script>            
+@endif
+@if( $errors->has('content_ua'))
+ <script> 
+    alert("The content ua must be a string.");
+</script>            
+@endif
 </body>
 </html>
 
- 
