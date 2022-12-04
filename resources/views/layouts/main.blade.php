@@ -80,18 +80,18 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto top-right">
                     <li class="links nav-item">
-                    <button id="modal_phone" type="button" class="btn btn-primary change" >
-                    modal phone: 0684805419
+                    <button id="modal_phone" type="button" class="btn btn-primary change" title="{{App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->title}}">
+                    modal phone: {{App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->content_en}}
                     </button>
                     </li>
                     <li class="links nav-item">
                     <button id="change" type="button" class="btn-primary btn">
-                        change
+                    {{ __('messages.Change')}}
                     </button>
                     </li>
                     <li class="links nav-item">
-                    <button id="modal_phone_2" type="button" class="btn-danger btn change" >
-                        phone: 0684805419
+                    <button id="modal_phone_2" type="button" class="btn-danger btn change" title="{{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->title}}">
+                        phone: {{ __('messages.Change')}} {{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->content_en}}
                     </button>
                     </li>
                     <li class="links nav-item dropdown">
@@ -143,10 +143,12 @@
             top = $(id).offset().top - 50;
         $('body,html').animate({scrollTop: top}, 0);
     });
+    
    
     $("#change").click(function(){
-        $(".change").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal").addClass("bnsiteChange");
+        $(".change").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal").addClass("bnsiteChange").text('bn');
         //alert($("#modal_phone_2").attr("class"));
+       
         $(".bnsiteChange").on({
             mouseenter: function(){
                 $(this).addClass("hover"); //добавляем класс текущей
@@ -155,10 +157,27 @@
                 $(this).removeClass("hover"); //удаляем класс текущей
             }, 
             click: function(){
-                $(this).removeClass("active");
+                //$(this).removeClass("active");
                 var attr_id = $(this).attr("id");
                 $("#exampleModalLabel").text(attr_id);
-                $("#title_input").val(attr_id);
+                //alert(attr_id);
+
+                //$("#title_input").val(attr_id);
+                var attr_title = $(this).attr("title");
+                alert(attr_title);
+                $("#title_input").val(attr_title);
+                
+                if (attr_title) {
+                    $("#formModal").attr("action","{{ route('bnsitecontents.update') }}");
+                    //$("#title_input")val(attr_id);
+                    alert($("#formModal").attr("action"));
+                    //alert("update");
+                } else {
+                    $("#formModal").attr("action","{{ route('bnsitecontents.store') }}");
+                    alert($("#formModal").attr("action"));
+                    //alert("store");
+                }
+                
             }  
         });
     });
