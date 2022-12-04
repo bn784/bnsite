@@ -87,7 +87,7 @@
                     </li>
                     @endcan
                     <li class="links nav-item">
-                    <button id="modal_phone" type="button" class="btn btn-primary change" title="{{App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->title}}"> 
+                    <button id="modal_phone" type="button" class="btn btn-primary change"> 
                     @if (app()->getLocale() == 'UA')
                     {{ App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->content_ua }}
                     @endif
@@ -101,8 +101,13 @@
                     </li>
                    
                     <li class="links nav-item">
-                    <button id="modal_phone_2" type="button" class="btn-danger btn change" title="{{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->title}}">
+                    <button id="modal_phone_2" type="button" class="btn-danger btn change">
                     {{ __('messages.phone')}}: {{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->content_en}}
+                    </button>
+                    </li>
+                    <li class="links nav-item">
+                    <button id="phone_2" type="button" class="btn-secondary btn change">
+                    {{ __('messages.phone')}}: {{App\Bnsitecontent::where('title', 'phone_2')->firstOrFail()->content_en}}
                     </button>
                     </li>
                     <li class="links nav-item dropdown">
@@ -174,17 +179,14 @@
                 
 
                 
-                var attr_title = $(this).attr("title");
+                //var attr_title = $(this).attr("title");
                 
-                $("#title_input").val(attr_title);
+                $("#title_input").val(attr_id);
                 
-                if (attr_title) {
-                    $("#formModal").attr("action","{{ route('bnsitecontents.update') }}");
+               
+                //$("#formModal").attr("action","{{ route('bnsitecontents.update') }}");
                     
-                } else {
-                    $("#formModal").attr("action","{{ route('bnsitecontents.store') }}");
-                    
-                }
+                
                 
             }  
         });

@@ -48,7 +48,7 @@
       </div>
       <div class="modal-body">
         <!-- form -->
-        <form id="formModal" method="post" action="{{ route('bnsitecontents.store') }}">
+        <form id="formModal" method="post" action="{{ route('bnsitecontents.update') }}">
             @csrf
             <input id="title_input" type="hidden" name="title" value="title">
 

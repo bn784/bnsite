@@ -34,9 +34,9 @@ class BnsitecontentController extends Controller
        
         $bnsitecontent = Bnsitecontent::create($request->all());
        
-        $bnsitecontents = Bnsitecontent::all();
+        //$bnsitecontents = Bnsitecontent::all();
         //return view('admin.roles.index', compact('roles'))->with('success', $role->title.' create successfully!');
-        return redirect()->back()->with('success',' create successfully!');;
+        return redirect()->back()->with('success','create successfully!');
     }
     public function update(Request $request)
     {
