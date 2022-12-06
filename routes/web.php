@@ -35,7 +35,7 @@ Route::post('/change_password', 'ChangePasswordController@changePassword')->name
 // UserController Routes...
 Route::get('/index', 'UserController@index')->name('users.index');
 Route::get('/create', 'UserController@create')->name('users.create');
-Route::post('/store', 'UserController@store')->name('users.store');
+Route::post('/store2', 'UserController@store')->name('users.store2');
 Route::get('/edit/{id}', 'UserController@edit')->name('users.edit');
 Route::patch('/update/{id}', 'UserController@update')->name('users.update');
 Route::delete('/destroy/{id}', 'UserController@destroy')->name('users.destroy');

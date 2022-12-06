@@ -81,7 +81,7 @@
                     <ul class="navbar-nav ml-auto top-right">
                     @can('admin_access')   
                     <li class="links nav-item">
-                    <button id="change" type="button" class="btn-primary btn">
+                    <button id="change" type="button" class="btn-info btn">
                     {{ __('messages.Change')}}
                     </button>
                     </li>

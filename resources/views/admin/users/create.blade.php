@@ -30,7 +30,7 @@
                         <div class="card-header">@lang('messages.Creating user')</div>
                         <div class="card-body">
                              <!-- form -->
-                            <form method="POST" action="{{ route('users.store') }}">
+                            <form method="POST" action="{{ route('users.store2') }}">
                             @csrf
                             <div class="form-group row" style="height: 50px;">
                             <div class="col-md-4"> 
