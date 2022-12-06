@@ -3,7 +3,6 @@
 @section('content')
 <?php //dd($users, $roles); ?>
 <div class="container-fluid">
-    
     <div class="row" style="height: 70px;">
     @if(session('warning'))
      <!--  warning show message -->
@@ -28,11 +27,9 @@
     <div class="row">
     <div class="col-2"></div>
 	<div class="col-5">
-   
     </div>
     <div class="col-5"></div>
     </div>
-    
     <div class="row">
     <div class="col-2"></div>
 	<div class="col-5">
@@ -53,7 +50,6 @@
                 </tr>
                 </thead>
                 <tbody>
-               
                         <tr data-entry-id="{{ $users->id }}" class="">
                             <td field-key='name'>{{ $users->name }}</td>
                             <td field-key='email'>{{ $users->email }}</td>
@@ -63,13 +59,10 @@
                                <a href="{{ route('users.edit',[$users->id]) }}" class="btn btn-xs btn-info">@lang('messages.edit')</a>
                             </td>
                         </tr>
-                   
-                 
                 </tbody>
             </table>
     </div>
     <div class="col-5"></div>
     </div>
-   
 </div>
 @stop

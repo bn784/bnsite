@@ -23,7 +23,7 @@
     <div class="row">
     <div class="col-1"></div>
 	<div class="col-7">
-    <div class="container">
+        <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
@@ -111,7 +111,6 @@
                                         </span>
                                         @endif
                                     </div>
-                                    
                                 </div>
                                 <div class="form-group row" style="height: 70px;">
                                     <div class="col-md-4"> 
@@ -132,21 +131,12 @@
                                     </div>
                                 </div>
                             </form>
-
-
-                          
-
-
-                            
-                            
-                            
-                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-</div>
+    </div>
     </div>
     <div class="col-4"></div>
     </div>

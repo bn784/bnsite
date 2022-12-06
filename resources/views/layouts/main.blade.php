@@ -22,6 +22,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+     <!-- javascripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 
@@ -33,7 +36,8 @@
 	width: 100%;
 }
 .rowbnsite {
-    height: 100vh;	
+    /*height: 100vh;*/
+    height: 200px;	
 }
 .bnsiteChange.active {
     background-color:pink;
@@ -75,14 +79,35 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto top-right">
+                    @can('admin_access')   
                     <li class="links nav-item">
-                    <button class="btn-primary btn" type="button" id="change">
-                        change
+                    <button id="change" type="button" class="btn-info btn">
+                    {{ __('messages.Change')}}
+                    </button>
+                    </li>
+                    @endcan
+                    <li class="links nav-item">
+                    <button id="modal_phone" type="button" class="btn btn-primary change"> 
+                    @if (app()->getLocale() == 'UA')
+                    {{ App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->content_ua }}
+                    @endif
+                    @if (app()->getLocale() == 'RU')
+                    {{ App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->content_ru }}
+                    @endif
+                    @if (app()->getLocale() == 'EN')
+                    {{ App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->content_en }}
+                    @endif
+                    </button>
+                    </li>
+                   
+                    <li class="links nav-item">
+                    <button id="modal_phone_2" type="button" class="btn-danger btn change">
+                    {{ __('messages.phone')}}: {{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->content_en}}
                     </button>
                     </li>
                     <li class="links nav-item">
-                    <button class="btn-danger btn bnsiteChange" type="button" id="phone">
-                        phone: 0684805419
+                    <button id="phone_2" type="button" class="btn-secondary btn change">
+                    {{ __('messages.phone')}}: {{App\Bnsitecontent::where('title', 'phone_2')->firstOrFail()->content_en}}
                     </button>
                     </li>
                     <li class="links nav-item dropdown">
@@ -125,8 +150,7 @@
 
     <!-- javascripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
+ <script>
 //smooth transition
  $(document).ready(function(){
     $("#menu").on("click","a", function (event) {
@@ -135,24 +159,70 @@
             top = $(id).offset().top - 50;
         $('body,html').animate({scrollTop: top}, 0);
     });
-    $(".bnsiteChange").hover(function(){
-        $(this).addClass("hover"); //добавляем класс текущей
-    });
-    $(".bnsiteChange").mouseleave(function(){  
-        $(this).removeClass("hover"); //удаляем класс текущей
-    });
-    $(".bnsiteChange").click(function(){
-        $(this).removeClass("active"); //
-    });
+    
+   
     $("#change").click(function(){
-        $(".bnsiteChange").addClass("active"); //добавляем класс текущей
-        
+        $(".change").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal").addClass("bnsiteChange").css({"border-style" :"solid","border-color":"gold"});
+       
+       
+        $(".bnsiteChange").on({
+            mouseenter: function(){
+                $(this).addClass("hover"); //добавляем класс текущей
+            },  
+            mouseleave: function(){
+                $(this).removeClass("hover"); //удаляем класс текущей
+            }, 
+            click: function(){
+                
+                var attr_id = $(this).attr("id");
+                $("#exampleModalLabel").text(attr_id);
+                
+
+                
+                //var attr_title = $(this).attr("title");
+                
+                $("#title_input").val(attr_id);
+                
+               
+                //$("#formModal").attr("action","{{ route('bnsitecontents.update') }}");
+                    
+                
+                
+            }  
+        });
     });
+    
 });
+//
+
 </script>
-
-
+@if(session('warning'))
+            <!-- If password successfully show message -->
+<script> 
+    alert("{{ session('warning') }}");
+</script>
+@endif
+@if(session('success'))
+            <!-- If password successfully show message -->
+ <script> 
+    alert("{{ session('success') }}");
+</script>            
+@endif
+@if( $errors->has('content_en'))
+ <script> 
+    alert("The content en must be a string.");
+</script>            
+@endif
+@if( $errors->has('content_ru'))
+ <script> 
+    alert("The content ru must be a string.");
+</script>            
+@endif
+@if( $errors->has('content_ua'))
+ <script> 
+    alert("The content ua must be a string.");
+</script>            
+@endif
 </body>
 </html>
 
- 

@@ -14,6 +14,7 @@ return [
 	'create' => 'Create',
 	'Creating user' => 'Creating user',
 	'Close' => 'Close',
+	'Change' => 'Change',
 	//d
 	'Delete' => 'Delete',
 	//e
@@ -27,6 +28,7 @@ return [
 	//h
 	'Home' => 'Home',
 	//i
+	'id' => 'id',
 	//j
 	//k
 	//l
@@ -42,6 +44,7 @@ return [
 	//p
 	'preferred_language' => 'Preferred language',
 	'Password' => 'Password',
+	'phone' => 'phone',
 	//q
 	//r
 	'Russian' => 'Russian',
@@ -59,8 +62,10 @@ return [
 	'site-management' => 'Site-management',
 	'Sidebar' => 'Sidebar',
 	'save' => 'Save',
+	'Save changes' => 'Save changes',
 	'Show' => 'Show',
 	//t
+	'title' => 'Title',
 	//u
 	'Ukrainian' => 'Ukrainian',
 	'user-management' => 'user-management',
