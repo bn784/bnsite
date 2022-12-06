@@ -157,7 +157,7 @@
                 <a href="{{ route('roles.index') }}" class="nav-link btnSidebar text-white">{{ __('messages.Role management')}}</a>
             </li>
 			<li class="nav-item">
-                <a href="#" class="nav-link btnSidebar text-white">{{ __('messages.site-management')}}</a>
+                <a href="{{ route('site_management') }}" class="nav-link btnSidebar text-white">{{ __('messages.site-management')}}</a>
             </li>
         </ul>
         <!-- end sidebar -->
