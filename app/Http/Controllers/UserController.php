@@ -227,13 +227,6 @@ class UserController extends Controller
             $user->save();
             return redirect()->back()->with('success', $user->email.' update role successfully!');
     }
-    public function site_management()
-    {
-        if (! Gate::allows('admin_access')) {
-            return abort(401);
-        }
-        $bnsitecontents = Bnsitecontent::all();
-        return view('admin.users.site_management', compact('bnsitecontents'));
-    }
+    
 
 }
