@@ -14,7 +14,8 @@ class BnsitecontentController extends Controller
     public function index()
   {
     $bnsitecontents = Bnsitecontent::all();
-    //dd($bnsitecontents);
+    $show_on_site = 'welcome';
+    session(['show_on_site' => $show_on_site]);
     return view('welcome', compact('bnsitecontents'));
   }
   public function setlocale($locale)
@@ -78,8 +79,9 @@ class BnsitecontentController extends Controller
         if (! Gate::allows('admin_access')) {
             return abort(401);
         }
+        $show_on_site = Bnsitecontent::findOrFail($id)->title;
+        session(['show_on_site' => $show_on_site]);
         $bnsitecontents = Bnsitecontent::all();
-        dd($bnsitecontents);
         return view('welcome', compact('bnsitecontents'));
     }
 }
