@@ -152,19 +152,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
  <script>
 //smooth transition
- $(document).ready(function(){
+$(document).ready(function(){
     $("#menu").on("click","a", function (event) {
         event.preventDefault();
         var id  = $(this).attr('href'),
             top = $(id).offset().top - 50;
         $('body,html').animate({scrollTop: top}, 0);
     });
-    
-   
-    $("#change").click(function(){
-        $(".change").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal").addClass("bnsiteChange").css({"border-style" :"solid","border-color":"gold"});
-       
-       
+//
+    if ({{ session('show_on_site') }} !== 'welcome') {
+        $("#{{ session('show_on_site') }}").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal")
+        .addClass("bnsiteChange").css({"border-style" :"solid","border-color":"gold"});
         $(".bnsiteChange").on({
             mouseenter: function(){
                 $(this).addClass("hover"); //добавляем класс текущей
@@ -173,25 +171,29 @@
                 $(this).removeClass("hover"); //удаляем класс текущей
             }, 
             click: function(){
-                
                 var attr_id = $(this).attr("id");
                 $("#exampleModalLabel").text(attr_id);
-                
-
-                
-                //var attr_title = $(this).attr("title");
-                
-                $("#title_input").val(attr_id);
-                
-               
-                //$("#formModal").attr("action","{{ route('bnsitecontents.update') }}");
-                    
-                
-                
+                $("#title_input").val(attr_id);    
             }  
         });
-    });
-    
+    }
+//
+    $("#change").click(function(){
+        $(".change").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal").addClass("bnsiteChange").css({"border-style" :"solid","border-color":"gold"});
+        $(".bnsiteChange").on({
+            mouseenter: function(){
+                $(this).addClass("hover"); //добавляем класс текущей
+            },  
+            mouseleave: function(){
+                $(this).removeClass("hover"); //удаляем класс текущей
+            }, 
+            click: function(){
+                var attr_id = $(this).attr("id");
+                $("#exampleModalLabel").text(attr_id);
+                $("#title_input").val(attr_id);    
+            }  
+        });
+    }); 
 });
 //
 
@@ -220,9 +222,17 @@
 @endif
 @if( $errors->has('content_ua'))
  <script> 
-    alert("The content ua must be a string.");
+    //alert("The content ua must be a string.");
 </script>            
 @endif
+
+@if (session('show_on_site'))
+ <script>
+
+    //alert("{{ session('show_on_site') }}"); 
+</script>        
+@endif
+
 </body>
 </html>
 

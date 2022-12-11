@@ -16,6 +16,10 @@ return [
 	'Creating user' => 'Создание пользователя',
 	'Close' => 'Закрыть',
 	'Change' => 'Изменять',
+	'content' => 'Контент',
+	'content_en' => 'Контент en',
+	'content_ru' => 'Контент ru',
+	'content_ua' => 'Контент ua',
 	//d
 	'Delete' => 'Удалить',
 	//e
@@ -65,6 +69,7 @@ return [
 	'save' => 'Сохранить',
 	'Save changes' => 'Сохранить изменения',
 	'Show' => 'Показывать',
+	'Show on site' => 'Показать на сайте',
 	//t
 	'title' => 'Заглавие',
 	//u

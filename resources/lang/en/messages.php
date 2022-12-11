@@ -15,6 +15,10 @@ return [
 	'Creating user' => 'Creating user',
 	'Close' => 'Close',
 	'Change' => 'Change',
+	'content' => 'Content',
+	'content_en' => 'Content en',
+	'content_ru' => 'Content ru',
+	'content_ua' => 'Content ua',
 	//d
 	'Delete' => 'Delete',
 	//e
@@ -64,6 +68,7 @@ return [
 	'save' => 'Save',
 	'Save changes' => 'Save changes',
 	'Show' => 'Show',
+	'Show on site' => 'Show on site',
 	//t
 	'title' => 'Title',
 	//u

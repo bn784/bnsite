@@ -44,9 +44,13 @@ Route::patch('/update_name/{id}', 'UserController@update_name')->name('users.upd
 Route::patch('/update_preferred_language/{id}', 'UserController@update_preferred_language')->name('users.update_preferred_language');
 Route::patch('/update_role/{id}', 'UserController@update_role')->name('users.update_role');
 Route::get('/show/{id}', 'UserController@show')->name('users.show');
+
 // RoleController Routes...
 Route::resource('roles', RoleController::class);
 // BnsiteContents Routes...
 //Route::resource('BnsiteContents', BnsiteContentController::class);
 Route::post('/store', 'BnsitecontentController@store')->name('bnsitecontents.store');
 Route::post('/update', 'BnsitecontentController@update')->name('bnsitecontents.update');
+Route::get('/site_management', 'BnsitecontentController@site_management')->name('site_management');
+Route::get('/bnsitecontents.edit/{id}', 'BnsitecontentController@edit')->name('bnsitecontents.edit');
+Route::get('/bnsitecontents.show_on_site/{id}', 'BnsitecontentController@show_on_site')->name('bnsitecontents.show_on_site');

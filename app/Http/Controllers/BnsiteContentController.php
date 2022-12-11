@@ -14,7 +14,8 @@ class BnsitecontentController extends Controller
     public function index()
   {
     $bnsitecontents = Bnsitecontent::all();
-    //dd($bnsitecontents);
+    $show_on_site = 'welcome';
+    session(['show_on_site' => $show_on_site]);
     return view('welcome', compact('bnsitecontents'));
   }
   public function setlocale($locale)
@@ -55,5 +56,32 @@ class BnsitecontentController extends Controller
         $bnsitecontent->save();
         
         return redirect()->back()->with('success', 'update successfully!');
+    }
+    public function site_management()
+    {
+        if (! Gate::allows('admin_access')) {
+            return abort(401);
+        }
+        $bnsitecontents = Bnsitecontent::all();
+        return view('admin.users.site_management', compact('bnsitecontents'));
+    }
+    public function edit($id)
+    {
+        if (! Gate::allows('admin_access')) {
+            return abort(401);
+        }
+        $bnsitecontents = Bnsitecontent::all();
+        dd($bnsitecontents);
+        return view('admin.users.site_management', compact('bnsitecontents'));
+    }
+    public function show_on_site($id)
+    {
+        if (! Gate::allows('admin_access')) {
+            return abort(401);
+        }
+        $show_on_site = Bnsitecontent::findOrFail($id)->title;
+        session(['show_on_site' => $show_on_site]);
+        $bnsitecontents = Bnsitecontent::all();
+        return view('welcome', compact('bnsitecontents'));
     }
 }
