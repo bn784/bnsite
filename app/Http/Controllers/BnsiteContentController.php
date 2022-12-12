@@ -70,9 +70,9 @@ class BnsitecontentController extends Controller
         if (! Gate::allows('admin_access')) {
             return abort(401);
         }
-        $bnsitecontents = Bnsitecontent::all();
-        dd($bnsitecontents);
-        return view('admin.users.site_management', compact('bnsitecontents'));
+        $bnsitecontents = Bnsitecontent::findOrFail($id);
+        //dd($bnsitecontents);
+        return view('admin.users.edit_site_management', compact('bnsitecontents'));
     }
     public function show_on_site($id)
     {
