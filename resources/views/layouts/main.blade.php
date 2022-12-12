@@ -226,13 +226,6 @@ $(document).ready(function(){
 </script>            
 @endif
 
-@if (session('show_on_site'))
- <script>
-
-    //alert("{{ session('show_on_site') }}"); 
-</script>        
-@endif
-
 </body>
 </html>
 
