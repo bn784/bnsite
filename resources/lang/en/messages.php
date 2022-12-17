@@ -27,6 +27,7 @@ return [
 	'email' => 'email',
 	'edit' => 'Edit',
 	'Editing user' => 'Editing user',
+	'Editing content' => 'Editing content',
 	//f
 	//g
 	//h
