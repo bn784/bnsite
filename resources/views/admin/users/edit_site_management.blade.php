@@ -29,7 +29,29 @@
                     <div class="card">
                         <div class="card-header">@lang('messages.Editing content'): &nbsp; </div>
                         <div class="card-body">
-                           
+                            <!-- form name-->
+                            <form method="POST" action="{{ route('bnsitecontents.update') }}">
+                                @csrf
+                                <input id="name_input_content" type="hidden" name="title" value="{{$bnsitecontents->title}}">
+                                <div class="form-group row" style="height: 70px;">
+                                    <div class="col-md-4"> 
+                                        <label for="name_input_content_en">{{ __('messages.content_en')}}</label>
+                                    </div>    
+                                    <div class="col-md-4">
+                                        <input id="name_input_content" type="text" name="content_en" class="form-control{{ $errors->has('content_en') ? ' is-invalid' : '' }}" 
+                                        value="{{$bnsitecontents->content_en}}">
+                                        @if ($errors->has('content_en'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('content_en') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                        @lang('messages.edit')
+                                    </div>
+                                </div>
+                            </form>  
                           
                                
                         </div>
