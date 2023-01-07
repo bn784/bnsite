@@ -45,6 +45,20 @@
 .bnsiteChange.hover {
     background-color:gold;
 }
+.rowbnsite {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 255, 0, 0.5);
+}
+.row1 {
+    background-image: url("{{asset('images/Mass.jpg')}}");
+    opacity: 0.8;
+    z-index: 2;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
 </style>
    
