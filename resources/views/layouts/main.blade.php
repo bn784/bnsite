@@ -159,25 +159,7 @@ $(document).ready(function(){
             top = $(id).offset().top - 50;
         $('body,html').animate({scrollTop: top}, 0);
     });
-//
-    if ({{ session('show_on_site') }} !== 'welcome') {
-        $("#{{ session('show_on_site') }}").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal")
-        .addClass("bnsiteChange").css({"border-style" :"solid","border-color":"gold"});
-        $(".bnsiteChange").on({
-            mouseenter: function(){
-                $(this).addClass("hover"); //добавляем класс текущей
-            },  
-            mouseleave: function(){
-                $(this).removeClass("hover"); //удаляем класс текущей
-            }, 
-            click: function(){
-                var attr_id = $(this).attr("id");
-                $("#exampleModalLabel").text(attr_id);
-                $("#title_input").val(attr_id);    
-            }  
-        });
-    }
-//
+    //
     $("#change").click(function(){
         $(".change").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal").addClass("bnsiteChange").css({"border-style" :"solid","border-color":"gold"});
         $(".bnsiteChange").on({
@@ -194,8 +176,26 @@ $(document).ready(function(){
             }  
         });
     }); 
+   //
+    if ({{ session('show_on_site') }} !== 'welcome') {
+        $("#{{ session('show_on_site') }}").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal")
+        .addClass("bnsiteChange").css({"border-style" :"solid","border-color":"gold"});
+        $(".bnsiteChange").on({
+            mouseenter: function(){
+                $(this).addClass("hover"); //добавляем класс текущей
+            },  
+            mouseleave: function(){
+                $(this).removeClass("hover"); //удаляем класс текущей
+            }, 
+            click: function(){
+                var attr_id = $(this).attr("id");
+                $("#exampleModalLabel").text(attr_id);
+                $("#title_input").val(attr_id);    
+            }  
+        });
+    };  
 });
-//
+
 
 </script>
 @if(session('warning'))
