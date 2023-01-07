@@ -43,11 +43,7 @@
         <!-- form -->
         <form id="formModal" method="post" action="{{ route('bnsitecontents.update') }}">
             @csrf
-            <input id="title_input" type="hidden" name="title" value="title">
-
-               
-
-                
+            <input id="title_input" type="hidden" name="title" value="title">               
                 <div class="form-group row" style="height: 70px;">
                         <label for="content_en" class="col-md-4 col-form-label text-md-right">{{ __('messages.content_en') }}</label>
                     <div class="col-md-8">
