@@ -51,6 +51,7 @@
 }
 div.rowbnsite {
     text-align: center;
+    border-style :"solid";
 }
 .row1 {
     background-image: url("{{asset('images/Mass.jpg')}}");
