@@ -47,6 +47,7 @@ return [
 	'Name' => 'Имя',
 	'New password' => 'Новый пароль',
 	//o
+	'order a massage' => 'заказать массаж',
 	//p
 	'preferred_language' => 'Предпочтительный язык',
 	'Password' => 'Пароль',

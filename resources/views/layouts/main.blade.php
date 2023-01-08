@@ -48,7 +48,9 @@
 .rowbnsite {
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 255, 0, 0.5);
+}
+div.rowbnsite {
+    text-align: center;
 }
 .row1 {
     background-image: url("{{asset('images/Mass.jpg')}}");
@@ -59,7 +61,21 @@
     -o-background-size: cover;
     background-size: cover;
 }
-
+.row2 {
+    background-color: rgba(0, 255, 0, 0.5);
+}
+.row3 {
+    background-color: rgba(0, 200, 100, 0.5);
+}
+.row4 {
+    background-color: rgba(50, 150, 50, 0.5);
+}
+.row5 {
+    background-color: rgba(100, 50, 50, 0.5);
+}
+.row6 {
+    background-color: rgba(200, 100, 100, 0.5);
+}
 </style>
    
        

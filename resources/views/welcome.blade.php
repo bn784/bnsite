@@ -12,7 +12,14 @@
 @section('content')
 
 <div class="container-fluid">
-    <div id="row1" class="row row1 rowbnsite">                      
+    <div id="row1" class="row row1 rowbnsite">
+    <div class="row row11"></div>
+    <div class="row row12">
+      <h1>
+        <a href="{{ route('users.index') }}" class="navbar-brand btn text-white">{{ __('messages.order a massage')}}</a>
+      </h1>
+    </div>
+    <div class="row row13"></div>
     </div>
     <div id="row2" class="row row2 rowbnsite">
 		row2

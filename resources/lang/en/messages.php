@@ -46,6 +46,7 @@ return [
 	'Name' => 'Name',
 	'New password' => 'New password',
 	//o
+	'order a massage' => 'order a massage',
 	//p
 	'preferred_language' => 'Preferred language',
 	'Password' => 'Password',
