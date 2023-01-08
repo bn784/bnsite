@@ -52,8 +52,9 @@
 div.rowbnsite {
     text-align: center;
     border-style :"solid";
+    font-weight: bold;
 }
-.row1 {
+#row1 {
     background-image: url("{{asset('images/Mass.jpg')}}");
     opacity: 0.8;
     z-index: 2;
@@ -62,19 +63,19 @@ div.rowbnsite {
     -o-background-size: cover;
     background-size: cover;
 }
-.row2 {
+#row2 {
     background-color: rgba(0, 255, 0, 0.5);
 }
-.row3 {
+#row3 {
     background-color: rgba(0, 200, 100, 0.5);
 }
-.row4 {
+#row4 {
     background-color: rgba(50, 150, 50, 0.5);
 }
-.row5 {
+#row5 {
     background-color: rgba(100, 50, 50, 0.5);
 }
-.row6 {
+#row6 {
     background-color: rgba(200, 100, 100, 0.5);
 }
 </style>

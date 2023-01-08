@@ -41,7 +41,7 @@ return [
 	'Logout' => 'Logout',
 	'list' => 'List',
 	//m
-	
+	'massage at home' => 'massage at home',
 	//n
 	'Name' => 'Name',
 	'New password' => 'New password',

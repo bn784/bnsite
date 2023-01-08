@@ -42,7 +42,8 @@ return [
 	'Logout' => 'Выйти',
 	'list' => 'Список',
 	//m
-	
+	//m
+    'massage at home' => 'масаж на дому',
 	//n
 	'Name' => 'Имя',
 	'New password' => 'Новый пароль',
