@@ -12,21 +12,33 @@
 @section('content')
 
 <div class="container-fluid">
-    <div id="row1" class="row row1 rowbnsite">                      
+    <div id="row1" class="row rowbnsite">
+    <div id="row11" class=""></div>
+    <div id="row12" class="">
+      <h1 class="text-white ">
+        {{ __('messages.massage at home')}}
+      </h1>
+      <h1>
+        <a href="{{ route('users.index') }}" class="navbar-brand btn active text-white">
+        {{ __('messages.order a massage')}}
+        </a>
+      </h1>
     </div>
-    <div id="row2" class="row row2 rowbnsite">
+    <div id="row13" class=""></div>
+    </div>
+    <div id="row2" class="row rowbnsite">
 		row2
     </div>
-    <div id="row3" class="row row3 rowbnsite">
+    <div id="row3" class="row rowbnsite">
 		row3
     </div>
-    <div id="row4" class="row row4 rowbnsite">
+    <div id="row4" class="row rowbnsite">
 		row4
     </div>
-    <div id="row5" class="row row5 rowbnsite">
+    <div id="row5" class="row rowbnsite">
 		row5
     </div>
-    <div id="row6" class="row row6 rowbnsite">
+    <div id="row6" class="row rowbnsite">
 		row6
     </div>
 </div>

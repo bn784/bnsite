@@ -41,11 +41,12 @@ return [
 	'Logout' => 'Logout',
 	'list' => 'List',
 	//m
-	
+	'massage at home' => 'massage at home',
 	//n
 	'Name' => 'Name',
 	'New password' => 'New password',
 	//o
+	'order a massage' => 'order a massage',
 	//p
 	'preferred_language' => 'Preferred language',
 	'Password' => 'Password',

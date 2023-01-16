@@ -13,7 +13,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 	<style type="text/css">
-	.wrapper {
+.wrapper {
     left: 0;
     top: 0;
     padding-top: 55px;

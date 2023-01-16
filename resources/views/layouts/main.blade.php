@@ -10,24 +10,24 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'bnsite') }}</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">  
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!--<link rel="dns-prefetch" href="//fonts.gstatic.com">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">-->
 
      <!-- javascripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <!-- Styles -->
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 
+    <!-- Styles -->
 <style type="text/css">
 .main {
     left: 0;
@@ -48,9 +48,13 @@
 .rowbnsite {
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 255, 0, 0.5);
 }
-.row1 {
+div.rowbnsite {
+    text-align: center;
+    border-style :"solid";
+    font-weight: bold;
+}
+#row1 {
     background-image: url("{{asset('images/Mass.jpg')}}");
     opacity: 0.8;
     z-index: 2;
@@ -59,10 +63,24 @@
     -o-background-size: cover;
     background-size: cover;
 }
-
+#row2 {
+    background-color: rgba(0, 255, 0, 0.5);
+}
+#row3 {
+    background-color: rgba(0, 200, 100, 0.5);
+}
+#row4 {
+    background-color: rgba(50, 150, 50, 0.5);
+}
+#row5 {
+    background-color: rgba(100, 50, 50, 0.5);
+}
+#row6 {
+    background-color: rgba(200, 100, 100, 0.5);
+}
 </style>
    
-       
+<title>{{ config('app.name', 'bnsite') }}</title>
 </head>
 <body>
     <div id="app">
