@@ -56,7 +56,7 @@ div.rowbnsite {
 }
 #row1 {
     background-image: url("{{asset('images/Mass.jpg')}}");
-    opacity: 0.8;
+    opacity: 1.0;
     z-index: 2;
     -webkit-background-size: cover;
     -moz-background-size: cover;

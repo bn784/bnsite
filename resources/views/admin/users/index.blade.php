@@ -38,7 +38,7 @@
     
     <div class="row">
         <div class="col-2"></div>
-	    <div class="col-5">
+	    <div class="col-auto">
             <div class="panel panel-default">
             <div class="panel-heading">@lang('messages.list')</div>
             <div class="panel-body table-responsive"></div>
@@ -80,7 +80,7 @@
                 </tbody>
             </table>
             </div>
-        <div class="col-5"></div>
+        <div class="col"></div>
     </div>
 </div>
 
