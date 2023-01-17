@@ -15,11 +15,11 @@
     <div id="row1" class="row rowbnsite">
     <div id="row11" class=""></div>
     <div id="row12" class="">
-      <h1 class="text-white display-1">
+      <h1 class="text-light display-1 ">
         {{ __('messages.massage at home')}}
       </h1>
-      <h1 class="text-white h1">
-        <a href="{{ route('users.index') }}" class="navbar-brand btn active">
+      <h1 class="h1 ">
+        <a href="{{ route('users.index') }}" class="navbar-brand btn btn-info border border-light border-2 rounded-start ">
         {{ __('messages.order a massage')}}
         </a>
       </h1>
