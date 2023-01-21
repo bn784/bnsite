@@ -78,6 +78,9 @@ div.rowbnsite {
 #row6 {
     background-color: rgba(200, 100, 100, 0.5);
 }
+#btn-order_a_massage.hover {
+    background-color: rgba(200, 100, 100, 0.5);
+}
 </style>
    
 <title>{{ config('app.name', 'bnsite') }}</title>
@@ -226,6 +229,14 @@ $(document).ready(function(){
             }  
         });
     };  
+});
+$("#btn-order_a_massage").on({
+    mouseenter: function(){
+        $(this).addClass("hover"); //добавляем класс текущей
+    },  
+    mouseleave: function(){
+        $(this).removeClass("hover"); //удаляем класс текущей
+    },
 });
 
 

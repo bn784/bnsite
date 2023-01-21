@@ -18,8 +18,8 @@
       <h1 class="text-light display-1 ">
         {{ __('messages.massage at home')}}
       </h1>
-      <h1 class="h1 ">
-        <a href="{{ route('users.index') }}" class="navbar-brand btn btn-info border border-light border-2 rounded-start ">
+      <h1 class="h1">
+        <a id="btn-order_a_massage" href="{{ route('users.index') }}" class="navbar-brand btn border border-light border-1 text-white">
         {{ __('messages.order a massage')}}
         </a>
       </h1>
