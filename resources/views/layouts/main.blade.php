@@ -210,7 +210,16 @@ $(document).ready(function(){
                 $("#title_input").val(attr_id);    
             }  
         });
-    }); 
+    });
+      //
+    $("#btn-order_a_massage").on({
+        mouseenter: function(){
+            $(this).addClass("hover"); //добавляем класс #btn-order_a_massage
+        },  
+        mouseleave: function(){
+            $(this).removeClass("hover"); //удаляем класс #btn-order_a_massage
+        }
+    });
    //
     if ({{ session('show_on_site') }} !== 'welcome') {
         $("#{{ session('show_on_site') }}").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal")
@@ -228,16 +237,16 @@ $(document).ready(function(){
                 $("#title_input").val(attr_id);    
             }  
         });
-    };  
+    };
+
 });
-$("#btn-order_a_massage").on({
-    mouseenter: function(){
-        $(this).addClass("hover"); //добавляем класс текущей
-    },  
-    mouseleave: function(){
-        $(this).removeClass("hover"); //удаляем класс текущей
-    },
-});
+
+
+
+
+
+
+
 
 
 </script>
