@@ -43,7 +43,7 @@ return [
 	'list' => 'Список',
 	//m
 	//m
-    'massage at home' => 'масаж на дому',
+    'massage at home' => 'массаж на дому',
 	//n
 	'Name' => 'Имя',
 	'New password' => 'Новый пароль',

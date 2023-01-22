@@ -13,16 +13,18 @@
 
 <div class="container-fluid">
     <div id="row1" class="row rowbnsite">
-    <div id="row11" class=""></div>
-    <div id="row12" class="">
-      <h1 class="text-white ">
+    <div id="row11" class="row"></div>
+    <div id="row12" class="row h1 text-white">
+      <div class="" style="font-size:300%; font-family:Arial, Helvetica, sans-serif;">
         {{ __('messages.massage at home')}}
-      </h1>
-      <h1>
-        <a href="{{ route('users.index') }}" class="navbar-brand btn active text-white">
+      </div>
+    </div>
+    <div id="row13" class="row h1 text-white">
+      <div class="" style="font-size:120%; font-family:Arial, Helvetica, sans-serif;">
+        <a id="btn-order_a_massage" href="{{ route('users.index') }}" class="navbar-brand btn border border-light">
         {{ __('messages.order a massage')}}
         </a>
-      </h1>
+      </div>
     </div>
     <div id="row13" class=""></div>
     </div>

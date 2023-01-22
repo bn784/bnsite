@@ -56,7 +56,7 @@ div.rowbnsite {
 }
 #row1 {
     background-image: url("{{asset('images/Mass.jpg')}}");
-    opacity: 0.8;
+    opacity: 1.0;
     z-index: 2;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -76,6 +76,9 @@ div.rowbnsite {
     background-color: rgba(100, 50, 50, 0.5);
 }
 #row6 {
+    background-color: rgba(200, 100, 100, 0.5);
+}
+#btn-order_a_massage.hover {
     background-color: rgba(200, 100, 100, 0.5);
 }
 </style>
@@ -207,7 +210,16 @@ $(document).ready(function(){
                 $("#title_input").val(attr_id);    
             }  
         });
-    }); 
+    });
+      //
+    $("#btn-order_a_massage").on({
+        mouseenter: function(){
+            $(this).addClass("hover"); //добавляем класс #btn-order_a_massage
+        },  
+        mouseleave: function(){
+            $(this).removeClass("hover"); //удаляем класс #btn-order_a_massage
+        }
+    });
    //
     if ({{ session('show_on_site') }} !== 'welcome') {
         $("#{{ session('show_on_site') }}").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal")
@@ -225,8 +237,16 @@ $(document).ready(function(){
                 $("#title_input").val(attr_id);    
             }  
         });
-    };  
+    };
+
 });
+
+
+
+
+
+
+
 
 
 </script>
