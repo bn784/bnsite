@@ -5,6 +5,7 @@ return [
 	'add_new' => 'Add new',
 	'Are you sure?' => 'Are you sure?',
 	'admin access' => 'admin access',
+	'About service' => 'About service',
 	//b
 	//c
 	'Change password' => 'Change password',
