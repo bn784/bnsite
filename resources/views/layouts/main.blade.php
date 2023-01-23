@@ -242,13 +242,6 @@ $(document).ready(function(){
 });
 
 
-
-
-
-
-
-
-
 </script>
 @if(session('warning'))
             <!-- If password successfully show message -->
