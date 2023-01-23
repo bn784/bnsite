@@ -137,7 +137,15 @@ div.rowbnsite {
                    
                     <li class="links nav-item">
                     <button id="modal_phone_2" type="button" class="btn-danger btn change">
-                    {{ __('messages.phone')}}: {{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->content_en}}
+                    @if (app()->getLocale() == 'UA')
+                    {{ __('messages.phone')}}: {{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->content_ua }}
+                    @endif
+                    @if (app()->getLocale() == 'RU')
+                    {{ __('messages.phone')}}: {{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->content_ru }}
+                    @endif
+                    @if (app()->getLocale() == 'EN')
+                    {{ __('messages.phone')}}: {{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->content_en }}
+                    @endif
                     </button>
                     </li>
                     <li class="links nav-item">
