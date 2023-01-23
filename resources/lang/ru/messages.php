@@ -6,6 +6,7 @@ return [
 	'add_new' => 'Добавить новый',
 	'Are you sure?' => 'Вы уверены?',
 	'admin access' => 'доступ администратора',
+	'About service' => 'О сервисе',
 	//b
 	//c
 	'Change password' => 'Сменить пароль',
