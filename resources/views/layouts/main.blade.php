@@ -81,6 +81,11 @@ div.rowbnsite {
 #btn-order_a_massage.hover {
     background-color: rgba(200, 100, 100, 0.5);
 }
+.logonav {
+    width: 50px;
+    border-radius: 10px;
+    margin-left: 15px;
+}
 </style>
    
 <title>{{ config('app.name', 'bnsite') }}</title>
@@ -88,32 +93,30 @@ div.rowbnsite {
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm fixed-top">
+                    <div class="nav-item">
+                        <a class="nav-link navbar-brand " href="#row1"><img class="logonav" src="{{ asset('images/Logo.jpg') }}"></a>
+                    </div>
             <div class="container-fluid">
-                
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto" id="menu">
-					<li class="nav-item">
-                        <a class="nav-link navbar-brand " href="#row1" aria-current="page">row1</a>
+                <ul class="nav nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link navbar-brand " href="#row2">{{__('messages.About service')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-brand " href="#row2" aria-current="page">row2</a>
+                        <a class="nav-link navbar-brand" href="#row3">{{__('messages.About service')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-brand" href="#row3" aria-current="page">row3</a>
+                        <a class="links nav-link navbar-brand" href="#row4">{{__('messages.About service')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-brand" href="#row4" aria-current="page">row4</a>
+                        <a class="nav-link navbar-brand" href="#row5">{{__('messages.About service')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-brand" href="#row5" aria-current="page">row5</a>
+                        <a class="nav-link navbar-brand" href="#row6">{{__('messages.About service')}}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link navbar-brand" href="#row6" aria-current="page">row6</a>
-                    </li>
-                    </ul>
+                </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto top-right">
+                    <ul class="navbar-nav top-right">
                     @can('admin_access')   
                     <li class="links nav-item">
                     <button id="change" type="button" class="btn-info btn">
