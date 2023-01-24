@@ -20,6 +20,7 @@ return [
 	'content_en' => 'Content en',
 	'content_ru' => 'Content ru',
 	'content_ua' => 'Content ua',
+	'Contacts' => 'Contacts',
 	//d
 	'Delete' => 'Delete',
 	//e
@@ -52,6 +53,7 @@ return [
 	'preferred_language' => 'Preferred language',
 	'Password' => 'Password',
 	'phone' => 'phone',
+	'Price' => 'Price',
 	//q
 	//r
 	'Russian' => 'Russian',

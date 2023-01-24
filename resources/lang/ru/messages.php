@@ -21,6 +21,7 @@ return [
 	'content_en' => 'Контент en',
 	'content_ru' => 'Контент ru',
 	'content_ua' => 'Контент ua',
+	'Contacts' => 'Контакты',
 	//d
 	'Delete' => 'Удалить',
 	//e
@@ -54,6 +55,7 @@ return [
 	'preferred_language' => 'Предпочтительный язык',
 	'Password' => 'Пароль',
 	'phone' => 'телефон',
+	'Price' => 'Прайс',
 	//q
 	//r
 	'Russian' => 'Русский',

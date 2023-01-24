@@ -102,13 +102,13 @@ div.rowbnsite {
                         <a class="nav-link navbar-brand " href="#row2">{{__('messages.About service')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-brand" href="#row3">{{__('messages.About service')}}</a>
+                        <a class="nav-link navbar-brand" href="#row3">{{__('messages.Price')}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="links nav-link navbar-brand" href="#row4">{{__('messages.About service')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-brand" href="#row5">{{__('messages.About service')}}</a>
+                        <a class="nav-link navbar-brand" href="#row5">{{__('messages.Contacts')}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link navbar-brand" href="#row6">{{__('messages.About service')}}</a>
