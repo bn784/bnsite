@@ -27,6 +27,7 @@ return [
 	'English' => 'English',
 	'E-Mail Address'=> 'E-Mail Address',
 	'email' => 'email',
+	'E-Mail' => 'E-Mail',
 	'edit' => 'Edit',
 	'Editing user' => 'Editing user',
 	'Editing content' => 'Editing content',
@@ -67,6 +68,7 @@ return [
 	'role edit' => 'role edit',
 	'role view' => 'role view',
 	'role delete' => 'role delete',
+	'Reviews' => 'Reviews',
 	//s
 	'site-management' => 'Site-management',
 	'Sidebar' => 'Sidebar',

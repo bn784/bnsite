@@ -15,7 +15,7 @@ class BnsitecontentTableSeeder extends Seeder
 
             [
                 'id' => 1,
-                'title' => 'modal_phone',
+                'title' => 'name_1',
                 'content_en' => 'name: Luba',
                 'content_ru' => 'имя: Люба',
                 'content_ua' => 'імя: Люба',
@@ -23,14 +23,14 @@ class BnsitecontentTableSeeder extends Seeder
             ],
             [
                 'id' => 2,
-                'title' => 'modal_phone_2',
-                'content_en' => '0684805419',
-                'content_ru' => '0684805419',
-                'content_ua' => '0684805419',
+                'title' => 'E-Mail',
+                'content_en' => 'bn7854420@gmail.com',
+                'content_ru' => 'bn7854420@gmail.com',
+                'content_ua' => 'bn7854420@gmail.com',
             ],
             [
                 'id' => 3,
-                'title' => 'phone_2',
+                'title' => 'phone_1',
                 'content_en' => '0684805419',
                 'content_ru' => '0684805419',
                 'content_ua' => '0684805419',

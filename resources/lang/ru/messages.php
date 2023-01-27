@@ -31,6 +31,7 @@ return [
 	'edit' => 'Редактировать',
 	'Editing user' => 'Редактирование пользователя',
 	'Editing content' => 'Редактирование контента',
+	'E-Mail' => 'E-Mail',
 	//f
 	//g
 	//h
@@ -69,6 +70,7 @@ return [
 	'role edit' => 'редактирование роли',
 	'role view' => 'просмотр роли',
 	'role delete' => 'удаление роли',
+	'Reviews' => 'Отзывы',
 	//s
 	'site-management' => 'Управление сайтом',
 	'Sidebar' => 'Боковая панель',
