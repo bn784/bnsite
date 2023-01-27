@@ -20,12 +20,14 @@ return [
 	'content_en' => 'Content en',
 	'content_ru' => 'Content ru',
 	'content_ua' => 'Content ua',
+	'Contacts' => 'Contacts',
 	//d
 	'Delete' => 'Delete',
 	//e
 	'English' => 'English',
 	'E-Mail Address'=> 'E-Mail Address',
 	'email' => 'email',
+	'E-Mail' => 'E-Mail',
 	'edit' => 'Edit',
 	'Editing user' => 'Editing user',
 	'Editing content' => 'Editing content',
@@ -52,6 +54,7 @@ return [
 	'preferred_language' => 'Preferred language',
 	'Password' => 'Password',
 	'phone' => 'phone',
+	'Price' => 'Price',
 	//q
 	//r
 	'Russian' => 'Russian',
@@ -65,6 +68,7 @@ return [
 	'role edit' => 'role edit',
 	'role view' => 'role view',
 	'role delete' => 'role delete',
+	'Reviews' => 'Reviews',
 	//s
 	'site-management' => 'Site-management',
 	'Sidebar' => 'Sidebar',

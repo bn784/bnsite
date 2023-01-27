@@ -75,9 +75,6 @@ div.rowbnsite {
 #row5 {
     background-color: rgba(100, 50, 50, 0.5);
 }
-#row6 {
-    background-color: rgba(200, 100, 100, 0.5);
-}
 #btn-order_a_massage.hover {
     background-color: rgba(200, 100, 100, 0.5);
 }
@@ -102,38 +99,29 @@ div.rowbnsite {
                         <a class="nav-link navbar-brand " href="#row2">{{__('messages.About service')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-brand" href="#row3">{{__('messages.About service')}}</a>
+                        <a class="nav-link navbar-brand" href="#row3">{{__('messages.Price')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="links nav-link navbar-brand" href="#row4">{{__('messages.About service')}}</a>
+                        <a class="links nav-link navbar-brand" href="#row4">{{__('messages.Reviews')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-brand" href="#row5">{{__('messages.About service')}}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navbar-brand" href="#row6">{{__('messages.About service')}}</a>
+                        <a class="nav-link navbar-brand" href="#row5">{{__('messages.Contacts')}}</a>
                     </li>
                 </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav top-right">
-                    @can('admin_access')   
+                   
                     <li class="links nav-item">
-                    <button id="change" type="button" class="btn-info btn">
-                    {{ __('messages.Change')}}
-                    </button>
-                    </li>
-                    @endcan
-                    <li class="links nav-item">
-                    <button id="modal_phone" type="button" class="btn btn-primary change"> 
+                    <button id="modal_phone" type="button" class="btn btn-primary change">   
                     @if (app()->getLocale() == 'UA')
-                    {{ App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->content_ua }}
+                    {{ App\Bnsitecontent::where('title', 'name_1')->firstOrFail()->content_ua }}
                     @endif
                     @if (app()->getLocale() == 'RU')
-                    {{ App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->content_ru }}
+                    {{ App\Bnsitecontent::where('title', 'name_1')->firstOrFail()->content_ru }}
                     @endif
                     @if (app()->getLocale() == 'EN')
-                    {{ App\Bnsitecontent::where('title', 'modal_phone')->firstOrFail()->content_en }}
+                    {{ App\Bnsitecontent::where('title', 'name_1')->firstOrFail()->content_en }}
                     @endif
                     </button>
                     </li>
@@ -141,19 +129,19 @@ div.rowbnsite {
                     <li class="links nav-item">
                     <button id="modal_phone_2" type="button" class="btn-danger btn change">
                     @if (app()->getLocale() == 'UA')
-                    {{ __('messages.phone')}}: {{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->content_ua }}
+                    {{ __('messages.E-Mail')}}: {{App\Bnsitecontent::where('title', 'E-Mail')->firstOrFail()->content_ua }}
                     @endif
                     @if (app()->getLocale() == 'RU')
-                    {{ __('messages.phone')}}: {{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->content_ru }}
+                    {{ __('messages.E-Mail')}}: {{App\Bnsitecontent::where('title', 'E-Mail')->firstOrFail()->content_ru }}
                     @endif
                     @if (app()->getLocale() == 'EN')
-                    {{ __('messages.phone')}}: {{App\Bnsitecontent::where('title', 'modal_phone_2')->firstOrFail()->content_en }}
+                    {{ __('messages.E-Mail')}}: {{App\Bnsitecontent::where('title', 'E-Mail')->firstOrFail()->content_en }}
                     @endif
                     </button>
                     </li>
                     <li class="links nav-item">
                     <button id="phone_2" type="button" class="btn-secondary btn change">
-                    {{ __('messages.phone')}}: {{App\Bnsitecontent::where('title', 'phone_2')->firstOrFail()->content_en}}
+                    {{ __('messages.phone')}}: {{App\Bnsitecontent::where('title', 'phone_1')->firstOrFail()->content_en}}
                     </button>
                     </li>
                     <li class="links nav-item dropdown">
@@ -205,24 +193,7 @@ $(document).ready(function(){
             top = $(id).offset().top - 50;
         $('body,html').animate({scrollTop: top}, 0);
     });
-    //
-    $("#change").click(function(){
-        $(".change").attr("data-bs-toggle","modal").attr("data-bs-target","#exampleModal").addClass("bnsiteChange").css({"border-style" :"solid","border-color":"gold"});
-        $(".bnsiteChange").on({
-            mouseenter: function(){
-                $(this).addClass("hover"); //добавляем класс текущей
-            },  
-            mouseleave: function(){
-                $(this).removeClass("hover"); //удаляем класс текущей
-            }, 
-            click: function(){
-                var attr_id = $(this).attr("id");
-                $("#exampleModalLabel").text(attr_id);
-                $("#title_input").val(attr_id);    
-            }  
-        });
-    });
-      //
+         //
     $("#btn-order_a_massage").on({
         mouseenter: function(){
             $(this).addClass("hover"); //добавляем класс #btn-order_a_massage
@@ -251,13 +222,6 @@ $(document).ready(function(){
     };
 
 });
-
-
-
-
-
-
-
 
 
 </script>

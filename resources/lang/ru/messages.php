@@ -21,6 +21,7 @@ return [
 	'content_en' => 'Контент en',
 	'content_ru' => 'Контент ru',
 	'content_ua' => 'Контент ua',
+	'Contacts' => 'Контакты',
 	//d
 	'Delete' => 'Удалить',
 	//e
@@ -30,6 +31,7 @@ return [
 	'edit' => 'Редактировать',
 	'Editing user' => 'Редактирование пользователя',
 	'Editing content' => 'Редактирование контента',
+	'E-Mail' => 'E-Mail',
 	//f
 	//g
 	//h
@@ -54,6 +56,7 @@ return [
 	'preferred_language' => 'Предпочтительный язык',
 	'Password' => 'Пароль',
 	'phone' => 'телефон',
+	'Price' => 'Прайс',
 	//q
 	//r
 	'Russian' => 'Русский',
@@ -67,6 +70,7 @@ return [
 	'role edit' => 'редактирование роли',
 	'role view' => 'просмотр роли',
 	'role delete' => 'удаление роли',
+	'Reviews' => 'Отзывы',
 	//s
 	'site-management' => 'Управление сайтом',
 	'Sidebar' => 'Боковая панель',

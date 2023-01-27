@@ -40,9 +40,6 @@
     <div id="row5" class="row rowbnsite">
 		row5
     </div>
-    <div id="row6" class="row rowbnsite">
-		row6
-    </div>
 </div>
 
 <!-- Modal -->
